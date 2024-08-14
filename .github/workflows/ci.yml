@@ -133,24 +133,24 @@ jobs:
       - name: "Validate JSON files"
         run: "python -u tools/validateJsonFiles.py"
 
-  analyzeCodeQl:
-    name: "CI - CodeQL Job"
-    runs-on: "ubuntu-20.04"
+  # analyzeCodeQl:
+  #   name: "CI - CodeQL Job"
+  #   runs-on: "ubuntu-20.04"
 
-    steps:
-      - name: "Checkout Repository"
-        uses: "actions/checkout@v2"
+  #   steps:
+  #     - name: "Checkout Repository"
+  #       uses: "actions/checkout@v2"
 
-      - name: "Initialize CodeQL"
-        uses: "github/codeql-action/init@v1"
-        with:
-          languages: "javascript,python"
+  #     - name: "Initialize CodeQL"
+  #       uses: "github/codeql-action/init@v1"
+  #       with:
+  #         languages: "javascript,python"
 
-      - name: "Autobuild"
-        uses: "github/codeql-action/autobuild@v1"
+  #     - name: "Autobuild"
+  #       uses: "github/codeql-action/autobuild@v1"
 
-      - name: "Perform CodeQL Analysis"
-        uses: "github/codeql-action/analyze@v1"
+  #     - name: "Perform CodeQL Analysis"
+  #       uses: "github/codeql-action/analyze@v1"
 
   deployForVsCode:
     name: "CI - Deploy for VS Code Job"
@@ -159,7 +159,7 @@ jobs:
       - "buildForVsCode"
       # - "buildForCocNvim"
       - "validate"
-      - "analyzeCodeQl"
+      # - "analyzeCodeQl"
     runs-on: "ubuntu-20.04"
 
     steps:

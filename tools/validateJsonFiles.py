@@ -63,7 +63,7 @@ def validatePackageJsonWalkthroughsWithSchema() -> None:
   print("Validating package.json walkthroughs with schema from VS Code...")
 
   jsonSchema = getJsonSchemaFromVsCodeGitHub(
-      "src/vs/workbench/contrib/welcome/gettingStarted/browser/gettingStartedExtensionPoint.ts",
+      "src/vs/workbench/contrib/welcomeGettingStarted/browser/gettingStartedExtensionPoint.ts",
       re.compile(r"const walkthroughsExtensionPoint.* = (?s:.*?^\tjsonSchema: (\{.*?^\t\}))",
         flags=re.MULTILINE))
   jsonschema.validate(packageJson["contributes"]["walkthroughs"], jsonSchema)
