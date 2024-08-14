@@ -157,7 +157,7 @@ jobs:
     if: "${{ startsWith(github.ref, 'refs/tags/') }}"
     needs:
       - "buildForVsCode"
-      - "buildForCocNvim"
+      # - "buildForCocNvim"
       - "validate"
       - "analyzeCodeQl"
     runs-on: "ubuntu-20.04"
