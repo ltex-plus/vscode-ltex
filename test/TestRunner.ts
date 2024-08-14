@@ -6,9 +6,11 @@
  */
 
 // #if TARGET == 'vscode'
+
+import { runTests, runVSCodeCommand, downloadAndUnzipVSCode, TestOptions, resolveCliPathFromVSCodeExecutablePath } from '@vscode/test-electron';
 import * as ChildProcess from 'child_process';
-import * as CodeTest from 'vscode-test';
-import * as CodeTestRunTest from 'vscode-test/out/runTest';
+//import * as CodeTest from 'vscode-test';
+//import * as CodeTestRunTest from 'vscode-test/out/runTest';
 import * as Fs from 'fs';
 import * as Path from 'path';
 import * as Rimraf from 'rimraf';
@@ -69,8 +71,10 @@ async function runTestIteration(testIteration: number): Promise<void> {
     }
 
     console.log('Calling Code CLI for extension installation...');
-    const childProcess: ChildProcess.SpawnSyncReturns<string> = ChildProcess.spawnSync(
-        cliPath, cliArgs, {encoding: 'utf-8', stdio: 'inherit'});
+    // const childProcess: ChildProcess.SpawnSyncReturns<string> = ChildProcess.spawnSync(
+    //     cliPath, cliArgs, {encoding: 'utf-8', stdio: 'inherit'});
+
+    await runVSCodeCommand(cliArgs);
 
     if (childProcess.status != 0) throw new Error('Could not install extensions.');
 
@@ -95,7 +99,7 @@ async function runTestIteration(testIteration: number): Promise<void> {
       Fs.renameSync(ltexOfflineLibDirPath, ltexLibDirPath);
     }
 
-    const testOptions: CodeTestRunTest.TestOptions = {
+    const testOptions: TestOptions = {
           vscodeExecutablePath: vscodeExecutablePath,
           launchArgs: [
             '--user-data-dir', userDataDirPath,
@@ -107,7 +111,7 @@ async function runTestIteration(testIteration: number): Promise<void> {
         };
 
     console.log('Running tests...');
-    const exitCode: number = await CodeTest.runTests(testOptions);
+    const exitCode: number = await runTests(testOptions);
 
     if (exitCode != 0) throw new Error(`Test returned exit code ${exitCode}.`);
   } finally {
@@ -139,16 +143,17 @@ async function main(): Promise<void> {
   }
 
   ltexDirPath = Path.resolve(__dirname, '..', '..');
-  const codeVersion: string = '1.57.1';
+  const codeVersion: string = '1.89.0';
   let codePlatform: string | undefined;
 
   console.log('Downloading and installing VS Code...');
-  vscodeExecutablePath = await CodeTest.downloadAndUnzipVSCode(codeVersion, codePlatform);
+  vscodeExecutablePath = await downloadAndUnzipVSCode(codeVersion, codePlatform);
 
   console.log('Resolving CLI path to VS Code...');
-  cliPath = CodeTest.resolveCliPathFromVSCodeExecutablePath(vscodeExecutablePath);
+  cliPath = resolveCliPathFromVSCodeExecutablePath(vscodeExecutablePath);
 
-  for (let testIteration: number = 0; testIteration < 2; testIteration++) {
+  //for (let testIteration: number = 0; testIteration < 2; testIteration++) {
+  for (let testIteration: number = 0; testIteration < 1; testIteration++) {
     if (fastMode && (testIteration != 1)) continue;
     if ((onlyTestIteration != null) && (testIteration != onlyTestIteration)) continue;
     await runTestIteration(testIteration);
