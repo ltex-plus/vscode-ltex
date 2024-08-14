@@ -6,11 +6,11 @@
  */
 
 // #if TARGET == 'vscode'
-import * as Assert from 'assert';
-import * as Code from 'vscode';
+// import * as Assert from 'assert';
+// import * as Code from 'vscode';
 
-import ExtensionInitializer from './ExtensionInitializer';
-import TestTools from './TestTools';
+// import ExtensionInitializer from './ExtensionInitializer';
+// import TestTools from './TestTools';
 
 // describe('Test settings', () => {
 //   before(async () => {

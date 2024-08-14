@@ -7,10 +7,11 @@
 
 // #if TARGET == 'vscode'
 
-import { runTests, runVSCodeCommand, downloadAndUnzipVSCode, TestOptions, resolveCliPathFromVSCodeExecutablePath } from '@vscode/test-electron';
+import {runTests, runVSCodeCommand, downloadAndUnzipVSCode, TestOptions}
+from '@vscode/test-electron';
 import * as ChildProcess from 'child_process';
-//import * as CodeTest from 'vscode-test';
-//import * as CodeTestRunTest from 'vscode-test/out/runTest';
+// import * as CodeTest from 'vscode-test';
+// import * as CodeTestRunTest from 'vscode-test/out/runTest';
 import * as Fs from 'fs';
 import * as Path from 'path';
 import * as Rimraf from 'rimraf';
@@ -19,7 +20,7 @@ import {version as ltexVersion} from '../package.json';
 
 let ltexDirPath: string;
 let vscodeExecutablePath: string;
-let cliPath: string;
+// let cliPath: string;
 
 const originalPath: string | undefined = process.env['PATH'];
 const originalJavaHome: string | undefined = process.env['JAVA_HOME'];
@@ -150,9 +151,9 @@ async function main(): Promise<void> {
   vscodeExecutablePath = await downloadAndUnzipVSCode(codeVersion, codePlatform);
 
   console.log('Resolving CLI path to VS Code...');
-  cliPath = resolveCliPathFromVSCodeExecutablePath(vscodeExecutablePath);
+  // cliPath = resolveCliPathFromVSCodeExecutablePath(vscodeExecutablePath);
 
-  //for (let testIteration: number = 0; testIteration < 2; testIteration++) {
+  // for (let testIteration: number = 0; testIteration < 2; testIteration++) {
   for (let testIteration: number = 0; testIteration < 1; testIteration++) {
     if (fastMode && (testIteration != 1)) continue;
     if ((onlyTestIteration != null) && (testIteration != onlyTestIteration)) continue;
