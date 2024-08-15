@@ -413,10 +413,16 @@ export default class DependencyManager {
     const executable: CodeLanguageClient.Executable = await this.getLtexLsExecutable();
     if (executable.args == null) executable.args = [];
     executable.args.push('--version');
-    const executableOptions: ChildProcess.SpawnSyncOptionsWithStringEncoding = {
-          encoding: 'utf-8',
-          timeout: 15000,
-        };
+    const executableOptions: ChildProcess.SpawnSyncOptionsWithStringEncoding =
+    DependencyManager.isWindows() ? {
+      encoding: 'utf-8',
+      timeout: 15000,
+      shell: true,
+    }
+    : {
+      encoding: 'utf-8',
+      timeout: 15000,
+    };
 
     if (executable.options != null) {
       executableOptions.cwd = executable.options.cwd;
@@ -520,14 +526,25 @@ export default class DependencyManager {
     if (maximumJavaHeapSize != null) javaArguments.push(`-Xmx${maximumJavaHeapSize}m`);
     env['JAVA_OPTS'] = javaArguments.join(' ');
 
-    return {command: ltexLsScriptPath, args: [], options: {'env': env}};
+    if (DependencyManager.isWindows()) {
+      // eslint-disable-next-line quote-props
+      return {command: ltexLsScriptPath, args: [], options: {'env': env, shell: true}};
+    } else {
+      return {command: ltexLsScriptPath, args: [], options: {'env': env}};
+    }
   }
 
   public static getDebugServerOptions(): CodeLanguageClient.ServerOptions | null {
-    const executableOptions: ChildProcess.SpawnSyncOptionsWithStringEncoding = {
-          encoding: 'utf-8',
-          timeout: 15000,
-        };
+    const executableOptions: ChildProcess.SpawnSyncOptionsWithStringEncoding =
+    DependencyManager.isWindows() ? {
+      encoding: 'utf-8',
+      timeout: 15000,
+      shell: true,
+    }
+    : {
+      encoding: 'utf-8',
+      timeout: 15000,
+    };
     const childProcess: ChildProcess.SpawnSyncReturns<string> = ((process.platform == 'win32')
         ? ChildProcess.spawnSync('wmic', ['process', 'list', 'FULL'], executableOptions)
         : ChildProcess.spawnSync('ps', ['-A', '-o', 'args'], executableOptions));
@@ -565,5 +582,13 @@ export default class DependencyManager {
 
   public get javaVersion(): string | null {
     return this._javaVersion;
+  }
+
+  public static isWindows(): boolean {
+    if (Os.platform() === 'win32') {
+      return true;
+    } else {
+      return false;
+    }
   }
 }
