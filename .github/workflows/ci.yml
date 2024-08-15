@@ -170,7 +170,7 @@ jobs:
           node-version: "16.11.0"
 
       - name: "Install Node.js Dependencies"
-        run: "npm install && npm install -g vsce@1.100.1 ovsx@0.2.1"
+        run: "npm install && npm install -g vsce ovsx"
 
       - name: "Set up Python"
         uses: "actions/setup-python@v2"
