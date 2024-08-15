@@ -7,45 +7,32 @@
    -->
 
 <!-- #if TARGET == 'vscode' -->
-# LT<sub>E</sub>X Extension for VS Code: Grammar/Spell Checker Using LanguageTool with Support for L<sup>A</sup>T<sub>E</sub>X, Markdown, and Others
+# LT<sub>E</sub>X+ Extension for VS Code: Grammar/Spell Checker Using LanguageTool with Support for L<sup>A</sup>T<sub>E</sub>X, Markdown, and Others
 <!-- #elseif TARGET == 'coc.nvim' -->
-<!-- # LT<sub>E</sub>X Extension for coc.nvim: Grammar/Spell Checker Using LanguageTool with Support for L<sup>A</sup>T<sub>E</sub>X, Markdown, and Others -->
+<!-- # LT<sub>E</sub>X+ Extension for coc.nvim: Grammar/Spell Checker Using LanguageTool with Support for L<sup>A</sup>T<sub>E</sub>X, Markdown, and Others -->
 <!-- #endif -->
-
-[![latest release](https://badgen.net/badge/-/release/585858?label=)![version number](https://badgen.net/vs-marketplace/v/valentjn.vscode-ltex?label=)![release date](https://badgen.net/github/last-commit/valentjn/vscode-ltex/release?label=)][website]&nbsp;
-[![installs](https://badgen.net/vs-marketplace/i/valentjn.vscode-ltex)][website]&nbsp;
-[![rating](https://badgen.net/vs-marketplace/rating/valentjn.vscode-ltex)][marketplace]
-
-[![vscode-ltex](https://badgen.net/github/license/valentjn/vscode-ltex?label=vscode-ltex)](https://github.com/valentjn/vscode-ltex)&nbsp;
-[![CI status](https://github.com/valentjn/vscode-ltex/workflows/CI/badge.svg?branch=release)](https://github.com/valentjn/vscode-ltex/actions?query=workflow%3A%22CI%22+branch%3Arelease)&nbsp;
-[![stars](https://badgen.net/github/stars/valentjn/vscode-ltex)](https://github.com/valentjn/vscode-ltex)&nbsp;
-[![open issues](https://badgen.net/github/open-issues/valentjn/vscode-ltex?label=open/closed%20issues&color=blue)](https://github.com/valentjn/vscode-ltex/issues)&nbsp;[![closed issues](https://badgen.net/github/closed-issues/valentjn/vscode-ltex?label=)](https://github.com/valentjn/vscode-ltex/issues)\
-[![ltex-ls](https://badgen.net/github/license/valentjn/ltex-ls?label=ltex-ls)](https://github.com/valentjn/ltex-ls)&nbsp;
-[![CI status](https://github.com/valentjn/ltex-ls/workflows/CI/badge.svg?branch=release)](https://github.com/valentjn/ltex-ls/actions?query=workflow%3A%22CI%22+branch%3Arelease)&nbsp;
-[![coverage](https://badgen.net/coveralls/c/github/valentjn/ltex-ls/release)](https://coveralls.io/github/valentjn/ltex-ls)&nbsp;
-[![stars](https://badgen.net/github/stars/valentjn/ltex-ls)](https://github.com/valentjn/ltex-ls)&nbsp;
-[![open issues](https://badgen.net/github/open-issues/valentjn/ltex-ls?label=open/closed%20issues&color=blue)](https://github.com/valentjn/ltex-ls/issues)&nbsp;[![closed issues](https://badgen.net/github/closed-issues/valentjn/ltex-ls?label=)](https://github.com/valentjn/ltex-ls/issues)
 
 <!-- #if TARGET == 'vscode' -->
-Notice: This is a fork of [@valentjn's vscode-ltex](https://github.com/valentjn/vscode-ltex). As of August 2024, this repository seems to be not maintained. This fork solves the severe bug in Windows mentioned in [issue 884](https://github.com/valentjn/vscode-ltex/issues/884)
+> [!NOTE]  
+> Notice: This is a fork of [@valentjn's vscode-ltex](https://github.com/valentjn/vscode-ltex). As of August 2024, this repository seems to be not maintained. This fork solves the severe bug in Windows mentioned in [issue 884](https://github.com/valentjn/vscode-ltex/issues/884)
 
-**LT<sub>E</sub>X** provides offline grammar checking of various markup languages in Visual Studio Code using [LanguageTool (LT)](https://languagetool.org/). LT<sub>E</sub>X currently supports BibT<sub>E</sub>X, ConT<sub>E</sub>Xt, L<sup>A</sup>T<sub>E</sub>X, Markdown, Org, reStructuredText, R Sweave, and XHTML documents. In addition, LT<sub>E</sub>X can check comments in many popular programming languages (optional, opt-in).
+**LT<sub>E</sub>X+** provides offline grammar checking of various markup languages in Visual Studio Code using [LanguageTool (LT)](https://languagetool.org/). LT<sub>E</sub>X+ currently supports BibT<sub>E</sub>X, ConT<sub>E</sub>Xt, L<sup>A</sup>T<sub>E</sub>X, Markdown, Org, reStructuredText, R Sweave, and XHTML documents. In addition, LT<sub>E</sub>X+ can check comments in many popular programming languages (optional, opt-in).
 <!-- #elseif TARGET == 'coc.nvim' -->
-<!-- **LT<sub>E</sub>X** provides offline grammar checking of various markup languages in Vim/Neovim using [LanguageTool (LT)](https://languagetool.org/) and [coc.nvim](https://github.com/neoclide/coc.nvim). LT<sub>E</sub>X currently supports BibT<sub>E</sub>X, ConT<sub>E</sub>Xt, L<sup>A</sup>T<sub>E</sub>X, Markdown, Org, reStructuredText, R Sweave, and XHTML documents. In addition, LT<sub>E</sub>X can check comments in many popular programming languages (optional, opt-in). -->
+<!-- **LT<sub>E</sub>X+** provides offline grammar checking of various markup languages in Vim/Neovim using [LanguageTool (LT)](https://languagetool.org/) and [coc.nvim](https://github.com/neoclide/coc.nvim). LT<sub>E</sub>X+ currently supports BibT<sub>E</sub>X, ConT<sub>E</sub>Xt, L<sup>A</sup>T<sub>E</sub>X, Markdown, Org, reStructuredText, R Sweave, and XHTML documents. In addition, LT<sub>E</sub>X+ can check comments in many popular programming languages (optional, opt-in). -->
 <!-- #endif -->
 
-The difference to regular spell checkers is that LT<sub>E</sub>X not only detects spelling errors, but also many grammar and stylistic errors such as:
+The difference to regular spell checkers is that LT<sub>E</sub>X+ not only detects spelling errors, but also many grammar and stylistic errors such as:
 
 - `This is an mistake.`
 - `The bananas is tasty.`
 - `We look forward to welcome you.`
 - `Are human beings any different than animals?`
 
-A classic use case of LT<sub>E</sub>X is checking scientific L<sup>A</sup>T<sub>E</sub>X papers, but why not check your next blog post, book chapter, or long e-mail before you send it to someone else?
+A classic use case of LT<sub>E</sub>X+ is checking scientific L<sup>A</sup>T<sub>E</sub>X papers, but why not check your next blog post, book chapter, or long e-mail before you send it to someone else?
 
-[Find more information and documentation about LT<sub>E</sub>X on the official website.][website]
+[Find more information and documentation about LT<sub>E</sub>X+ on the official website.][website]
 
-LT<sub>E</sub>X is a successor (since it's a fork) of the abandoned [LanguageTool for Visual Studio Code extension](https://github.com/adamvoss/vscode-languagetool) by Adam Voss<sup>†</sup>.
+LT<sub>E</sub>X+ is a successor (since it's a fork) of the abandoned [LanguageTool for Visual Studio Code extension](https://github.com/adamvoss/vscode-languagetool) by Adam Voss<sup>†</sup>.
 
 ## Features
 
@@ -83,7 +70,7 @@ LT<sub>E</sub>X is a successor (since it's a fork) of the abandoned [LanguageToo
 2. Install this extension (see [download options](https://valentjn.github.io/ltex/vscode-ltex/installation-usage-vscode-ltex.html#how-to-install-and-use))
 3. Reload the VS Code window if necessary
 4. Open a L<sup>A</sup>T<sub>E</sub>X or a Markdown document, or open a new file and change the language mode to `LaTeX` or `Markdown` (open the Command Palette and select `Change Language Mode`)
-5. Wait until [ltex-ls](https://valentjn.github.io/ltex/faq.html#whats-the-difference-between-vscode-ltex-ltex-ls-and-languagetool) has been found; if necessary, LT<sub>E</sub>X downloads it for you. Alternatively, you can choose [offline installation](https://valentjn.github.io/ltex/vscode-ltex/installation-usage-vscode-ltex.html#offline-installation).
+5. Wait until [ltex-ls](https://valentjn.github.io/ltex/faq.html#whats-the-difference-between-vscode-ltex-ltex-ls-and-languagetool) has been found; if necessary, LT<sub>E</sub>X+ downloads it for you. Alternatively, you can choose [offline installation](https://valentjn.github.io/ltex/vscode-ltex/installation-usage-vscode-ltex.html#offline-installation).
 6. Grammar/spelling errors will be displayed! (if there are any)
 <!-- #elseif TARGET == 'coc.nvim' -->
 <!-- 1. Install the requirements listed above -->
@@ -150,12 +137,12 @@ LT<sub>E</sub>X is a successor (since it's a fork) of the abandoned [LanguageToo
   - [FAQ](https://valentjn.github.io/ltex/faq.html)
     - [General Questions](https://valentjn.github.io/ltex/faq.html#general-questions)
       - [What's the difference between vscode-ltex, ltex-ls, and LanguageTool?](https://valentjn.github.io/ltex/faq.html#whats-the-difference-between-vscode-ltex-ltex-ls-and-languagetool)
-      - [Why does LT<sub>E</sub>X have such a high CPU load?](https://valentjn.github.io/ltex/faq.html#why-does-ltex-have-such-a-high-cpu-load)
+      - [Why does LT<sub>E</sub>X+ have such a high CPU load?](https://valentjn.github.io/ltex/faq.html#why-does-ltex-have-such-a-high-cpu-load)
       - [How can I check multiple languages at once?](https://valentjn.github.io/ltex/faq.html#how-can-i-check-multiple-languages-at-once)
-      - [Why does LT<sub>E</sub>X check in a different language than expected?](https://valentjn.github.io/ltex/faq.html#why-does-ltex-check-in-a-different-language-than-expected)
+      - [Why does LT<sub>E</sub>X+ check in a different language than expected?](https://valentjn.github.io/ltex/faq.html#why-does-ltex-check-in-a-different-language-than-expected)
       - [How can I fix multiple spelling errors at the same time?](https://valentjn.github.io/ltex/faq.html#how-can-i-fix-multiple-spelling-errors-at-the-same-time)
       - [How can I prevent `\text{...}` in math mode from producing false positives?](https://valentjn.github.io/ltex/faq.html#how-can-i-prevent-text-in-math-mode-from-producing-false-positives)
-      - [What does LT<sub>E</sub>X stand for?](https://valentjn.github.io/ltex/faq.html#what-does-ltex-stand-for)
+      - [What does LT<sub>E</sub>X+ stand for?](https://valentjn.github.io/ltex/faq.html#what-does-ltex-stand-for)
       - [Where can I ask a question that's not answered here?](https://valentjn.github.io/ltex/faq.html#where-can-i-ask-a-question-thats-not-answered-here)
     - [Questions about vscode-ltex](https://valentjn.github.io/ltex/faq.html#questions-about-vscode-ltex)
       - [How can I prevent vscode-ltex from redownloading ltex-ls after every update?](https://valentjn.github.io/ltex/faq.html#how-can-i-prevent-vscode-ltex-from-redownloading-ltex-ls-after-every-update)
@@ -179,7 +166,7 @@ LT<sub>E</sub>X is a successor (since it's a fork) of the abandoned [LanguageToo
     - [Requirements](https://valentjn.github.io/ltex/vscode-ltex/installation-usage-vscode-ltex.html#requirements)
     - [How to Install and Use](https://valentjn.github.io/ltex/vscode-ltex/installation-usage-vscode-ltex.html#how-to-install-and-use)
     - [Offline Installation](https://valentjn.github.io/ltex/vscode-ltex/installation-usage-vscode-ltex.html#offline-installation)
-      - [First Alternative: Download the Offline Version of LT<sub>E</sub>X](https://valentjn.github.io/ltex/vscode-ltex/installation-usage-vscode-ltex.html#first-alternative-download-the-offline-version-of-ltex)
+      - [First Alternative: Download the Offline Version of LT<sub>E</sub>X+](https://valentjn.github.io/ltex/vscode-ltex/installation-usage-vscode-ltex.html#first-alternative-download-the-offline-version-of-ltex)
       - [Second Alternative: Download ltex-ls/Java Manually](https://valentjn.github.io/ltex/vscode-ltex/installation-usage-vscode-ltex.html#second-alternative-download-ltex-lsjava-manually)
   - [Installation &amp; Usage (coc-ltex)](https://valentjn.github.io/ltex/vscode-ltex/installation-usage-coc-ltex.html)
     - [Download Providers](https://valentjn.github.io/ltex/vscode-ltex/installation-usage-coc-ltex.html#download-providers)
@@ -210,7 +197,7 @@ LT<sub>E</sub>X is a successor (since it's a fork) of the abandoned [LanguageToo
     - [How to Test Pre-Releases](https://valentjn.github.io/ltex/vscode-ltex/contributing.html#how-to-test-pre-releases)
     - [How to Edit the Documentation](https://valentjn.github.io/ltex/vscode-ltex/contributing.html#how-to-edit-the-documentation)
     - [How to Translate the User Interface](https://valentjn.github.io/ltex/vscode-ltex/contributing.html#how-to-translate-the-user-interface)
-- [ltex-ls (LT<sub>E</sub>X LS)](https://valentjn.github.io/ltex/ltex-ls/installation.html)
+- [ltex-ls (LT<sub>E</sub>X+ LS)](https://valentjn.github.io/ltex/ltex-ls/installation.html)
   - [Installation](https://valentjn.github.io/ltex/ltex-ls/installation.html)
     - [Download Providers](https://valentjn.github.io/ltex/ltex-ls/installation.html#download-providers)
     - [Requirements](https://valentjn.github.io/ltex/ltex-ls/installation.html#requirements)
