@@ -126,7 +126,7 @@ export default class BugReporter {
     // deprecated: replace with self._context.extension starting with VS Code 1.55.0
     const extension: Code.Extension<any> | undefined =
     // #if TARGET == 'vscode'
-        Code.extensions.getExtension('valentjn.vscode-ltex');
+        Code.extensions.getExtension('ltex-plus.vscode-ltex');
     // #elseif TARGET == 'coc.nvim'
         // Code.extensions.all.find(
             // (extension: Code.Extension<Code.ExtensionApi>) => extension.id == 'coc-ltex');

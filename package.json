@@ -5,7 +5,7 @@
   "description": "Grammar/spell checker using LanguageTool with support for LaTeX, Markdown, and others",
   "icon": "img/logo-ltex.png",
   "author": "Julian Valentin",
-  "publisher": "valentjn",
+  "publisher": "ltex-plus",
   "contributors": [
     "Julian Valentin",
     "Daniel Spitzer"

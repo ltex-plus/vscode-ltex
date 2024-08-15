@@ -68,7 +68,7 @@ async function runTestIteration(testIteration: number): Promise<void> {
       if (process.platform == 'darwin') platform = 'mac';
       else if (process.platform == 'win32') platform = 'windows';
       cliArgs.push('--install-extension', Path.join(ltexDirPath,
-          `vscode-ltex-${ltexVersion}-offline-${platform}-x64.vsix`));
+          `vscode-ltex-plus-${ltexVersion}-offline-${platform}-x64.vsix`));
     }
 
     console.log('Calling Code CLI for extension installation...');
@@ -95,7 +95,7 @@ async function runTestIteration(testIteration: number): Promise<void> {
       console.log(`Removing '${ltexLibDirPath}'...`);
       Rimraf.sync(ltexLibDirPath);
       const ltexOfflineLibDirPath: string =
-          Path.join(extensionsDirPath, `valentjn.vscode-ltex-${ltexVersion}`, 'lib');
+          Path.join(extensionsDirPath, `ltex-plus.vscode-ltex-${ltexVersion}`, 'lib');
       console.log(`Moving '${ltexOfflineLibDirPath}' to '${ltexLibDirPath}'...`);
       Fs.renameSync(ltexOfflineLibDirPath, ltexLibDirPath);
     }

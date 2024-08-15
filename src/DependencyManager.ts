@@ -58,7 +58,7 @@ export default class DependencyManager {
     // deprecated: replace with context.extension starting with VS Code 1.55.0
     const vscodeLtexExtension: Code.Extension<any> | undefined =
         // #if TARGET == 'vscode'
-        Code.extensions.getExtension('valentjn.vscode-ltex');
+        Code.extensions.getExtension('ltex-plus.vscode-ltex-plus');
         // #elseif TARGET == 'coc.nvim'
         // Code.extensions.all.find(
           // (extension: Code.Extension<Code.ExtensionApi>) => extension.id == 'coc-ltex');
