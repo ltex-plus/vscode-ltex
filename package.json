@@ -11,15 +11,15 @@
     "Daniel Spitzer"
   ],
   "license": "MPL-2.0",
-  "homepage": "https://valentjn.github.io/ltex",
+  "homepage": "https://github.com/ltex-plus/vscode-ltex-plus",
   "repository": {
     "type": "git",
-    "url": "https://github.com/valentjn/vscode-ltex"
+    "url": "https://github.com/ltex-plus/vscode-ltex-plus"
   },
   "bugs": {
-    "url": "https://github.com/valentjn/vscode-ltex/issues"
+    "url": "https://github.com/ltex-plus/vscode-ltex-plus/issues"
   },
-  "qna": "https://github.com/valentjn/vscode-ltex/discussions",
+  "qna": "https://github.com/ltex-plus/vscode-ltex-plus/discussions",
   "engines": {
     "vscode": "^1.52.0"
   },
