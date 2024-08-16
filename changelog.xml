@@ -12,7 +12,7 @@
     <author>Julian Valentin, LTeX Development Community</author>
   </properties>
   <body>
-    <release version="13.1.1" description="Bug Fix Windows" date="16.08.2024">
+    <release version="13.1.1" description="Bug Fix Windows" date="2024-08-16">
       <action type="fix">
         Fix severe bug for VS Code 1.92 and higher running on Windows [valentjn/vscode-ltex/issues/884](https://github.com/valentjn/vscode-ltex/issues/884)
       </action>
