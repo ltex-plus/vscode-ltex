@@ -17,7 +17,7 @@ jobs:
 
     steps:
       - name: "Checkout Repository"
-        uses: "actions/checkout@v2"
+        uses: "actions/checkout@v4"
 
       - name: "Set up Node.js"
         uses: "actions/setup-node@v4"
@@ -26,9 +26,9 @@ jobs:
         run: "npm install && npm install -g vsce ovsx"
 
       - name: "Set up Python"
-        uses: "actions/setup-python@v2"
+        uses: "actions/setup-python@v5"
         with:
-          python-version: "3.12.5"
+          python-version: "3.10"
 
       - name: "Install Python Dependencies"
         run: "python -u -m pip install --upgrade pip && pip install semver==2.13.0"
