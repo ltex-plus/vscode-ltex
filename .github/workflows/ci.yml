@@ -42,7 +42,7 @@ jobs:
       - name: "Set up Python"
         uses: "actions/setup-python@v2"
         with:
-          python-version: "3.9.0"
+          python-version: "3.12.5"
 
       - name: "Install Python Dependencies"
         run: "python -u -m pip install --upgrade pip && pip install semver==2.13.0"
@@ -120,7 +120,7 @@ jobs:
       - name: "Set up Python"
         uses: "actions/setup-python@v2"
         with:
-          python-version: "3.9.0"
+          python-version: "3.12.5"
 
       - name: "Install Python Dependencies"
         run: "python -u -m pip install --upgrade pip && pip install jsonschema==3.2.0 xmlschema==1.6.4"
@@ -173,7 +173,7 @@ jobs:
       - name: "Set up Python"
         uses: "actions/setup-python@v2"
         with:
-          python-version: "3.9.0"
+          python-version: "3.12.5"
 
       - name: "Install Python Dependencies"
         run: "python -u -m pip install --upgrade pip && pip install semver==2.13.0"
