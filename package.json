@@ -20,6 +20,9 @@
     "url": "https://github.com/ltex-plus/vscode-ltex-plus/issues"
   },
   "qna": "https://github.com/ltex-plus/vscode-ltex-plus/discussions",
+  "sponsor": {
+    "url": "https://ko-fi.com/spitzerd"
+  },
   "engines": {
     "vscode": "^1.52.0"
   },
