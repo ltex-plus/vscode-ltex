@@ -11,7 +11,7 @@
     "Daniel Spitzer"
   ],
   "license": "MPL-2.0",
-  "homepage": "https://github.com/ltex-plus/vscode-ltex-plus",
+  "homepage": "https://ltex-plus.github.io/ltex-plus/",
   "repository": {
     "type": "git",
     "url": "https://github.com/ltex-plus/vscode-ltex-plus"
@@ -2552,22 +2552,22 @@
           "type": "string",
           "scope": "window",
           "default": "",
-          "markdownDeprecationMessage": "**Deprecated:** This setting has been renamed to [`ltex.languageToolHttpServerUri`](https://valentjn.github.io/vscode-ltex/docs/settings.html#ltexlanguagetoolhttpserveruri).",
-          "deprecationMessage": "Deprecated: This setting has been renamed to 'ltex.languageToolHttpServerUri', see https://valentjn.github.io/vscode-ltex/docs/settings.html#ltexlanguagetoolhttpserveruri."
+          "markdownDeprecationMessage": "**Deprecated:** This setting has been renamed to [`ltex.languageToolHttpServerUri`](https://ltex-plus.github.io/vscode-ltex-plus/docs/settings.html#ltexlanguagetoolhttpserveruri).",
+          "deprecationMessage": "Deprecated: This setting has been renamed to 'ltex.languageToolHttpServerUri', see https://ltex-plus.github.io/vscode-ltex-plus/docs/settings.html#ltexlanguagetoolhttpserveruri."
         },
         "ltex.ltex-ls.languageToolOrgUsername": {
           "type": "string",
           "scope": "window",
           "default": "",
-          "markdownDeprecationMessage": "**Deprecated:** This setting has been renamed to [`ltex.languageToolOrg.username`](https://valentjn.github.io/vscode-ltex/docs/settings.html#ltexlanguagetoolorgusername).",
-          "deprecationMessage": "Deprecated: This setting has been renamed to 'ltex.languageToolOrg.username', see https://valentjn.github.io/vscode-ltex/docs/settings.html#ltexlanguagetoolorgusername."
+          "markdownDeprecationMessage": "**Deprecated:** This setting has been renamed to [`ltex.languageToolOrg.username`](https://ltex-plus.github.io/vscode-ltex-plus/docs/settings.html#ltexlanguagetoolorgusername).",
+          "deprecationMessage": "Deprecated: This setting has been renamed to 'ltex.languageToolOrg.username', see https://ltex-plus.github.io/vscode-ltex-plus/docs/settings.html#ltexlanguagetoolorgusername."
         },
         "ltex.ltex-ls.languageToolOrgApiKey": {
           "type": "string",
           "scope": "window",
           "default": "",
-          "markdownDeprecationMessage": "**Deprecated:** This setting has been renamed to [`ltex.languageToolOrg.apiKey`](https://valentjn.github.io/vscode-ltex/docs/settings.html#ltexlanguagetoolorgapikey).",
-          "deprecationMessage": "Deprecated: This setting has been renamed to 'ltex.languageToolOrg.apiKey', see https://valentjn.github.io/vscode-ltex/docs/settings.html#ltexlanguagetoolorgapikey."
+          "markdownDeprecationMessage": "**Deprecated:** This setting has been renamed to [`ltex.languageToolOrg.apiKey`](https://ltex-plus.github.io/vscode-ltex-plus/docs/settings.html#ltexlanguagetoolorgapikey).",
+          "deprecationMessage": "Deprecated: This setting has been renamed to 'ltex.languageToolOrg.apiKey', see https://ltex-plus.github.io/vscode-ltex-plus/docs/settings.html#ltexlanguagetoolorgapikey."
         }
       }
     },

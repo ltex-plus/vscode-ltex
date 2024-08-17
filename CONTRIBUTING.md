@@ -33,22 +33,22 @@ If you like LT<sub>E</sub>X, but are not able to contribute in any of these ways
 5. Set the setting `"ltex.trace.server": "verbose"` in your `settings.json`.
 6. Try to understand the bug by selecting `View` → `Output` → `LTeX Language Server`/`LTeX Language Client`.
 7. Do one of the following:
-   - Reproduce the bug and keep the document for which it occurs open. Execute the command [`LTeX: Report Bug in LTeX`](https://valentjn.github.io/ltex/vscode-ltex/commands.html#ltex-report-bug-in-ltex) inside VS Code from the Command Palette (`Ctrl+Shift+P`) and click on `Copy report and create issue`. This will copy a prefilled bug report to your clipboard and open the `New Issue` page on GitHub in your browser (you may have to confirm that you really want to open the page). Enter a summary of the issue in the title field and paste the bug report from your clipboard into the description field. Before submitting the bug report, check that it doesn't contain any confidential data. OR
-   - Manually [open an issue on GitHub](https://github.com/valentjn/vscode-ltex/issues/new/choose), select the `Bug Report` template, and fill in as much info as you can (the [`LTeX: Report Bug in LTeX`](https://valentjn.github.io/ltex/vscode-ltex/commands.html#ltex-report-bug-in-ltex) command would do that for you). This will help us reproduce the issue.
+   - Reproduce the bug and keep the document for which it occurs open. Execute the command [`LTeX: Report Bug in LTeX`](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/commands.html#ltex-report-bug-in-ltex) inside VS Code from the Command Palette (`Ctrl+Shift+P`) and click on `Copy report and create issue`. This will copy a prefilled bug report to your clipboard and open the `New Issue` page on GitHub in your browser (you may have to confirm that you really want to open the page). Enter a summary of the issue in the title field and paste the bug report from your clipboard into the description field. Before submitting the bug report, check that it doesn't contain any confidential data. OR
+   - Manually [open an issue on GitHub](https://github.com/valentjn/vscode-ltex/issues/new/choose), select the `Bug Report` template, and fill in as much info as you can (the [`LTeX: Report Bug in LTeX`](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/commands.html#ltex-report-bug-in-ltex) command would do that for you). This will help us reproduce the issue.
 
 **Important:** Please follow the issue template. Issues that don't follow the template or that don't contain the vital information requested in the template (especially minimal example document and settings) may be immediately closed as invalid.
 
 ### Known Issues and Limitations
 
 - The LaTeX parser is not perfect. False positives are sometimes reported as errors. However, it is impossible to fully parse LaTeX's output without compiling the source. This follows from the [Turing-completeness of TeX](https://en.wikipedia.org/w/index.php?title=TeX&oldid=979062806#Typesetting_system) and the [halting problem](https://en.wikipedia.org/w/index.php?title=Halting_problem&oldid=979261081).
-- Initial checking might take a while (up to two minutes), depending on the length of the document. [This is a limitation of LanguageTool.](https://valentjn.github.io/ltex/faq.html#why-does-ltex-have-such-a-high-cpu-load)
+- Initial checking might take a while (up to two minutes), depending on the length of the document. [This is a limitation of LanguageTool.](https://ltex-plus.github.io/ltex-plus/faq.html#why-does-ltex-have-such-a-high-cpu-load)
 
 ## How to Request Features
 
 1. Make sure that your feature is actually about LT<sub>E</sub>X (not about LanguageTool, for example).
 2. Make sure that your feature is not in the [list of all open and closed GitHub issues](https://github.com/valentjn/vscode-ltex/issues?q=is%3Aissue).
 3. Do one of the following:
-   - Execute the command [`LTeX: Request Feature for LTeX`](https://valentjn.github.io/ltex/vscode-ltex/commands.html#ltex-request-feature-for-ltex) inside VS Code from the Command Palette (`Ctrl+Shift+P`) and click on `Create issue`. This will open the `New Issue` page on GitHub in your browser (you may have to confirm that you really want to open the page). OR
+   - Execute the command [`LTeX: Request Feature for LTeX`](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/commands.html#ltex-request-feature-for-ltex) inside VS Code from the Command Palette (`Ctrl+Shift+P`) and click on `Create issue`. This will open the `New Issue` page on GitHub in your browser (you may have to confirm that you really want to open the page). OR
    - Manually [open an issue on GitHub](https://github.com/valentjn/vscode-ltex/issues/new/choose) and select the `Feature Request` template.
 4. Enter a summary of the feature in the title field and fill out the template in the description field. Fill in as much info as you can. Using actual real-world examples that explain why you and many other users would benefit from the feature increases the request's chances of being implemented.
 
@@ -56,7 +56,7 @@ If you like LT<sub>E</sub>X, but are not able to contribute in any of these ways
 
 ## How to Set Up the Project
 
-[As explained in the FAQ](https://valentjn.github.io/ltex/faq.html#whats-the-difference-between-vscode-ltex-ltex-ls-and-languagetool), LT<sub>E</sub>X consists of two components: [vscode-ltex](https://github.com/valentjn/vscode-ltex) and [ltex-ls](https://github.com/valentjn/ltex-ls). This guide is only about the vscode-ltex part. If you want to change ltex-ls as well, [be sure to read and follow the contribution guidelines of ltex-ls](https://valentjn.github.io/ltex/ltex-ls/contributing.html).
+[As explained in the FAQ](https://ltex-plus.github.io/ltex-plus/faq.html#whats-the-difference-between-vscode-ltex-ltex-ls-and-languagetool), LT<sub>E</sub>X consists of two components: [vscode-ltex](https://github.com/valentjn/vscode-ltex) and [ltex-ls](https://github.com/valentjn/ltex-ls). This guide is only about the vscode-ltex part. If you want to change ltex-ls as well, [be sure to read and follow the contribution guidelines of ltex-ls](https://ltex-plus.github.io/ltex-plus/ltex-ls/contributing.html).
 
 1. Install VS Code, Git, and npm.
 2. Fork vscode-ltex on GitHub.
@@ -92,7 +92,7 @@ Of course, pre-releases are not for productive work, they even may be harmful an
 
 ## How to Edit the Documentation
 
-You can improve the [documentation](https://valentjn.github.io/ltex):
+You can improve the [documentation](https://ltex-plus.github.io/ltex-plus):
 
 1. Check whether the page you want to edit is listed in the table below.
    - If yes, then follow the corresponding link to the source.
@@ -105,11 +105,11 @@ You can improve the [documentation](https://valentjn.github.io/ltex):
 
 | Page | Sources |
 | ---- | ------- |
-| [Settings](https://valentjn.github.io/ltex/settings.html) | [`package.json`](https://github.com/valentjn/vscode-ltex/blob/develop/package.json), [`package.nls.json`](https://github.com/valentjn/vscode-ltex/blob/develop/package.nls.json) |
-| [Code of Conduct](https://valentjn.github.io/ltex/code-of-conduct.html) | [`CODE_OF_CONDUCT.md`](https://github.com/valentjn/vscode-ltex/blob/develop/CODE_OF_CONDUCT.md) |
-| [vscode-ltex / coc-ltex → Commands](https://valentjn.github.io/ltex/vscode-ltex/commands.html) | [`package.json`](https://github.com/valentjn/vscode-ltex/blob/develop/package.json), [`package.nls.json`](https://github.com/valentjn/vscode-ltex/blob/develop/package.nls.json) |
-| [vscode-ltex / coc-ltex → Changelog](https://valentjn.github.io/ltex/vscode-ltex/changelog.html) | [`vscode-ltex/changelog.xml`](https://github.com/valentjn/vscode-ltex/blob/develop/changelog.xml) |
-| [vscode-ltex / coc-ltex → Contributing](https://valentjn.github.io/ltex/vscode-ltex/contributing.html) | [`vscode-ltex/CONTRIBUTING.md`](https://github.com/valentjn/vscode-ltex/blob/develop/CONTRIBUTING.md) |
+| [Settings](https://ltex-plus.github.io/ltex-plus/settings.html) | [`package.json`](https://github.com/valentjn/vscode-ltex/blob/develop/package.json), [`package.nls.json`](https://github.com/valentjn/vscode-ltex/blob/develop/package.nls.json) |
+| [Code of Conduct](https://ltex-plus.github.io/ltex-plus/code-of-conduct.html) | [`CODE_OF_CONDUCT.md`](https://github.com/valentjn/vscode-ltex/blob/develop/CODE_OF_CONDUCT.md) |
+| [vscode-ltex / coc-ltex → Commands](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/commands.html) | [`package.json`](https://github.com/valentjn/vscode-ltex/blob/develop/package.json), [`package.nls.json`](https://github.com/valentjn/vscode-ltex/blob/develop/package.nls.json) |
+| [vscode-ltex / coc-ltex → Changelog](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/changelog.html) | [`vscode-ltex/changelog.xml`](https://github.com/valentjn/vscode-ltex/blob/develop/changelog.xml) |
+| [vscode-ltex / coc-ltex → Contributing](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/contributing.html) | [`vscode-ltex/CONTRIBUTING.md`](https://github.com/valentjn/vscode-ltex/blob/develop/CONTRIBUTING.md) |
 
 ## How to Translate the User Interface
 

@@ -37,8 +37,8 @@ export default class DependencyManager {
   private _ltexLsVersion: string | null = null;
   private _javaVersion: string | null = null;
 
-  private static readonly _offlineInstructionsUrl: string = 'https://valentjn.github.io/'
-      + 'vscode-ltex/docs/installation-and-usage.html#offline-installation';
+  private static readonly _offlineInstructionsUrl: string = 'https://ltex-plus.github.io/'
+      + 'vscode-ltex-plus/docs/installation-and-usage.html#offline-installation';
 
   private static readonly _toBeDownloadedLtexLsTag: string =
       '15.2.0';

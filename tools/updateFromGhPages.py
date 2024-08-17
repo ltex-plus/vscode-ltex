@@ -73,7 +73,7 @@ def processTitle(title: str) -> str:
 
 
 def updateReadme() -> None:
-  serverUrl = "https://valentjn.github.io/ltex"
+  serverUrl = "https://ltex-plus.github.io/ltex-plus"
   sidebarYamlPath = pagesDirPath.joinpath("_data", "sidebars", "sidebar.yml")
   with open(sidebarYamlPath, "r") as f: sidebarYaml = yaml.load(f, Loader=yaml.SafeLoader)
 

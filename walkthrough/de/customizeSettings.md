@@ -8,6 +8,6 @@ Klicken Sie auf den Knopf *LTeX-Einstellungen öffnen,* um die Einstellungen von
 
 Einige Einstellungen sind:
 
-- [`ltex.language`](https://valentjn.github.io/ltex/settings-de.html#ltexlanguage) bestimmt die Sprache, in der die Dokumente geprüft werden. Die Standardsprache ist Englisch.
-- [`ltex.latex.commands`](https://valentjn.github.io/ltex/settings-de.html#ltexlatexcommands) ermöglicht es, eigene L<sup>A</sup>T<sub>E</sub>X-Befehle zu ignorieren.
-- Es gibt viele weitere Einstellungen. [Lesen Sie die ausführliche Dokumentation für weitere Informationen.](https://valentjn.github.io/ltex/settings-de.html)
+- [`ltex.language`](https://ltex-plus.github.io/ltex-plus/settings-de.html#ltexlanguage) bestimmt die Sprache, in der die Dokumente geprüft werden. Die Standardsprache ist Englisch.
+- [`ltex.latex.commands`](https://ltex-plus.github.io/ltex-plus/settings-de.html#ltexlatexcommands) ermöglicht es, eigene L<sup>A</sup>T<sub>E</sub>X-Befehle zu ignorieren.
+- Es gibt viele weitere Einstellungen. [Lesen Sie die ausführliche Dokumentation für weitere Informationen.](https://ltex-plus.github.io/ltex-plus/settings-de.html)
