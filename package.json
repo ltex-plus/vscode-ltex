@@ -2640,7 +2640,7 @@
     "@types/mocha": "9.0.0",
     "@types/node": "17.0.6",
     "@types/rimraf": "3.0.2",
-    "@types/semver": "7.3.9",
+    "@types/semver": "7.5.8",
     "@types/tar": "6.1.1",
     "@types/vscode": "1.52.0",
     "@types/webpack": "5.28.0",
@@ -2659,7 +2659,7 @@
   "dependencies": {
     "@vscode/test-electron": "^2.4.1",
     "extract-zip": "2.0.1",
-    "semver": "7.3.5",
+    "semver": "7.6.3",
     "tar": "6.1.11",
     "vscode-languageclient": "7.0.0",
     "vscode-languageserver-protocol": "3.16.0"
