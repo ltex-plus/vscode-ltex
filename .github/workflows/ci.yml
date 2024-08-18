@@ -131,24 +131,24 @@ jobs:
       - name: "Validate JSON files"
         run: "python -u tools/validateJsonFiles.py"
 
-  # analyzeCodeQl:
-  #   name: "CI - CodeQL Job"
-  #   runs-on: "ubuntu-20.04"
+  analyzeCodeQl:
+    name: "CI - CodeQL Job"
+    runs-on: "ubuntu-latest"
 
-  #   steps:
-  #     - name: "Checkout Repository"
-  #       uses: "actions/checkout@v2"
+    steps:
+      - name: "Checkout Repository"
+        uses: "actions/checkout@v4"
 
-  #     - name: "Initialize CodeQL"
-  #       uses: "github/codeql-action/init@v1"
-  #       with:
-  #         languages: "javascript,python"
+      - name: "Initialize CodeQL"
+        uses: "github/codeql-action/init@v3"
+        with:
+          languages: "javascript,python"
 
-  #     - name: "Autobuild"
-  #       uses: "github/codeql-action/autobuild@v1"
+      - name: "Autobuild"
+        uses: "github/codeql-action/autobuild@v3"
 
-  #     - name: "Perform CodeQL Analysis"
-  #       uses: "github/codeql-action/analyze@v1"
+      - name: "Perform CodeQL Analysis"
+        uses: "github/codeql-action/analyze@v3"
 
   deployForVsCode:
     name: "CI - Deploy for VS Code Job"
@@ -157,7 +157,7 @@ jobs:
       - "buildForVsCode"
       # - "buildForCocNvim"
       - "validate"
-      # - "analyzeCodeQl"
+      - "analyzeCodeQl"
     runs-on: "ubuntu-latest"
 
     steps:
@@ -208,7 +208,7 @@ jobs:
         with:
           prerelease: "${{ env.VSCODE_LTEX_IS_PRERELEASE }}"
           body: "${{ env.VSCODE_LTEX_CHANGELOG }}"
-          files: "vscode-ltex-${{ env.VSCODE_LTEX_VERSION }}.vsix\nvscode-ltex-${{ env.VSCODE_LTEX_VERSION }}-offline-linux-x64.vsix\nvscode-ltex-${{ env.VSCODE_LTEX_VERSION }}-offline-mac-x64.vsix\nvscode-ltex-${{ env.VSCODE_LTEX_VERSION }}-offline-windows-x64.vsix"
+          files: "vscode-ltex-plus-${{ env.VSCODE_LTEX_VERSION }}.vsix\nvscode-ltex-plus-${{ env.VSCODE_LTEX_VERSION }}-offline-linux-x64.vsix\nvscode-ltex-plus-${{ env.VSCODE_LTEX_VERSION }}-offline-mac-x64.vsix\nvscode-ltex-plus-${{ env.VSCODE_LTEX_VERSION }}-offline-windows-x64.vsix"
 
       - name: "Publish Package on VS Marketplace"
         if: "${{ env.VSCODE_LTEX_IS_PRERELEASE == 'false' }}"
