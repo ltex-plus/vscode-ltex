@@ -37,6 +37,8 @@ export default class DependencyManager {
   private _ltexLsVersion: string | null = null;
   private _javaVersion: string | null = null;
 
+  private static _isWindows: boolean = (Os.platform() === 'win32');
+
   private static readonly _offlineInstructionsUrl: string = 'https://ltex-plus.github.io/'
       + 'vscode-ltex-plus/docs/installation-and-usage.html#offline-installation';
 
@@ -287,7 +289,7 @@ export default class DependencyManager {
       const arch: string = 'x64';
       let archiveType: string = 'tar.gz';
 
-      if (process.platform == 'win32') {
+      if (DependencyManager._isWindows) {
         platform = 'windows';
         archiveType = 'zip';
       } else if (process.platform == 'darwin') {
@@ -414,7 +416,7 @@ export default class DependencyManager {
     if (executable.args == null) executable.args = [];
     executable.args.push('--version');
     const executableOptions: ChildProcess.SpawnSyncOptionsWithStringEncoding =
-    DependencyManager.isWindows() ? {
+    DependencyManager._isWindows ? {
       encoding: 'utf-8',
       timeout: 15000,
       shell: true,
@@ -513,9 +515,8 @@ export default class DependencyManager {
       env['JAVA_HOME'] = this._javaPath!;
     }
 
-    const isWindows: boolean = (process.platform === 'win32');
     const ltexLsScriptPath: string = Path.join(
-        this._ltexLsPath!, 'bin', (isWindows ? 'ltex-ls.bat' : 'ltex-ls'));
+        this._ltexLsPath!, 'bin', (DependencyManager._isWindows ? 'ltex-ls.bat' : 'ltex-ls'));
 
     const workspaceConfig: Code.WorkspaceConfiguration = Code.workspace.getConfiguration('ltex');
     const initialJavaHeapSize: number | undefined = workspaceConfig.get('java.initialHeapSize');
@@ -526,7 +527,7 @@ export default class DependencyManager {
     if (maximumJavaHeapSize != null) javaArguments.push(`-Xmx${maximumJavaHeapSize}m`);
     env['JAVA_OPTS'] = javaArguments.join(' ');
 
-    if (DependencyManager.isWindows()) {
+    if (DependencyManager._isWindows) {
       // eslint-disable-next-line quote-props
       return {command: ltexLsScriptPath, args: [], options: {'env': env, shell: true}};
     } else {
@@ -536,7 +537,7 @@ export default class DependencyManager {
 
   public static getDebugServerOptions(): CodeLanguageClient.ServerOptions | null {
     const executableOptions: ChildProcess.SpawnSyncOptionsWithStringEncoding =
-    DependencyManager.isWindows() ? {
+    DependencyManager._isWindows ? {
       encoding: 'utf-8',
       timeout: 15000,
       shell: true,
@@ -545,7 +546,7 @@ export default class DependencyManager {
       encoding: 'utf-8',
       timeout: 15000,
     };
-    const childProcess: ChildProcess.SpawnSyncReturns<string> = ((process.platform == 'win32')
+    const childProcess: ChildProcess.SpawnSyncReturns<string> = ((this._isWindows)
         ? ChildProcess.spawnSync('wmic', ['process', 'list', 'FULL'], executableOptions)
         : ChildProcess.spawnSync('ps', ['-A', '-o', 'args'], executableOptions));
     if (childProcess.status != 0) return null;
@@ -582,13 +583,5 @@ export default class DependencyManager {
 
   public get javaVersion(): string | null {
     return this._javaVersion;
-  }
-
-  public static isWindows(): boolean {
-    if (Os.platform() === 'win32') {
-      return true;
-    } else {
-      return false;
-    }
   }
 }
