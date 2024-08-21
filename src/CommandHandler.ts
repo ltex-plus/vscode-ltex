@@ -47,7 +47,8 @@ export default class CommandHandler {
   private _languageClient: CodeLanguageClient.LanguageClient | null;
   private _externalFileManager: ExternalFileManager;
 
-  private static readonly _featureRequestUrl: string = 'https://github.com/ltex-plus/vscode-ltex-plus/'
+  private static readonly _featureRequestUrl: string =
+        'https://github.com/ltex-plus/vscode-ltex-plus/'
       + 'issues/new?assignees=&labels=1-feature-request%20%E2%9C%A8&'
       + 'template=feature-request.md&title=';
 
