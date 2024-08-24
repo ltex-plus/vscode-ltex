@@ -43,16 +43,16 @@ export default class DependencyManager {
       + 'vscode-ltex-plus/docs/installation-and-usage.html#offline-installation';
 
   private static readonly _toBeDownloadedLtexLsTag: string =
-      '15.2.0';
+      '17.0.0';
   private static readonly _toBeDownloadedLtexLsVersion: string =
-      '15.2.0';
+      '17.0.0';
   private static readonly _toBeDownloadedLtexLsHashDigests: {[fileName: string]: string} = {
-    'ltex-ls-15.2.0-linux-x64.tar.gz':
-      '04d7e2ba6ef0ff91f84983554e39181ada59518f7b6268e559bed6efae0827fc',
-    'ltex-ls-15.2.0-mac-x64.tar.gz':
-      'd89b547722f165ca2343962065cbe7ee4a832316825b04266d1d2db3e46487b3',
-    'ltex-ls-15.2.0-windows-x64.zip':
-      '66a8449840fd09d7cde27c1e23ecfe94c0cbe6622769c19d36b007965c0c0124',
+    'ltex-ls-plus-17.0.0-linux-x64.tar.gz':
+      'e24afe74386fd41c2d7e2c2945a6275a6ce277d9902ee7a8eda891c5ce41d205',
+    'ltex-ls-plus-17.0.0-mac-x64.tar.gz':
+      '2a2b1c2e0512a1e940127c1724a559992a059bd206242c4efb1f37d04c2b020d',
+    'ltex-ls-plus-17.0.0-windows-x64.zip':
+      '61180bb344fad8d3bf6fa1cede3f8559286271cafbcff5344e633f3d441945e1',
   };
 
   public constructor(context: Code.ExtensionContext) {
@@ -296,15 +296,15 @@ export default class DependencyManager {
         platform = 'mac';
       }
 
-      const ltexLsArchiveName: string = 'ltex-ls-'
+      const ltexLsArchiveName: string = 'ltex-ls-plus-'
           + `${DependencyManager._toBeDownloadedLtexLsVersion}-${platform}-${arch}.${archiveType}`;
-      const ltexLsUrl: string = 'https://github.com/valentjn/ltex-ls/releases/download/'
+      const ltexLsUrl: string = 'https://github.com/ltex-plus/ltex-ls-plus/releases/download/'
           + `${DependencyManager._toBeDownloadedLtexLsTag}/${ltexLsArchiveName}`;
       const ltexLsHashDigest: string =
           DependencyManager._toBeDownloadedLtexLsHashDigests[ltexLsArchiveName];
 
       await this.installDependency(ltexLsUrl, ltexLsHashDigest,
-          `ltex-ls ${DependencyManager._toBeDownloadedLtexLsVersion}`, codeProgress);
+          `ltex-ls-plus ${DependencyManager._toBeDownloadedLtexLsVersion}`, codeProgress);
     });
   }
 
@@ -313,13 +313,14 @@ export default class DependencyManager {
     const ltexLsVersions: string[] = [];
 
     names.forEach((name: string) => {
-      if (name.startsWith('ltex-ls-')) {
-        ltexLsVersions.push(name.substr(8));
+      if (name.startsWith('ltex-ls-plus-')) {
+        ltexLsVersions.push(name.substr(13));
       }
     });
 
     const ltexLsVersion: string | null = this.getLatestLtexLsVersion(ltexLsVersions);
-    return ((ltexLsVersion != null) ? Path.join(libDirPath, `ltex-ls-${ltexLsVersion}`) : null);
+    return ((ltexLsVersion != null)
+    ? Path.join(libDirPath, `ltex-ls-plus-${ltexLsVersion}`) : null);
   }
 
   public async install(): Promise<boolean> {
@@ -516,7 +517,8 @@ export default class DependencyManager {
     }
 
     const ltexLsScriptPath: string = Path.join(
-        this._ltexLsPath!, 'bin', (DependencyManager._isWindows ? 'ltex-ls.bat' : 'ltex-ls'));
+        this._ltexLsPath!, 'bin', (DependencyManager._isWindows
+          ? 'ltex-ls-plus.bat' : 'ltex-ls-plus'));
 
     const workspaceConfig: Code.WorkspaceConfiguration = Code.workspace.getConfiguration('ltex');
     const initialJavaHeapSize: number | undefined = workspaceConfig.get('java.initialHeapSize');

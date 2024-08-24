@@ -12,6 +12,11 @@
     <author>Julian Valentin, LTeX Development Community</author>
   </properties>
   <body>
+    <release version="14.0.0" description="The Language Tool Schism" date="upcoming">
+      <action type="update">
+        Update LanguageTool from 5.5 to 6.0 (see [LT 6.0 release notes](https://github.com/languagetool-org/languagetool/blob/v6.0/languagetool-standalone/CHANGES.md))
+      </action>
+    </release>
     <release version="13.1.2" description="The Stray Java Process Reaction" date="2024-08-18">
       <action type="fix">
         Fix stray Java process [valentjn/vscode-ltex/issues/497](https://github.com/valentjn/vscode-ltex/issues/497)

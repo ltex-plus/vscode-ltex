@@ -48,22 +48,22 @@ def getLtexVersion() -> semver.VersionInfo:
 def downloadLtexLs(platform: str, arch: str) -> None:
   ltexLsArchiveType = ("zip" if platform == "windows" else "tar.gz")
   ltexLsArchiveName = (
-      f"ltex-ls-{common.toBeDownloadedLtexLsVersion}-{platform}-{arch}.{ltexLsArchiveType}")
+      f"ltex-ls-plus-{common.toBeDownloadedLtexLsVersion}-{platform}-{arch}.{ltexLsArchiveType}")
 
-  ltexLsUrl = ("https://github.com/valentjn/ltex-ls/releases/download/"
+  ltexLsUrl = ("https://github.com/ltex-plus/ltex-ls-plus/releases/download/"
       f"{common.toBeDownloadedLtexLsTag}/{ltexLsArchiveName}")
   ltexLsArchivePath = libDirPath.joinpath(ltexLsArchiveName)
-  print(f"Downloading ltex-ls {common.toBeDownloadedLtexLsVersion} from '{ltexLsUrl}' to "
+  print(f"Downloading ltex-ls-plus {common.toBeDownloadedLtexLsVersion} from '{ltexLsUrl}' to "
       f"'{ltexLsArchivePath}'...")
   urllib.request.urlretrieve(ltexLsUrl, ltexLsArchivePath)
 
   extractLtexLs(ltexLsArchivePath)
 
-  print("Removing ltex-ls archive...")
+  print("Removing ltex-ls-plus archive...")
   ltexLsArchivePath.unlink()
 
 def extractLtexLs(ltexLsArchivePath: pathlib.Path) -> None:
-  print("Extracting ltex-ls archive...")
+  print("Extracting ltex-ls-plus archive...")
 
   if ltexLsArchivePath.suffix == ".zip":
     with zipfile.ZipFile(ltexLsArchivePath, "r") as zipFile: zipFile.extractall(path=libDirPath)
