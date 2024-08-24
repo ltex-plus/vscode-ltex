@@ -40,7 +40,7 @@ export default class DependencyManager {
   private static _isWindows: boolean = (Os.platform() === 'win32');
 
   private static readonly _offlineInstructionsUrl: string = 'https://ltex-plus.github.io/'
-      + 'vscode-ltex-plus/docs/installation-and-usage.html#offline-installation';
+      + 'ltex-plus/vscode-ltex-plus/installation-usage-vscode-ltex-plus.html#offline-installation';
 
   private static readonly _toBeDownloadedLtexLsTag: string =
       '17.0.0';
