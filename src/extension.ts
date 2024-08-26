@@ -94,15 +94,15 @@ async function startLanguageClient(context: Code.ExtensionContext,
           configurationSection: 'ltex',
         },
         // LSP sends locale itself since LSP 3.16.0. However, this would require VS Code 1.53.0.
-        // Currently, we only require VS Code 1.52.0.
-        initializationOptions: {
-          // #if TARGET == 'vscode'
-          locale: Code.env.language,
-          // #endif
-          customCapabilities: {
-            workspaceSpecificConfiguration: true,
-          },
-        },
+//         // Currently, we only require VS Code 1.52.0.
+         initializationOptions: {
+//           // #if TARGET == 'vscode'
+//           locale: Code.env.language,
+//           // #endif
+           customCapabilities: {
+              workspaceSpecificConfiguration: true,
+             },
+         },
         revealOutputChannelOn: CodeLanguageClient.RevealOutputChannelOn.Never,
         // #if TARGET == 'vscode'
         traceOutputChannel: Logger.clientOutputChannel,
@@ -113,10 +113,6 @@ async function startLanguageClient(context: Code.ExtensionContext,
   const languageClient: CodeLanguageClient.LanguageClient = new CodeLanguageClient.LanguageClient(
       'ltex', i18n('ltexLanguageServer'), serverOptions, clientOptions);
 
-  languageClient.onReady().then(languageClientIsReady.bind(
-      null, languageClient, externalFileManager, statusBarItemManager));
-  statusPrinter.languageClient = languageClient;
-
   if ('command' in serverOptions) {
     Logger.log(i18n('startingLtexLs'));
     Logger.logExecutable(serverOptions);
@@ -124,8 +120,10 @@ async function startLanguageClient(context: Code.ExtensionContext,
   }
 
   languageClient.info(i18n('startingLtexLs'));
-  const languageClientDisposable: Code.Disposable = languageClient.start();
-  context.subscriptions.push(languageClientDisposable);
+  await languageClient.start().then(languageClientIsReady.bind(
+    null, languageClient, externalFileManager, statusBarItemManager));
+  statusPrinter.languageClient = languageClient;
+  context.subscriptions.push(languageClient);
 
   return Promise.resolve(languageClient);
 }
@@ -144,8 +142,6 @@ export async function activate(context: Code.ExtensionContext): Promise<Api> {
   const statusPrinter: StatusPrinter = new StatusPrinter(
       context, dependencyManager, externalFileManager);
   const bugReporter: BugReporter = new BugReporter(context, dependencyManager, statusPrinter);
-  const commandHandler: CommandHandler = new CommandHandler(
-      context, externalFileManager, statusPrinter, bugReporter);
 
   const workspaceConfig: Code.WorkspaceConfiguration = Code.workspace.getConfiguration('ltex');
   const enabled: any = workspaceConfig.get('enabled');
@@ -153,6 +149,8 @@ export async function activate(context: Code.ExtensionContext): Promise<Api> {
   if ((enabled === true) || (enabled.length > 0)) {
     try {
       api.languageClient = await startLanguageClient(context, externalFileManager, statusPrinter);
+      const commandHandler: CommandHandler = new CommandHandler(
+        context, externalFileManager, statusPrinter, bugReporter);
       commandHandler.languageClient = api.languageClient;
     } catch (e: unknown) {
       Logger.error(i18n('couldNotStartLanguageClient'), e);

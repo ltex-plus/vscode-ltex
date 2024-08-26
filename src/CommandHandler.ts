@@ -133,7 +133,7 @@ export default class CommandHandler {
 
     try {
       await Promise.race([
-        this._languageClient.onReady(),
+        this._languageClient.needsStart() ? this._languageClient.start() : Promise.resolve(),
         new Promise((_resolve: (value: any) => void, reject: (e: Error) => void) => {
           setTimeout(() => reject(new Error(i18n('ltexNotInitialized'))), 30000);
         }),

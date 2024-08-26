@@ -60,7 +60,7 @@ export default class ExtensionInitializer {
       return Promise.reject(new Error('Language client not initialized.'));
     }
 
-    await ExtensionInitializer._languageClient.onReady();
+    // await ExtensionInitializer._languageClient.onReady();
     console.log('Language client is ready.');
 
     let ltexReady: boolean = false;
