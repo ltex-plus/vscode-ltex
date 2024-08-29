@@ -43,16 +43,16 @@ export default class DependencyManager {
       + 'ltex-plus/vscode-ltex-plus/installation-usage-vscode-ltex-plus.html#offline-installation';
 
   private static readonly _toBeDownloadedLtexLsTag: string =
-      '17.0.0';
+      '17.0.1';
   private static readonly _toBeDownloadedLtexLsVersion: string =
-      '17.0.0';
+      '17.0.1';
   private static readonly _toBeDownloadedLtexLsHashDigests: {[fileName: string]: string} = {
-    'ltex-ls-plus-17.0.0-linux-x64.tar.gz':
-      'e24afe74386fd41c2d7e2c2945a6275a6ce277d9902ee7a8eda891c5ce41d205',
-    'ltex-ls-plus-17.0.0-mac-x64.tar.gz':
-      '2a2b1c2e0512a1e940127c1724a559992a059bd206242c4efb1f37d04c2b020d',
-    'ltex-ls-plus-17.0.0-windows-x64.zip':
-      '61180bb344fad8d3bf6fa1cede3f8559286271cafbcff5344e633f3d441945e1',
+    'ltex-ls-plus-17.0.1-linux-x64.tar.gz':
+      '0b658ab57675abd6304ed3edbfa9f7878eacf59134bb89df6afa9fb2eaefcb36',
+    'ltex-ls-plus-17.0.1-mac-x64.tar.gz':
+      '995be02352136d0d7b1debb1a64fadbb743b65df33cd581c1d2705f6c781d291',
+    'ltex-ls-plus-17.0.1-windows-x64.zip':
+      '2612f032b530a0fab53bf4cd37ed733732d436aaf64be8cf8236f8f935a2bb59',
   };
 
   public constructor(context: Code.ExtensionContext) {
