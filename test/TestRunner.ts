@@ -20,7 +20,6 @@ import {version as ltexVersion} from '../package.json';
 
 let ltexDirPath: string;
 let vscodeExecutablePath: string;
-// let cliPath: string;
 
 const originalPath: string | undefined = process.env['PATH'];
 const originalJavaHome: string | undefined = process.env['JAVA_HOME'];
@@ -72,8 +71,6 @@ async function runTestIteration(testIteration: number): Promise<void> {
     }
 
     console.log('Calling Code CLI for extension installation...');
-    // const childProcess: ChildProcess.SpawnSyncReturns<string> = ChildProcess.spawnSync(
-    //     cliPath, cliArgs, {encoding: 'utf-8', stdio: 'inherit'});
 
     await runVSCodeCommand(cliArgs);
 
@@ -144,17 +141,15 @@ async function main(): Promise<void> {
   }
 
   ltexDirPath = Path.resolve(__dirname, '..', '..');
-  const codeVersion: string = '1.89.0';
+  const codeVersion: string = 'stable';
   let codePlatform: string | undefined;
 
   console.log('Downloading and installing VS Code...');
   vscodeExecutablePath = await downloadAndUnzipVSCode(codeVersion, codePlatform);
 
   console.log('Resolving CLI path to VS Code...');
-  // cliPath = resolveCliPathFromVSCodeExecutablePath(vscodeExecutablePath);
 
-  // for (let testIteration: number = 0; testIteration < 2; testIteration++) {
-  for (let testIteration: number = 0; testIteration < 1; testIteration++) {
+  for (let testIteration: number = 0; testIteration < 2; testIteration++) {
     if (fastMode && (testIteration != 1)) continue;
     if ((onlyTestIteration != null) && (testIteration != onlyTestIteration)) continue;
     await runTestIteration(testIteration);
