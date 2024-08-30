@@ -314,7 +314,7 @@ export default class ExternalFileManager {
     return path;
   }
 
-  private onFileWatcherEvent(filePath: string, eventType: string, _: string): void {
+  private onFileWatcherEvent(filePath: string, eventType: string): void {
     if (!Fs.existsSync(filePath)) {
       Logger.log(i18n('stoppedWatchingExternalSettingFileDueToDeletion', filePath));
 
