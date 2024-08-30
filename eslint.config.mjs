@@ -67,7 +67,6 @@ export default [...compat.extends(
         }],
 
         indent: ['off'],
-        'linebreak-style': ['warn', 'windows'],
         'max-len': ['warn', 100],
 
         'no-constant-condition': ['warn', {
