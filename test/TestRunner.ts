@@ -92,7 +92,7 @@ async function runTestIteration(testIteration: number): Promise<void> {
       console.log(`Removing '${ltexLibDirPath}'...`);
       Rimraf.sync(ltexLibDirPath);
       const ltexOfflineLibDirPath: string =
-          Path.join(extensionsDirPath, `ltex-plus.vscode-ltex-${ltexVersion}`, 'lib');
+          Path.join(extensionsDirPath, `ltex-plus.vscode-ltex-plus-${ltexVersion}`, 'lib');
       console.log(`Moving '${ltexOfflineLibDirPath}' to '${ltexLibDirPath}'...`);
       Fs.renameSync(ltexOfflineLibDirPath, ltexLibDirPath);
     }
