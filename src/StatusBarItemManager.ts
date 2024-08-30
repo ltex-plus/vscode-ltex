@@ -155,7 +155,7 @@ export default class StatusBarItemManager {
 
     try {
       token = JSON.parse(params.token.toString());
-    } catch (e: unknown) {
+    } catch (_e: unknown) {
       Logger.warn(i18n('couldNotParseTokenInProgressNotification', params.token, params));
       return;
     }

@@ -470,7 +470,7 @@ export default class DependencyManager {
         if ((ltexLsVersion.length > 0) && (javaVersion.length > 0)) {
           success = true;
         }
-      } catch (e: unknown) {
+      } catch (_e: unknown) {
         // don't throw error as debug info is printed below
       }
     }
@@ -530,8 +530,7 @@ export default class DependencyManager {
     env['JAVA_OPTS'] = javaArguments.join(' ');
 
     if (DependencyManager._isWindows) {
-      // eslint-disable-next-line quote-props
-      return {command: ltexLsScriptPath, args: [], options: {'env': env, shell: true}};
+      return {command: ltexLsScriptPath, args: [], options: {'env': env, 'shell': true}};
     } else {
       return {command: ltexLsScriptPath, args: [], options: {'env': env}};
     }

@@ -1,4 +1,4 @@
-.eslintrc.js
+eslint.config.mjs
 .gitattributes
 .gitignore
 .gitmodules
