@@ -55,7 +55,7 @@ def main() -> None:
   args = parser.parse_args()
 
   print("Retrieving list of releases of LTeX LS...")
-  releases = common.requestFromGitHub("https://api.github.com/repos/valentjn/ltex-ls/releases")
+  releases = common.requestFromGitHub("https://api.github.com/repos/ltex-plus/ltex-ls-plus/releases")
 
   if args.tag is not None:
     ltexLsTag = args.tag
@@ -71,14 +71,14 @@ def main() -> None:
     ltexLsTag = ltexLsVersion
 
   print(f"Retrieving list of assets for LTeX LS {ltexLsVersion} (tag '{ltexLsTag}')...")
-  downloadUrls = getDownloadUrlsOfGitHubReleases("valentjn", "ltex-ls", ltexLsTag)
+  downloadUrls = getDownloadUrlsOfGitHubReleases("ltex-plus", "ltex-ls-plus", ltexLsTag)
   assetFileNames = [x for x in downloadUrls if x != f"ltex-ls-{ltexLsVersion}.tar.gz"]
   assetFileNames.sort()
   hashDigests = []
 
   for assetFileName in assetFileNames:
     print(f"Downloading '{assetFileName}'...")
-    ltexLsUrl = ("https://github.com/valentjn/ltex-ls/releases/download/"
+    ltexLsUrl = ("https://github.com/ltex-plus/ltex-ls-plus/releases/download/"
         f"{urllib.parse.quote_plus(ltexLsTag)}/{assetFileName}")
     response = common.requestFromGitHub(ltexLsUrl, decodeAsJson=False)
 
