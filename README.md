@@ -66,10 +66,10 @@ LT<sub>E</sub>X+ is a successor (since it's a fork) of the abandoned [LanguageTo
 
 <!-- #if TARGET == 'vscode' -->
 1. Install the requirements listed above
-2. Install this extension (see [download options](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/installation-usage-vscode-ltex.html#how-to-install-and-use))
+2. Install this extension (see [download options](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/installation-usage-vscode-ltex-plus.html#how-to-install-and-use))
 3. Reload the VS Code window if necessary
 4. Open a L<sup>A</sup>T<sub>E</sub>X or a Markdown document, or open a new file and change the language mode to `LaTeX` or `Markdown` (open the Command Palette and select `Change Language Mode`)
-5. Wait until [ltex-ls](https://ltex-plus.github.io/ltex-plus/faq.html#whats-the-difference-between-vscode-ltex-ltex-ls-and-languagetool) has been found; if necessary, LT<sub>E</sub>X+ downloads it for you. Alternatively, you can choose [offline installation](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/installation-usage-vscode-ltex.html#offline-installation).
+5. Wait until [ltex-ls](https://ltex-plus.github.io/ltex-plus/faq.html#whats-the-difference-between-vscode-ltex-ltex-ls-and-languagetool) has been found; if necessary, LT<sub>E</sub>X+ downloads it for you. Alternatively, you can choose [offline installation](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/installation-usage-vscode-ltex-plus.html#offline-installation).
 6. Grammar/spelling errors will be displayed! (if there are any)
 <!-- #elseif TARGET == 'coc.nvim' -->
 <!-- 1. Install the requirements listed above -->
@@ -159,14 +159,14 @@ LT<sub>E</sub>X+ is a successor (since it's a fork) of the abandoned [LanguageTo
       - [3. Temporary Ban](https://ltex-plus.github.io/ltex-plus/code-of-conduct.html#3-temporary-ban)
       - [4. Permanent Ban](https://ltex-plus.github.io/ltex-plus/code-of-conduct.html#4-permanent-ban)
     - [Attribution](https://ltex-plus.github.io/ltex-plus/code-of-conduct.html#attribution)
-- [vscode-ltex / coc-ltex](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/installation-usage-vscode-ltex.html)
-  - [Installation &amp; Usage (vscode-ltex)](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/installation-usage-vscode-ltex.html)
-    - [Download Providers](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/installation-usage-vscode-ltex.html#download-providers)
-    - [Requirements](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/installation-usage-vscode-ltex.html#requirements)
-    - [How to Install and Use](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/installation-usage-vscode-ltex.html#how-to-install-and-use)
-    - [Offline Installation](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/installation-usage-vscode-ltex.html#offline-installation)
-      - [First Alternative: Download the Offline Version of LT<sub>E</sub>X+](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/installation-usage-vscode-ltex.html#first-alternative-download-the-offline-version-of-ltex)
-      - [Second Alternative: Download ltex-ls/Java Manually](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/installation-usage-vscode-ltex.html#second-alternative-download-ltex-lsjava-manually)
+- [vscode-ltex / coc-ltex](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/installation-usage-vscode-ltex-plus.html)
+  - [Installation &amp; Usage (vscode-ltex)](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/installation-usage-vscode-ltex-plus.html)
+    - [Download Providers](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/installation-usage-vscode-ltex-plus.html#download-providers)
+    - [Requirements](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/installation-usage-vscode-ltex-plus.html#requirements)
+    - [How to Install and Use](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/installation-usage-vscode-ltex-plus.html#how-to-install-and-use)
+    - [Offline Installation](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/installation-usage-vscode-ltex-plus.html#offline-installation)
+      - [First Alternative: Download the Offline Version of LT<sub>E</sub>X+](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/installation-usage-vscode-ltex-plus.html#first-alternative-download-the-offline-version-of-ltex)
+      - [Second Alternative: Download ltex-ls/Java Manually](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/installation-usage-vscode-ltex-plus.html#second-alternative-download-ltex-lsjava-manually)
   - [Installation &amp; Usage (coc-ltex)](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/installation-usage-coc-ltex.html)
     - [Download Providers](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/installation-usage-coc-ltex.html#download-providers)
     - [Requirements](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/installation-usage-coc-ltex.html#requirements)
