@@ -2640,6 +2640,7 @@
     "coc.nvim:prepublish": "npm run vscode:prepublish"
   },
   "devDependencies": {
+    "@vscode/test-electron": "^2.4.1",
     "@types/mocha": "10.0.7",
     "@types/node": "22.5.1",
     "@types/rimraf": "3.0.2",
@@ -2660,7 +2661,6 @@
     "glob": "7.2.0"
   },
   "dependencies": {
-    "@vscode/test-electron": "^2.4.1",
     "extract-zip": "2.0.1",
     "semver": "7.6.3",
     "tar": "7.4.3",
