@@ -12,9 +12,12 @@
     <author>Julian Valentin, LTeX Development Community</author>
   </properties>
   <body>
-    <release version="14.0.0" description="The Language Tool Schism" date="upcoming">
+    <release version="14.0.0" description="The Language Tool Schism" date="2024-09-01">
       <action type="update">
-        Update LanguageTool from 5.5 to 6.0 (see [LT 6.0 release notes](https://github.com/languagetool-org/languagetool/blob/v6.0/languagetool-standalone/CHANGES.md))
+        Update LanguageTool from 5.5 to 6.0 (see [LT 6.0 release notes](https://github.com/languagetool-org/languagetool/blob/v6.0/languagetool-standalone/CHANGES.md)). LTeX LS+ 17.0.1 is now used.
+      </action>
+      <action type="update">
+        Update to LSP 3.17.5 and vscode-languageclient 9.0.1
       </action>
     </release>
     <release version="13.1.2" description="The Stray Java Process Reaction" date="2024-08-18">
