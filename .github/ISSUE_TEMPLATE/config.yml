@@ -2,7 +2,7 @@ blank_issues_enabled: false
 
 contact_links:
   - name: "Question → Q&A at GitHub Discussions"
-    url: "https://github.com/valentjn/vscode-ltex/discussions?discussions_q=category%3AQ%26A"
+    url: "https://github.com/ltex-plus/vscode-ltex-plus/discussions?discussions_q=category%3AQ%26A"
     about: "Got a question about LTeX, not a bug report or feature request? Ask here for help!"
   - name: "Website/Documentation of LTeX"
     url: "https://ltex-plus.github.io/ltex-plus/"
