@@ -530,9 +530,9 @@ export default class DependencyManager {
     env['JAVA_OPTS'] = javaArguments.join(' ');
 
     if (DependencyManager._isWindows) {
-      return {command: ltexLsScriptPath, args: [], options: {'env': env, 'shell': true}};
+      return {command: '"'+ltexLsScriptPath+'"', args: [], options: {'env': env, 'shell': true}};
     } else {
-      return {command: ltexLsScriptPath, args: [], options: {'env': env}};
+      return {command: '"'+ltexLsScriptPath+'"', args: [], options: {'env': env}};
     }
   }
 
