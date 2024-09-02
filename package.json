@@ -24,7 +24,7 @@
     "url": "https://ko-fi.com/spitzerd"
   },
   "engines": {
-    "vscode": "^1.52.0"
+    "vscode": "^1.82.0"
   },
   "galleryBanner": {
     "color": "#6565f6",

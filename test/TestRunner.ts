@@ -17,18 +17,19 @@ import * as Path from 'path';
 import * as Rimraf from 'rimraf';
 
 import {version as ltexVersion} from '../package.json';
+import {engines} from '../package.json';
 
 let ltexDirPath: string;
 let vscodeExecutablePath: string;
+let iterations: number = 0;
 
 const originalPath: string | undefined = process.env['PATH'];
 const originalJavaHome: string | undefined = process.env['JAVA_HOME'];
 
-async function runTestIteration(testIteration: number): Promise<void> {
-  const useOfflinePackage: boolean = ((testIteration & 1) != 0);
-
+async function runTestIteration(useOfflinePackage:boolean): Promise<void> {
+  iterations++;
   console.log('');
-  console.log(`Running test iteration ${testIteration}...`);
+  console.log(`Running test iteration ${iterations}...`);
   console.log('');
   console.log(`useOfflinePackage = ${useOfflinePackage}`);
   console.log('');
@@ -127,16 +128,12 @@ async function runTestIteration(testIteration: number): Promise<void> {
 
 async function main(): Promise<void> {
   let fastMode: boolean = false;
-  let onlyTestIteration: number | null = null;
 
   for (let i: number = 0; i < process.argv.length; i++) {
     const arg: string = process.argv[i];
 
     if (arg == '--fast') {
       fastMode = true;
-    } else if ((arg == '--iteration') && (i < process.argv.length - 1)) {
-      onlyTestIteration = parseInt(process.argv[i + 1]);
-      i++;
     }
   }
 
@@ -144,17 +141,16 @@ async function main(): Promise<void> {
   const codeVersion: string = 'stable';
   let codePlatform: string | undefined;
 
-  console.log('Downloading and installing VS Code...');
+  console.log('Downloading and installing latest stable VS Code...');
   vscodeExecutablePath = await downloadAndUnzipVSCode(codeVersion, codePlatform);
 
-  console.log('Resolving CLI path to VS Code...');
-
-  for (let testIteration: number = 0; testIteration < 2; testIteration++) {
-    if (fastMode && (testIteration != 1)) continue;
-    if ((onlyTestIteration != null) && (testIteration != onlyTestIteration)) continue;
-    await runTestIteration(testIteration);
+  await runTestIteration(false);
+  if(!fastMode){
+    await runTestIteration(true);
+    console.log('Downloading and installing minimum required version of VS Code...');
+    vscodeExecutablePath = await downloadAndUnzipVSCode(engines.vscode.substring(1), codePlatform);
+    await runTestIteration(true);
   }
-
   return Promise.resolve();
 }
 
