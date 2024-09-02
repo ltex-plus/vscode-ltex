@@ -532,7 +532,7 @@ export default class DependencyManager {
     if (DependencyManager._isWindows) {
       return {command: '"'+ltexLsScriptPath+'"', args: [], options: {'env': env, 'shell': true}};
     } else {
-      return {command: '"'+ltexLsScriptPath+'"', args: [], options: {'env': env}};
+      return {command: ltexLsScriptPath, args: [], options: {'env': env}};
     }
   }
 
