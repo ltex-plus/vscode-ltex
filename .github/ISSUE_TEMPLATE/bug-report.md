@@ -33,7 +33,7 @@ REPLACE_THIS_WITH_SAMPLE_DOCUMENT
 
 </details>
 
-**LTeX configuration**
+**LTeX+ configuration**
 Please paste all configuration settings starting with `ltex.` from your `settings.json`. You can help us by temporarily removing some irrelevant settings from your `settings.json` and see if the bug still occurs.
 
 <details>
@@ -44,7 +44,7 @@ REPLACE_THIS_WITH_LTEX_CONFIGURATION
 
 </details>
 
-**"LTeX Language Server" log file**
+**"LTeX+ Language Server" log file**
 First, reproduce the bug. Then, go to `View` → `Output` and select `LTeX Language Server` in the drop-down list. Paste this log here:
 
 <details>
@@ -55,7 +55,7 @@ REPLACE_THIS_WITH_LTEX_LANGUAGE_SERVER_LOG
 
 </details>
 
-**"LTeX Language Client" log file**
+**"LTeX+ Language Client" log file**
 First, set the `ltex.trace.server` setting in your `settings.json` to `"verbose"`. Then, reload the VS Code window and reproduce the bug. Go to `View` → `Output` and select `LTeX Language Client` in the drop-down list. Paste this log here (note: it will contain your checked document):
 
 <details>
@@ -71,9 +71,9 @@ List here the version information of the relevant software.
 
 - Operating system: Linux (which distribution/version), macOS xx.xx, or Windows xx
 - VS Code: 1.xx.x
-- vscode-ltex: x.xx
-- ltex-ls: x.xx (only if not using ltex-ls automatically downloaded by LTeX)
-- Java: x.xx (usually obtained with `java -version`, only if not using Java automatically downloaded by LTeX)
+- vscode-ltex-plus: x.xx
+- ltex-ls-plus: x.xx (only if not using ltex-ls automatically downloaded by LTeX+)
+- Java: x.xx (usually obtained with `java -version`, only if not using Java automatically downloaded by LTeX+)
 
 **Additional context/information**
 You can add any other context or information about the problem here.
