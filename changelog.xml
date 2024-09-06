@@ -22,6 +22,7 @@
       <action type="fix" issue="#22">
         Update link to create new issues on Github.
       </action>
+    </release>
     <release version="14.0.0" description="The Language Tool Schism" date="2024-09-01">
       <action type="update">
         Update LanguageTool from 5.5 to 6.0 (see [LT 6.0 release notes](https://github.com/languagetool-org/languagetool/blob/v6.0/languagetool-standalone/CHANGES.md)). LTeX LS+ 17.0.1 is now used.
