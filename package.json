@@ -2646,7 +2646,7 @@
     "@types/rimraf": "3.0.2",
     "@types/semver": "7.5.8",
     "@types/tar": "6.1.13",
-    "@types/vscode": "1.52.0",
+    "@types/vscode": "1.93.0",
     "@types/webpack": "5.28.5",
     "@typescript-eslint/eslint-plugin": "8.3.0",
     "@typescript-eslint/parser": "8.3.0",
