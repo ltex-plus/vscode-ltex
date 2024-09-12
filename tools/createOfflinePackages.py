@@ -104,10 +104,13 @@ def main() -> None:
     ltexArch = {
           "AMD64" : "x64",
           "x86_64" : "x64",
+          "arm64" : "aarch64",
+          "aarch64" : "aarch64",
         }[platform.machine()]
     ltexPlatformArchs = [(ltexPlatform, ltexArch)]
   else:
-    ltexPlatformArchs = [("linux", "x64"), ("mac", "x64"), ("windows", "x64")]
+    ltexPlatformArchs = [("linux", "x64"), ("mac", "x64"), ("windows", "x64"),
+    ("linux", "aarch64"), ("mac", "aarch64"), ("windows", "aarch64")]
 
   ltexLsArchivePath = args.ltex_ls_path
   cleanLibDir()

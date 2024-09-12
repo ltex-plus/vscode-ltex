@@ -212,7 +212,7 @@ jobs:
         with:
           prerelease: "${{ env.VSCODE_LTEX_IS_PRERELEASE }}"
           body: "${{ env.VSCODE_LTEX_CHANGELOG }}"
-          files: "vscode-ltex-plus-${{ env.VSCODE_LTEX_VERSION }}.vsix\nvscode-ltex-plus-${{ env.VSCODE_LTEX_VERSION }}-offline-linux-x64.vsix\nvscode-ltex-plus-${{ env.VSCODE_LTEX_VERSION }}-offline-mac-x64.vsix\nvscode-ltex-plus-${{ env.VSCODE_LTEX_VERSION }}-offline-windows-x64.vsix"
+          files: "vscode-ltex-plus-${{ env.VSCODE_LTEX_VERSION }}*.vsix"
 
       - name: "Publish Package on VS Marketplace"
         if: "${{ env.VSCODE_LTEX_IS_PRERELEASE == 'false' }}"

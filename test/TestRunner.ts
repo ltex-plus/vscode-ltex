@@ -67,8 +67,10 @@ async function runTestIteration(useOfflinePackage:boolean): Promise<void> {
       let platform: string = 'linux';
       if (process.platform == 'darwin') platform = 'mac';
       else if (process.platform == 'win32') platform = 'windows';
+      let architecture: string = 'x64';
+      if (process.arch == 'arm64') architecture = 'aarch64';
       cliArgs.push('--install-extension', Path.join(ltexDirPath,
-          `vscode-ltex-plus-${ltexVersion}-offline-${platform}-x64.vsix`));
+          `vscode-ltex-plus-${ltexVersion}-offline-${platform}-${architecture}.vsix`));
     }
 
     console.log('Calling Code CLI for extension installation...');
