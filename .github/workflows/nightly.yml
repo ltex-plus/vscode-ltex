@@ -77,4 +77,4 @@ jobs:
           name: "${{ env.VSCODE_LTEX_VERSION }}"
           prerelease: true
           body: "This is a nightly build. Use at your own risk."
-          files: "vscode-ltex-plus-${{ env.VSCODE_LTEX_VERSION }}-offline-linux-x64.vsix\nvscode-ltex-plus-${{ env.VSCODE_LTEX_VERSION }}-offline-mac-x64.vsix\nvscode-ltex-plus-${{ env.VSCODE_LTEX_VERSION }}-offline-windows-x64.vsix"
+          files: "vscode-ltex-plus-${{ env.VSCODE_LTEX_VERSION }}-offline-*.vsix"
