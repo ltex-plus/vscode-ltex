@@ -12,6 +12,11 @@
     <author>Julian Valentin, Daniel Spitzer, LTeX+ Development Community</author>
   </properties>
   <body>
+    <release version="14.0.2" description="The Java 21 Annoucement Determination" date="2024-09-12">
+      <action type="update">
+        Announce change of Java version to Java 21 in next mayor release 15.0.0 in README.md.
+      </action>
+    </release>
     <release version="14.0.1" description="The User Name Spaces Indeterminacy" date="2024-09-07">
       <action type="fix" issue="valentjn/vscode-ltex#887">
         Fix the dump of LTeX LS+ if spaces are in the user profile.
