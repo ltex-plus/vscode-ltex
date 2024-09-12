@@ -35,6 +35,8 @@ jobs:
 
       - name: "Set up Node.js"
         uses: "actions/setup-node@v4"
+        with:
+          node-version: 22
 
       - name: "Install Node.js Dependencies"
         run: "npm install && npm install -g vsce"
@@ -45,7 +47,7 @@ jobs:
           python-version: "3.10"
 
       - name: "Install Python Dependencies"
-        run: "python -u -m pip install --upgrade pip && pip install semver==2.13.0"
+        run: "python -u -m pip install --upgrade pip && pip install semver"
 
       - name: "Start X Virtual Frame Buffer"
         if: "${{ startsWith(matrix.os, 'ubuntu-') }}"
@@ -78,24 +80,24 @@ jobs:
 
   # buildForCocNvim:
   #   name: "CI - Build for coc.nvim Job"
-  #   runs-on: "ubuntu-20.04"
+  #   runs-on: "ubuntu-latest"
 
   #   steps:
   #     - name: "Checkout Repository"
-  #       uses: "actions/checkout@v2"
+  #       uses: "actions/checkout@v4"
 
   #     - name: "Set up Node.js"
-  #       uses: "actions/setup-node@v1"
+  #       uses: "actions/setup-node@v4"
   #       with:
-  #         node-version: "16.11.0"
+  #         node-version: "22"
 
   #     - name: "Set up Python"
-  #       uses: "actions/setup-python@v2"
+  #       uses: "actions/setup-python@v5"
   #       with:
-  #         python-version: "3.9.0"
+  #         python-version: "3.10.0"
 
   #     - name: "Install Python Dependencies"
-  #       run: "python -u -m pip install --upgrade pip && pip install semver==2.13.0"
+  #       run: "python -u -m pip install --upgrade pip && pip install semver"
 
   #     - name: "Patch for coc.nvim Target"
   #       run: "python -u tools/patchForTarget.py --target coc.nvim"
@@ -166,6 +168,8 @@ jobs:
 
       - name: "Set up Node.js"
         uses: "actions/setup-node@v4"
+        with:
+          node-version: 22
 
       - name: "Install Node.js Dependencies"
         run: "npm install && npm install -g vsce ovsx"
@@ -176,7 +180,7 @@ jobs:
           python-version: "3.10"
 
       - name: "Install Python Dependencies"
-        run: "python -u -m pip install --upgrade pip && pip install semver==2.13.0"
+        run: "python -u -m pip install --upgrade pip && pip install semver"
 
       - name: "Set VSCODE_LTEX_VERSION"
         run: "echo \"VSCODE_LTEX_VERSION=$(python -u -c \"import json; print(json.load(open('package.json', 'r'))['version'], end='')\")\" >> $GITHUB_ENV"
@@ -230,25 +234,24 @@ jobs:
   #     - "buildForCocNvim"
   #     - "validate"
   #     - "analyzeCodeQl"
-  #   runs-on: "ubuntu-20.04"
+  #   runs-on: "ubuntu-latest"
 
   #   steps:
   #     - name: "Checkout Repository"
-  #       uses: "actions/checkout@v2"
+  #       uses: "actions/checkout@v4"
 
   #     - name: "Set up Node.js"
-  #       uses: "actions/setup-node@v1"
+  #       uses: "actions/setup-node@v4"
   #       with:
-  #         node-version: "16.11.0"
-  #         registry-url: "https://registry.npmjs.org"
+  #         node-version: "22"
 
   #     - name: "Set up Python"
-  #       uses: "actions/setup-python@v2"
+  #       uses: "actions/setup-python@v5"
   #       with:
-  #         python-version: "3.9.0"
+  #         python-version: "3.10.0"
 
   #     - name: "Install Python Dependencies"
-  #       run: "python -u -m pip install --upgrade pip && pip install semver==2.13.0"
+  #       run: "python -u -m pip install --upgrade pip && pip install semver"
 
   #     - name: "Patch for coc.nvim Target"
   #       run: "python -u tools/patchForTarget.py --target coc.nvim"
