@@ -43,16 +43,24 @@ export default class DependencyManager {
       + 'ltex-plus/vscode-ltex-plus/installation-usage-vscode-ltex-plus.html#offline-installation';
 
   private static readonly _toBeDownloadedLtexLsTag: string =
-      '17.0.1';
+      '18.0.0';
   private static readonly _toBeDownloadedLtexLsVersion: string =
-      '17.0.1';
+      '18.0.0';
   private static readonly _toBeDownloadedLtexLsHashDigests: {[fileName: string]: string} = {
-    'ltex-ls-plus-17.0.1-linux-x64.tar.gz':
-      '0b658ab57675abd6304ed3edbfa9f7878eacf59134bb89df6afa9fb2eaefcb36',
-    'ltex-ls-plus-17.0.1-mac-x64.tar.gz':
-      '995be02352136d0d7b1debb1a64fadbb743b65df33cd581c1d2705f6c781d291',
-    'ltex-ls-plus-17.0.1-windows-x64.zip':
-      '2612f032b530a0fab53bf4cd37ed733732d436aaf64be8cf8236f8f935a2bb59',
+    'ltex-ls-plus-18.0.0-linux-aarch64.tar.gz':
+      '33aa52f57ccaefedd85df2a334bb874fb1935acd2974cd7460c659a91ca8cfd7',
+    'ltex-ls-plus-18.0.0-linux-x64.tar.gz':
+      'cd28119fa367626c86bf9f966df27edc2b2d8d0aa55edd8f0cd0d2794fe17064',
+    'ltex-ls-plus-18.0.0-mac-aarch64.tar.gz':
+      'c7cbbb5c4d64bc124d17b29b72daecff7e0edb70fb38cd72ee4b4c101aa9ef43',
+    'ltex-ls-plus-18.0.0-mac-x64.tar.gz':
+      'eaa9be2656f918932832baa0ba670c05288f674d1a1497d7ee586c77c640ee1d',
+    'ltex-ls-plus-18.0.0-windows-aarch64.zip':
+      '37140661fbe7eba472d7cd14e31ea20e73099cd65cbadb744a8098c4c34f8488',
+    'ltex-ls-plus-18.0.0-windows-x64.zip':
+      '522aa79541578b2083f20a62909b89e7d911016c08bfc643ea0fe4a33d5c025b',
+    'ltex-ls-plus-18.0.0.tar.gz':
+      'c7791ac4c725c545c72ca9b4f47f875870307d19397426303b5c098a39c2eac7',
   };
 
   public constructor(context: Code.ExtensionContext) {
@@ -286,7 +294,7 @@ export default class DependencyManager {
           i18n('downloadingAndExtractingLtexLs'), progress);
 
       let platform: string = 'linux';
-      const arch: string = 'x64';
+      let arch: string = 'x64';
       let archiveType: string = 'tar.gz';
 
       if (DependencyManager._isWindows) {
@@ -294,6 +302,9 @@ export default class DependencyManager {
         archiveType = 'zip';
       } else if (process.platform == 'darwin') {
         platform = 'mac';
+      }
+      if (process.arch == 'arm64'){
+        arch = 'aarch64';
       }
 
       const ltexLsArchiveName: string = 'ltex-ls-plus-'
@@ -314,7 +325,7 @@ export default class DependencyManager {
 
     names.forEach((name: string) => {
       if (name.startsWith('ltex-ls-plus-')) {
-        ltexLsVersions.push(name.substr(13));
+        ltexLsVersions.push(name.substring(13));
       }
     });
 
