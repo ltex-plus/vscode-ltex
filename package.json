@@ -2648,7 +2648,7 @@
     "typescript": "5.6.2",
     "webpack": "5.94.0",
     "webpack-cli": "5.1.4",
-    "glob": "7.2.0"
+    "glob": "11.0.0"
   },
   "dependencies": {
     "extract-zip": "2.0.1",
