@@ -15,8 +15,6 @@
 <!-- #if TARGET == 'vscode' -->  
 > Notice: This is a fork of [@valentjn's vscode-ltex](https://github.com/valentjn/vscode-ltex). As of August 2024, this repository seems to be not maintained. This fork solves the severe bug in Windows mentioned in [issue 884](https://github.com/valentjn/vscode-ltex/issues/884)
 
-> Notice: Starting from the next mayor release LT<sub>E</sub>X+ 15.0.0, LT<sub>E</sub>X+ requires Java 21 instead of Java 11. If you are using the setting [`ltex.java.path`](https://ltex-plus.github.io/ltex-plus/settings.html#ltexjavapath) setting, to might be affected by this change. Please read the article [Deprecation of Java 11](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/deprecation-of-java-11.html) in this case. If you don't use [`ltex.java.path`](https://ltex-plus.github.io/ltex-plus/settings.html#ltexjavapath), you are not affected.
-
 **LT<sub>E</sub>X+** provides offline grammar checking of various markup languages in Visual Studio Code using [LanguageTool (LT)](https://languagetool.org/). LT<sub>E</sub>X+ currently supports BibT<sub>E</sub>X, ConT<sub>E</sub>Xt, L<sup>A</sup>T<sub>E</sub>X, Markdown, Org, reStructuredText, R Sweave, and XHTML documents. In addition, LT<sub>E</sub>X+ can check comments in many popular programming languages (optional, opt-in).
 <!-- #elseif TARGET == 'coc.nvim' -->
 <!-- **LT<sub>E</sub>X+** provides offline grammar checking of various markup languages in Vim/Neovim using [LanguageTool (LT)](https://languagetool.org/) and [coc.nvim](https://github.com/neoclide/coc.nvim). LT<sub>E</sub>X+ currently supports BibT<sub>E</sub>X, ConT<sub>E</sub>Xt, L<sup>A</sup>T<sub>E</sub>X, Markdown, Org, reStructuredText, R Sweave, and XHTML documents. In addition, LT<sub>E</sub>X+ can check comments in many popular programming languages (optional, opt-in). -->
@@ -55,7 +53,7 @@ LT<sub>E</sub>X+ is a successor (since it's a fork) of the abandoned [LanguageTo
 
 <!-- #if TARGET == 'vscode' -->
 - 64-bit Linux, Mac, or Windows operating system
-- [VS Code 1.52.0 or newer](https://code.visualstudio.com/)
+- [VS Code 1.82.0 or newer](https://code.visualstudio.com/)
 - Optional:
   - If you want to check documents written in a markup language that VS Code does not support out-of-the-box (e.g., L<sup>A</sup>T<sub>E</sub>X), install an extension that provides support for that language (e.g., [LaTeX Workshop Extension for VS Code](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)) in addition to this extension.
 <!-- #elseif TARGET == 'coc.nvim' -->
@@ -161,8 +159,8 @@ LT<sub>E</sub>X+ is a successor (since it's a fork) of the abandoned [LanguageTo
       - [3. Temporary Ban](https://ltex-plus.github.io/ltex-plus/code-of-conduct.html#3-temporary-ban)
       - [4. Permanent Ban](https://ltex-plus.github.io/ltex-plus/code-of-conduct.html#4-permanent-ban)
     - [Attribution](https://ltex-plus.github.io/ltex-plus/code-of-conduct.html#attribution)
-- [vscode-ltex / coc-ltex](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/installation-usage-vscode-ltex-plus.html)
-  - [Installation &amp; Usage (vscode-ltex)](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/installation-usage-vscode-ltex-plus.html)
+- [vscode-ltex-plus](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/installation-usage-vscode-ltex-plus.html)
+  - [Installation &amp; Usage (vscode-ltex-plus)](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/installation-usage-vscode-ltex-plus.html)
     - [Download Providers](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/installation-usage-vscode-ltex-plus.html#download-providers)
     - [Requirements](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/installation-usage-vscode-ltex-plus.html#requirements)
     - [How to Install and Use](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/installation-usage-vscode-ltex-plus.html#how-to-install-and-use)
@@ -198,7 +196,7 @@ LT<sub>E</sub>X+ is a successor (since it's a fork) of the abandoned [LanguageTo
     - [How to Test Pre-Releases](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/contributing.html#how-to-test-pre-releases)
     - [How to Edit the Documentation](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/contributing.html#how-to-edit-the-documentation)
     - [How to Translate the User Interface](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/contributing.html#how-to-translate-the-user-interface)
-- [ltex-ls (LT<sub>E</sub>X+ LS)](https://ltex-plus.github.io/ltex-plus/ltex-ls-plus/installation.html)
+- [ltex-ls-plus (LT<sub>E</sub>X+ LS)](https://ltex-plus.github.io/ltex-plus/ltex-ls-plus/installation.html)
   - [Installation](https://ltex-plus.github.io/ltex-plus/ltex-ls-plus/installation.html)
     - [Download Providers](https://ltex-plus.github.io/ltex-plus/ltex-ls-plus/installation.html#download-providers)
     - [Requirements](https://ltex-plus.github.io/ltex-plus/ltex-ls-plus/installation.html#requirements)
@@ -235,6 +233,3 @@ LT<sub>E</sub>X+ is a successor (since it's a fork) of the abandoned [LanguageTo
     - [How to Test Pre-Releases](https://ltex-plus.github.io/ltex-plus/ltex-ls-plus/contributing.html#how-to-test-pre-releases)
     - [How to Edit the Documentation](https://ltex-plus.github.io/ltex-plus/ltex-ls-plus/contributing.html#how-to-edit-the-documentation)
     - [How to Translate the User Interface](https://ltex-plus.github.io/ltex-plus/ltex-ls-plus/contributing.html#how-to-translate-the-user-interface)
-
-[marketplace]: https://marketplace.visualstudio.com/items?itemName=valentjn.vscode-ltex
-[website]: https://ltex-plus.github.io/ltex-plus
