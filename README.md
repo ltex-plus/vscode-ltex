@@ -29,7 +29,7 @@ The difference to regular spell checkers is that LT<sub>E</sub>X+ not only detec
 
 A classic use case of LT<sub>E</sub>X+ is checking scientific L<sup>A</sup>T<sub>E</sub>X papers, but why not check your next blog post, book chapter, or long e-mail before you send it to someone else?
 
-[Find more information and documentation about LT<sub>E</sub>X+ on the official website.][website]
+[Find more information and documentation about LT<sub>E</sub>X+ on the official website.](https://ltex-plus.github.io/ltex-plus)
 
 LT<sub>E</sub>X+ is a successor (since it's a fork) of the abandoned [LanguageTool for Visual Studio Code extension](https://github.com/adamvoss/vscode-languagetool) by Adam Voss<sup>†</sup>.
 
