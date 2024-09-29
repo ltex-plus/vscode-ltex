@@ -12,9 +12,9 @@
     <author>Julian Valentin, Daniel Spitzer, LTeX+ Development Community</author>
   </properties>
   <body>
-    <release version="15.0.0" description="The AArch64 Bifurcation" date="upcoming">
+    <release version="15.0.0" description="The AArch64 Bifurcation" date="2024-09-29">
       <action type="update">
-        Update LanguageTool from 6.0 to 6.5 (see [LT 6.5 release notes](https://github.com/languagetool-org/languagetool/blob/v6.5/languagetool-standalone/CHANGES.md)). LTeX LS+ 18.1.0 including Java 21 is now used.
+        Update LanguageTool from 6.0 to 6.5 (see [LT 6.5 release notes](https://github.com/languagetool-org/languagetool/blob/v6.5/languagetool-standalone/CHANGES.md)). LTeX+ LS 18.1.0 including Java 21 is now used.
       </action>
       <action type="add">
         Add support for AArch64/ARM64.
@@ -27,7 +27,7 @@
     </release>
     <release version="14.0.1" description="The User Name Spaces Indeterminacy" date="2024-09-07">
       <action type="fix" issue="valentjn/vscode-ltex#887">
-        Fix the dump of LTeX LS+ if spaces are in the user profile.
+        Fix the dump of LTeX+ LS if spaces are in the user profile.
       </action>
       <action type="fix">
         Incorrectly, compatibility with VS Code lower than 1.82 was claimed in version 14.0.0, but this was not the case. Starting from LTeX+ 14.0.0, VS Code 1.82 or higher is required.
@@ -38,7 +38,7 @@
     </release>
     <release version="14.0.0" description="The Language Tool Schism" date="2024-09-01">
       <action type="update">
-        Update LanguageTool from 5.5 to 6.0 (see [LT 6.0 release notes](https://github.com/languagetool-org/languagetool/blob/v6.0/languagetool-standalone/CHANGES.md)). LTeX LS+ 17.0.1 is now used.
+        Update LanguageTool from 5.5 to 6.0 (see [LT 6.0 release notes](https://github.com/languagetool-org/languagetool/blob/v6.0/languagetool-standalone/CHANGES.md)). LTeX+ LS 17.0.1 is now used.
       </action>
       <action type="update">
         Update to LSP 3.17.5 and vscode-languageclient 9.0.1
