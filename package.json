@@ -2639,7 +2639,7 @@
     "@types/vscode": "1.52.0",
     "@types/webpack": "5.28.5",
     "@typescript-eslint/eslint-plugin": "8.7.0",
-    "@typescript-eslint/parser": "8.6.0",
+    "@typescript-eslint/parser": "8.7.0",
     "eslint": "9.11.1",
     "eslint-plugin-only-warn": "1.1.0",
     "mocha": "^10.7.3",
