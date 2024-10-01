@@ -12,6 +12,14 @@
     <author>Julian Valentin, Daniel Spitzer, LTeX+ Development Community</author>
   </properties>
   <body>
+    <release version="15.1.0" description="The LTeX+ LS Recovery Experiment" date="upcoming">
+      <action type="update">
+        New LTeX+ logo and branding.
+      </action>
+      <action type="update">
+        LTex+ LS ?
+      </action>
+    </release>
     <release version="15.0.1" description="The Rollback Dissolution" date="2024-09-29">
       <action type="fix" issue="#55">
         Serious issues with LTeX+ LS 18.1.0. Going back to LTeX+ LS 17.0.1 temporarily.
