@@ -47,7 +47,7 @@ LT<sub>E</sub>X+ is a successor (since it's a fork) of the abandoned [LanguageTo
 - **User dictionaries**
 - **Multilingual support** with babel commands or magic comments
 - Possibility to use **external LanguageTool servers**
-- **[Extensive documentation][website]**
+- **[Extensive documentation](https://ltex-plus.github.io/ltex-plus)**
 
 ## Requirements
 
