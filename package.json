@@ -2407,7 +2407,7 @@
         "ltex.java.maximumHeapSize": {
           "type": "integer",
           "scope": "window",
-          "default": 512,
+          "default": 2048,
           "markdownDescription": "%ltex.i18n.configuration.ltex.java.maximumHeapSize.markdownDescription%"
         },
         "ltex.sentenceCacheSize": {

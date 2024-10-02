@@ -43,16 +43,24 @@ export default class DependencyManager {
       + 'ltex-plus/vscode-ltex-plus/installation-usage-vscode-ltex-plus.html#offline-installation';
 
   private static readonly _toBeDownloadedLtexLsTag: string =
-      '17.0.1';
+      '18.1.0';
   private static readonly _toBeDownloadedLtexLsVersion: string =
-      '17.0.1';
+      '18.1.0';
   private static readonly _toBeDownloadedLtexLsHashDigests: {[fileName: string]: string} = {
-    'ltex-ls-plus-17.0.1-linux-x64.tar.gz':
-      '0b658ab57675abd6304ed3edbfa9f7878eacf59134bb89df6afa9fb2eaefcb36',
-    'ltex-ls-plus-17.0.1-mac-x64.tar.gz':
-      '995be02352136d0d7b1debb1a64fadbb743b65df33cd581c1d2705f6c781d291',
-    'ltex-ls-plus-17.0.1-windows-x64.zip':
-      '2612f032b530a0fab53bf4cd37ed733732d436aaf64be8cf8236f8f935a2bb59',
+    'ltex-ls-plus-18.1.0-linux-aarch64.tar.gz':
+      'b71bf0b3f3b602ab6d24d035d4559fb273fe3a2abad3012a3ee662e0feb5ba93',
+    'ltex-ls-plus-18.1.0-linux-x64.tar.gz':
+      '3604a662a616f1016b363c728758820a054091bfd6c1e989e3cf207b8e69102f',
+    'ltex-ls-plus-18.1.0-mac-aarch64.tar.gz':
+      'db7766b0d15a80d14260ff7c54e7c7e0cb53c0c87dce1b54a40a4def2fb471d9',
+    'ltex-ls-plus-18.1.0-mac-x64.tar.gz':
+      'd9a8c4b9794839f863cfb89fce998e121faa0e733d3cb39452b086026e8ebe98',
+    'ltex-ls-plus-18.1.0-windows-aarch64.zip':
+      'b8f49e76cf370b7f7029e8f4bd037238be5f2bad6a8aa975e278bca48832b86b',
+    'ltex-ls-plus-18.1.0-windows-x64.zip':
+      '7948fab993fe4bf88c7295634672cdce2c2cd4e17f8f7e3a0e610983d6983d0d',
+    'ltex-ls-plus-18.1.0.tar.gz':
+      '99d907aa8319008be3a669a6da286484160c1d05116da7ec08684bda1a66f26b',
   };
 
   public constructor(context: Code.ExtensionContext) {
@@ -286,7 +294,7 @@ export default class DependencyManager {
           i18n('downloadingAndExtractingLtexLs'), progress);
 
       let platform: string = 'linux';
-      const arch: string = 'x64';
+      let arch: string = 'x64';
       let archiveType: string = 'tar.gz';
 
       if (DependencyManager._isWindows) {
@@ -295,9 +303,9 @@ export default class DependencyManager {
       } else if (process.platform == 'darwin') {
         platform = 'mac';
       }
-      // if (process.arch == 'arm64'){
-      //   arch = 'aarch64';
-      // }
+      if (process.arch == 'arm64'){
+         arch = 'aarch64';
+       }
 
       const ltexLsArchiveName: string = 'ltex-ls-plus-'
           + `${DependencyManager._toBeDownloadedLtexLsVersion}-${platform}-${arch}.${archiveType}`;
