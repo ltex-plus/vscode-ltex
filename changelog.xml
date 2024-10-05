@@ -12,7 +12,7 @@
     <author>Julian Valentin, Daniel Spitzer, LTeX+ Development Community</author>
   </properties>
   <body>
-    <release version="15.1.0" description="The LTeX+ LS Recovery Experiment" date="upcoming">
+    <release version="15.1.0" description="The LTeX+ LS Recovery Experiment" date="2024-10-05">
       <action type="update">
         New LTeX+ logo and branding.
       </action>
