@@ -61,8 +61,8 @@
       </action>
     </release>
     <release version="13.1.2" description="The Stray Java Process Reaction" date="2024-08-18">
-      <action type="fix">
-        Fix stray Java process [valentjn/vscode-ltex/issues/497](https://github.com/valentjn/vscode-ltex/issues/497)
+      <action type="fix" issue="valentjn/vscode-ltex#497">
+        Fix stray Java process.
       </action>
     </release>
     <release version="13.1.1" description="The The Windows Bug Negation" date="2024-08-16">
@@ -71,19 +71,19 @@
       </action>
     </release>
     <release version="13.1.0" description="The ConTeXt Paradigm" date="2021-11-28">
-      <action type="add" issue="ltex-ls#120">
+      <action type="add" issue="valentjn/ltex-ls#120">
         Add support for ConTeXt
       </action>
-      <action type="add" issue="ltex-ls#123">
+      <action type="add" issue="valentjn/ltex-ls#123">
         Add support for strikethrough as in [GitHub Flavored Markdown](https://github.github.com/gfm/#strikethrough-extension-)
       </action>
-      <action type="add" issue="#457">
+      <action type="add" issue="valentjn/vscode-ltex#457">
         Always check selected text when running [`LTeX: Check Selection`](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/commands.html#ltex-check-selection), even non-comment parts of programs
       </action>
-      <action type="add" issue="#463">
+      <action type="add" issue="valentjn/vscode-ltex#463">
         Add support for the `minted` package (LaTeX)
       </action>
-      <action type="add" issue="#465">
+      <action type="add" issue="valentjn/vscode-ltex#465">
         Add support for the Pandoc language variable `lang` in YAML front matter (Markdown)
       </action>
       <action type="update">
@@ -91,7 +91,7 @@
       </action>
     </release>
     <release version="13.0.0" description="The Completion Setting Excitation" date="2021-10-30">
-      <action type="update" issue="#443">
+      <action type="update" issue="valentjn/vscode-ltex#443">
         Add [`ltex.completionEnabled`](https://ltex-plus.github.io/vscode-ltex-plus/docs/settings.html#ltexcompletionenabled) to disable completion by default
       </action>
       <action type="fix" issue="vscode-ltex#442">
@@ -114,10 +114,10 @@
       <action type="update">
         Rename `ltex.ltex-ls.languageToolOrgApiKey` &#x2192; [`ltex.languageToolOrg.apiKey`](https://ltex-plus.github.io/vscode-ltex-plus/docs/settings.html#ltexlanguagetoolorgapikey); the previous name is deprecated
       </action>
-      <action type="add" issue="#409">
+      <action type="add" issue="valentjn/vscode-ltex#409">
         Add completion support for English and German (begin typing a word and press `Ctrl+Space`)
       </action>
-      <action type="fix" issue="#431">
+      <action type="fix" issue="valentjn/vscode-ltex#431">
         Fix `Add '...' to dictionary` quick fix missing for Austrian and Swiss German
       </action>
       <action type="update">
@@ -142,7 +142,7 @@
       <action type="update">
         Update LanguageTool to 5.5 (see [LT 5.5 release notes](https://github.com/languagetool-org/languagetool/blob/v5.5/languagetool-standalone/CHANGES.md#55-2021-10-02))
       </action>
-      <action type="add" issue="ltex-ls#103">
+      <action type="add" issue="valentjn/ltex-ls#103">
         Add support for automatic language detection via language short code `auto`; language variants like `en-US` are not detected, only generic languages like `en`; this will result in spelling errors not being reported
       </action>
       <action type="add">
@@ -151,22 +151,22 @@
       <action type="add">
         Link diagnostics to LanguageTool website with more information
       </action>
-      <action type="add" issue="#391">
+      <action type="add" issue="valentjn/vscode-ltex#391">
         Add support for the `main` option of the babel package (LaTeX)
       </action>
-      <action type="add" issue="#398">
+      <action type="add" issue="valentjn/vscode-ltex#398">
         Add setting [`ltex.ltex-ls.languageToolOrgUsername`](https://ltex-plus.github.io/ltex-plus/settings.html#ltexltex-lslanguagetoolorgusername) to set username on languagetool.org for Premium API access
       </action>
-      <action type="add" issue="#398">
+      <action type="add" issue="valentjn/vscode-ltex#398">
         Add setting [`ltex.ltex-ls.languageToolOrgApiKey`](https://ltex-plus.github.io/ltex-plus/settings.html#ltexltex-lslanguagetoolorgapikey) to set API key on languagetool.org for Premium API access
       </action>
       <action type="add">
         Add support for [`ltex.dictionary`](https://ltex-plus.github.io/ltex-plus/settings.html#ltexdictionary) when using a LanguageTool HTTP server
       </action>
-      <action type="update" issue="#390">
+      <action type="update" issue="valentjn/vscode-ltex#390">
         Handle disabled rules ourselves to prevent reinitialization of LanguageTool when running the `Disable rule` quick fix
       </action>
-      <action type="fix" issue="#390">
+      <action type="fix" issue="valentjn/vscode-ltex#390">
         Fix LanguageTool reinitialized when running the `Add '...' to dictionary` quick fix
       </action>
       <action type="fix">
@@ -178,7 +178,7 @@
       <action type="fix">
         Fix fallback from German to English i18n in LTeX LS
       </action>
-      <action type="add" issue="ltex-ls#103">
+      <action type="add" issue="valentjn/ltex-ls#103">
         Add support for coc.nvim (Vim/Neovim)
       </action>
       <action type="update">
@@ -195,31 +195,31 @@
       <action type="update">
         Migrate LTeX LS from Java to Kotlin
       </action>
-      <action type="add" issue="#350">
+      <action type="add" issue="valentjn/vscode-ltex#350">
         Add support for checking comments in many popular programming languages
       </action>
-      <action type="add" issue="ltex-ls#95">
+      <action type="add" issue="valentjn/ltex-ls#95">
         Add support for rule-dependent diagnostic severities in [`ltex.diagnosticSeverity`](https://ltex-plus.github.io/ltex-plus/settings.html#ltexdiagnosticseverity)
       </action>
-      <action type="add" issue="#366">
+      <action type="add" issue="valentjn/vscode-ltex#366">
         Add support for vowel dummies in LaTeX (`"vowelDummy"` in [`ltex.latex.commands`](https://ltex-plus.github.io/ltex-plus/settings.html#ltexlatexcommands)) and Markdown (`"vowelDummy"` in [`ltex.markdown.nodes`](https://ltex-plus.github.io/ltex-plus/settings.html#ltexmarkdownnodes))
       </action>
-      <action type="add" issue="ltex-ls#92" due-to="Shuhao Cao (@scaomath)">
+      <action type="add" issue="valentjn/ltex-ls#92" due-to="Shuhao Cao (@scaomath)">
         Add support for more LaTeX commands (`\mathop`, `\overline`, `\tilde`, `\alpha`, etc.) for automatic vowel detection in formulas in LaTeX
       </action>
-      <action type="add" issue="ltex-ls#87" due-to="Alexander Zeilmann (@AlexanderZeilmann)">
+      <action type="add" issue="valentjn/ltex-ls#87" due-to="Alexander Zeilmann (@AlexanderZeilmann)">
         Add support for `\counterwithin`, `\counterwithout`, and `\numberwithin` in LaTeX
       </action>
       <action type="add">
         Add missing support for Argentine Spanish (`es-AR`)
       </action>
-      <action type="fix" issue="#373">
+      <action type="fix" issue="valentjn/vscode-ltex#373">
         Don't ignore second argument of `\setkomavar` in LaTeX
       </action>
       <action type="remove">
         Remove support for magic comments in XHTML
       </action>
-      <action type="fix" issue="#381">
+      <action type="fix" issue="valentjn/vscode-ltex#381">
         Validate keys of [`ltex.dictionary`](https://ltex-plus.github.io/ltex-plus/settings.html#ltexdictionary), [`ltex.disabledRules`](https://ltex-plus.github.io/ltex-plus/settings.html#ltexdisabledrules), [`ltex.enabledRules`](https://ltex-plus.github.io/ltex-plus/settings.html#ltexenabledrules), and [`ltex.hiddenFalsePositives`](https://ltex-plus.github.io/ltex-plus/settings.html#ltexhiddenfalsepositives)
       </action>
       <action type="add">
@@ -236,16 +236,16 @@
       <action type="update">
         Update LanguageTool to 5.4 (see [LT 5.4 release notes](https://github.com/languagetool-org/languagetool/blob/v5.4/languagetool-standalone/CHANGES.md#54-2021-06-25))
       </action>
-      <action type="add" issue="#342">
+      <action type="add" issue="valentjn/vscode-ltex#342">
         Add support for XHTML
       </action>
-      <action type="fix" issue="#349">
+      <action type="fix" issue="valentjn/vscode-ltex#349">
         Fix markup before actual grammar/spelling errors included in errors
       </action>
-      <action type="fix" issue="#341">
+      <action type="fix" issue="valentjn/vscode-ltex#341">
         Fix error when checking LaTeX documents ending with specific commands
       </action>
-      <action type="add" issue="ltex-ls#72">
+      <action type="add" issue="valentjn/ltex-ls#72">
         Fix name of Portuguese babel language names, add support for Brazilian Portuguese babel language names
       </action>
       <action type="remove">
@@ -270,7 +270,7 @@
       <action type="add">
         Add support for `\setplength` (LaTeX)
       </action>
-      <action type="fix" issue="#325">
+      <action type="fix" issue="valentjn/vscode-ltex#325">
         Fix LTeX LS not closed when VS Code or workspace is closed
       </action>
       <action type="update">
@@ -278,10 +278,10 @@
       </action>
     </release>
     <release version="10.2.0" description="The Long Document Reverberation" date="2021-05-01">
-      <action type="update" issue="#297">
+      <action type="update" issue="valentjn/vscode-ltex#297">
         Show `Use ...` quick fixes before other quick fixes
       </action>
-      <action type="update" issue="#297">
+      <action type="update" issue="valentjn/vscode-ltex#297">
         Limit number of `Use ...` quick fixes to 5
       </action>
       <action type="add">
@@ -290,10 +290,10 @@
       <action type="add">
         Add support for `\phantom`, `\hphantom`, and `\vphantom` (LaTeX)
       </action>
-      <action type="fix" issue="#253">
+      <action type="fix" issue="valentjn/vscode-ltex#253">
         Fix almost infinite loops when checking very long documents
       </action>
-      <action type="fix" issue="ltex-ls#69">
+      <action type="fix" issue="valentjn/ltex-ls#69">
         Fix wrong underlining of words starting with markup
       </action>
       <action type="update">
@@ -304,10 +304,10 @@
       </action>
     </release>
     <release version="10.1.0" description="The Org Summation" date="2021-04-18">
-      <action type="add" issue="#277">
+      <action type="add" issue="valentjn/vscode-ltex#277">
         Add support for Org
       </action>
-      <action type="add" issue="#32">
+      <action type="add" issue="valentjn/vscode-ltex#32">
         Add basic support for reStructuredText
       </action>
       <action type="add">
@@ -319,7 +319,7 @@
       <action type="fix">
         Fix inconsistent titles of German commands
       </action>
-      <action type="fix" issue="#282">
+      <action type="fix" issue="valentjn/vscode-ltex#282">
         Hide internal commands in table of keyboard shortcuts to prevent confusion
       </action>
       <action type="update">
@@ -342,22 +342,22 @@
       <action type="update">
         Automatically activate extension if one of the [LTeX commands](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/commands.html) is executed
       </action>
-      <action type="add" issue="#269">
+      <action type="add" issue="valentjn/vscode-ltex#269">
         Enhance support of accents in LaTeX by using Unicode combining diacritical marks, normalized via [Unicode Normalization Form C](https://www.unicode.org/reports/tr15/tr15-50.html#Normalization_Forms_Table)
       </action>
-      <action type="add" issue="ltex-ls#56,ltex-ls#57" due-to="@ed359">
+      <action type="add" issue="valentjn/ltex-ls#56,ltex-ls#57" due-to="@ed359">
         Add support for many accents in LaTeX: double acute (e.g., `\H{O}`, &amp;#x0150;), line below (e.g., `\b{h}`, &amp;#x1e96;), dot below (e.g., `\d{A}`, &amp;#x1ea0;), ogonek (e.g., `\k{A}`, &amp;#x0104;), breve (e.g., `\u{A}`, &amp;#x0102;), and caron (e.g., `\v{C}`, &amp;#x010c;)
       </action>
-      <action type="add" issue="ltex-ls#56,ltex-ls#57" due-to="@ed359">
+      <action type="add" issue="valentjn/ltex-ls#56,ltex-ls#57" due-to="@ed359">
         Add support for special characters in LaTeX: `\L` (&amp;#x0141;), `\SS` (&amp;#x1e9e;), `\i` (&amp;#x0131;), `\j` (&amp;#x0237;), and `\l` (&amp;#x0142;)
       </action>
-      <action type="add" issue="ltex-ls#47" due-to="Nicolas Sicard (@biozic)">
+      <action type="add" issue="valentjn/ltex-ls#47" due-to="Nicolas Sicard (@biozic)">
         Add `FR_SPELLING_RULE` as a rule for unknown words
       </action>
-      <action type="update" issue="ltex-ls#53,ltex-ls#54" due-to="Lucas Alber (@LDAP)">
+      <action type="update" issue="valentjn/ltex-ls#53,ltex-ls#54" due-to="Lucas Alber (@LDAP)">
         Use LaTeX parser for documents with code language ID `tex`
       </action>
-      <action type="update" issue="#260">
+      <action type="update" issue="valentjn/vscode-ltex#260">
         Change type of [`ltex.additionalRules.motherTongue`](https://ltex-plus.github.io/ltex-plus/settings.html#ltexadditionalrulesmothertongue) to `enum` to clarify possible values
       </action>
       <action type="update">
@@ -377,13 +377,13 @@
       <action type="add">
         Add support for magic comments inside HTML comments in Markdown (`&lt;!-- ltex: SETTINGS --&gt;`)
       </action>
-      <action type="update" issue="#239">
+      <action type="update" issue="valentjn/vscode-ltex#239">
         Check frame title in argument of LaTeX Beamer frames
       </action>
       <action type="add">
         Add [`LTeX: Check Selection`](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/commands.html#ltex-check-selection) to check text in documents with unsupported code languages
       </action>
-      <action type="fix" issue="#245">
+      <action type="fix" issue="valentjn/vscode-ltex#245">
         Fix comment sign before babel commands not recognized
       </action>
       <action type="fix">
@@ -406,25 +406,25 @@
       </action>
     </release>
     <release version="8.4.0" description="The Math Optimization" date="2021-01-29">
-      <action type="add" issue="#210">
+      <action type="add" issue="valentjn/vscode-ltex#210">
         Add support for Pandoc-style inline math (`$...$`) and display math (`$$...$$` with `$$` being at the beginning/end of a Markdown block) to Markdown parser
       </action>
-      <action type="fix" issue="#221">
+      <action type="fix" issue="valentjn/vscode-ltex#221">
         Fix false positives for words added by `Add to dictionary` for Slovak rule IDs `MUZSKY_ROD_NEZIV_A`, `ZENSKY_ROD_A`, and `STREDNY_ROD_A`
       </action>
-      <action type="fix" issue="#211">
+      <action type="fix" issue="valentjn/vscode-ltex#211">
         Fix BibTeX field `seealso` not ignored, ignore `category` and `parent`
       </action>
-      <action type="update" issue="#211">
+      <action type="update" issue="valentjn/vscode-ltex#211">
         Disable `UPPERCASE_SENTENCE_START` in BibTeX files
       </action>
-      <action type="update" issue="#233">
+      <action type="update" issue="valentjn/vscode-ltex#233">
         Move rule ID to the end of diagnostic messages as VS Code truncates the messages if the Problems panel is narrow
       </action>
-      <action type="fix" issue="#161">
+      <action type="fix" issue="valentjn/vscode-ltex#161">
         Fix regression that messages of possible spelling mistakes are not prepended with the respective unknown words
       </action>
-      <action type="fix" issue="#236">
+      <action type="fix" issue="valentjn/vscode-ltex#236">
         Fix crash when using `\begin` or `\end` without an argument
       </action>
       <action type="update">
@@ -435,28 +435,28 @@
       </action>
     </release>
     <release version="8.3.0" description="The BibT&lt;sub&gt;E&lt;/sub&gt;X Experimentation" date="2021-01-24">
-      <action type="add" issue="#211">
+      <action type="add" issue="valentjn/vscode-ltex#211">
         Add support for BibTeX files (language code `bibtex`)
       </action>
       <action type="add">
         Add setting [`ltex.bibtex.fields`](https://ltex-plus.github.io/ltex-plus/settings.html#ltexbibtexfields) to control which BibTeX fields should be checked
       </action>
-      <action type="add" issue="#210">
+      <action type="add" issue="valentjn/vscode-ltex#210">
         Add support for [GitLab Flavored Markdown](https://gitlab.com/gitlab-org/gitlab/blob/master/doc/user/markdown.md), especially inline math (e.g., ``$`E = mc^2`$``)
       </action>
-      <action type="add" issue="#218">
+      <action type="add" issue="valentjn/vscode-ltex#218">
         Add support for Markdown tables as in [GitHub Flavored Markdown](https://github.github.com/gfm/#tables-extension-)
       </action>
       <action type="add">
         Add support for more commands of the `glossaries` LaTeX package
       </action>
-      <action type="update" issue="#221">
+      <action type="update" issue="valentjn/vscode-ltex#221">
         Enable `Add to dictionary` quick fix for Slovak rule IDs `MUZSKY_ROD_NEZIV_A`, `ZENSKY_ROD_A`, and `STREDNY_ROD_A`
       </action>
       <action type="remove">
         Remove superfluous spaces in messages of diagnostics
       </action>
-      <action type="fix" issue="#224">
+      <action type="fix" issue="valentjn/vscode-ltex#224">
         Fix LTeX LS not starting if Java version string does not contain a minor version (e.g., `&quot;16&quot;`)
       </action>
       <action type="fix">
@@ -465,7 +465,7 @@
       <action type="update">
         Use Flexmark's YAML Front Matter extension to ignore YAML front matter in Markdown instead of own handling
       </action>
-      <action type="fix" issue="#232">
+      <action type="fix" issue="valentjn/vscode-ltex#232">
         Fix documentation on the number of backslashes for [`ltex.latex.commands`](https://ltex-plus.github.io/ltex-plus/settings.html#ltexlatexcommands)
       </action>
       <action type="update">
@@ -479,7 +479,7 @@
       <action type="update">
         Ignore `\pgfmathsetmacro`, `\setmainfont`, and `\theoremstyle`
       </action>
-      <action type="fix" issue="#216">
+      <action type="fix" issue="valentjn/vscode-ltex#216">
         Fix accent commands such as `\O` in math mode resulting in diagnostics
       </action>
       <action type="update">
@@ -499,7 +499,7 @@
       <action type="add">
         Add [`ltex.additionalRules.enablePickyRules`](https://ltex-plus.github.io/ltex-plus/settings.html#ltexadditionalrulesenablepickyrules) to still be able to detect false friends after the update of LanguageTool (default: `false`)
       </action>
-      <action type="update" issue="#183">
+      <action type="update" issue="valentjn/vscode-ltex#183">
         Only check file types for which LTeX has been enabled when running [`LTeX: Check All Documents in Workspace`](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/commands.html#ltex-check-all-documents-in-workspace)
       </action>
       <action type="fix">
@@ -521,16 +521,16 @@
       </action>
     </release>
     <release version="8.1.0" description="The Prepending Annihilation" date="2020-11-15">
-      <action type="update" issue="#161">
+      <action type="update" issue="valentjn/vscode-ltex#161">
         Prepend messages of possible spelling mistakes with the respective unknown words
       </action>
       <action type="add">
         Add support for optional arguments of `\newtheorem`
       </action>
-      <action type="fix" issue="#167">
+      <action type="fix" issue="valentjn/vscode-ltex#167">
         Fix wrong position of diagnostics when using a recognized LaTeX command with a non-recognized set of arguments due to an infinite loop
       </action>
-      <action type="update" issue="#162">
+      <action type="update" issue="valentjn/vscode-ltex#162">
         Avoid misleading popup prompting to install Java on Mac, use [`ltex.java.forceTrySystemWide`](https://ltex-plus.github.io/ltex-plus/settings.html#ltexjavaforcetrysystemwide) to force trying a system-wide Java installation
       </action>
       <action type="update">
@@ -544,7 +544,7 @@
       </action>
     </release>
     <release version="8.0.0" description="The Setting Transformation" date="2020-11-01">
-      <action type="update" issue="#39">
+      <action type="update" issue="valentjn/vscode-ltex#39">
         Upgrade from Java 8 to Java 11 (see [announcement](https://ltex-plus.github.io/ltex-plus/old/deprecation-of-java-8.html))
       </action>
       <action type="add">
@@ -583,28 +583,28 @@
       <action type="update">
         Rename `ignoreRuleInSentence` &#x2192; `hiddenFalsePositives` in [`ltex.configurationTarget`](https://ltex-plus.github.io/ltex-plus/settings.html#ltexconfigurationtarget)
       </action>
-      <action type="add" issue="#144,#145">
+      <action type="add" issue="valentjn/vscode-ltex#144,#145">
         Add `userExternalFile`, `workspaceExternalFile`, and `workspaceFolderExternalFile` enumeration values to [`ltex.configurationTarget`](https://ltex-plus.github.io/ltex-plus/settings.html#ltexconfigurationtarget), which enables saving settings to external files (see [documentation](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/setting-scopes-files.html#external-setting-files))
       </action>
       <action type="update">
         Change default of [`ltex.configurationTarget`](https://ltex-plus.github.io/ltex-plus/settings.html#ltexconfigurationtarget) for `dictionary`, `disabledRules`, and `hiddenFalsePositives` to `workspaceFolderExternalFile`
       </action>
-      <action type="add" issue="#141">
+      <action type="add" issue="valentjn/vscode-ltex#141">
         Add [`ltex.statusBarItem`](https://ltex-plus.github.io/ltex-plus/settings.html#ltexstatusbaritem) to permanently display LTeX's status in the status bar
       </action>
-      <action type="add" issue="#142">
+      <action type="add" issue="valentjn/vscode-ltex#142">
         Add [`ltex.checkFrequency`](https://ltex-plus.github.io/ltex-plus/settings.html#ltexcheckfrequency) to control when LTeX checks documents
       </action>
       <action type="add">
         Add [`LTeX: Show Status Information`](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/commands.html#ltex-show-status-information) command to show information about the status of LTeX
       </action>
-      <action type="add" issue="#140">
+      <action type="add" issue="valentjn/vscode-ltex#140">
         Add support for `\usepackage[LANGUAGE]{babel}` if in the same file as the text to be checked
       </action>
-      <action type="add" issue="#143">
+      <action type="add" issue="valentjn/vscode-ltex#143">
         Add support for more BibLaTeX commands such as `\autocite`, `\citeauthor`, etc.
       </action>
-      <action type="add" issue="ltex-ls#27">
+      <action type="add" issue="valentjn/ltex-ls#27">
         Add support for overriding hard-coded command signatures
       </action>
       <action type="add">
@@ -613,7 +613,7 @@
       <action type="update">
         Move handling of external setting files from ltex-ls to vscode-ltex
       </action>
-      <action type="update" issue="#146">
+      <action type="update" issue="valentjn/vscode-ltex#146">
         Better resolve relative paths to external setting files, either with respect to the `.vscode` directory of the workspace folder if any, the `.vscode` directory of the workspace if any, or the global storage directory of the extension (see [documentation](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/setting-scopes-files.html#external-setting-files))
       </action>
       <action type="update">
@@ -625,7 +625,7 @@
       <action type="update">
         Increase duration before sentences expire in the result cache to 60 minutes
       </action>
-      <action type="fix" issue="#134">
+      <action type="fix" issue="valentjn/vscode-ltex#134">
         Fix many settings changes cleared sentence cache, which led to performance issues, e.g., changing the [`ltex.enabled`](https://ltex-plus.github.io/ltex-plus/settings.html#ltexenabled) setting via magic comments
       </action>
       <action type="remove">
@@ -650,7 +650,7 @@
       </action>
     </release>
     <release version="7.3.0" description="The Debugging Formulation" date="2020-10-10">
-      <action type="add" issue="#131">
+      <action type="add" issue="valentjn/vscode-ltex#131">
         Add support for `\ell` as well as `\mathcal`, `\mathfrak`, etc. to vowel detection
       </action>
       <action type="add">
@@ -690,7 +690,7 @@
       </action>
     </release>
     <release version="7.1.2" description="The Magic Configuration" date="2020-09-22">
-      <action type="fix" issue="#124">
+      <action type="fix" issue="valentjn/vscode-ltex#124">
         Fix performance issue with multiple languages in one document via magic comments due to LanguageTool being reinitialized on each keystroke
       </action>
       <action type="update">
@@ -709,25 +709,25 @@
       </action>
     </release>
     <release version="7.1.0" description="The External Accumulation" date="2020-09-20">
-      <action type="add" issue="#118">
+      <action type="add" issue="valentjn/vscode-ltex#118">
         Add support for external dictionary files
       </action>
-      <action type="add" issue="#19">
+      <action type="add" issue="valentjn/vscode-ltex#19">
         Add support for enabling/disabling LTeX only for specific file types via [`ltex.enabled`](https://ltex-plus.github.io/ltex-plus/settings.html#ltexenabled)
       </action>
-      <action type="add" issue="#19">
+      <action type="add" issue="valentjn/vscode-ltex#19">
         Add support for `acro` commands such as `\DeclareAcronym` and `\ac`
       </action>
-      <action type="add" issue="#19">
+      <action type="add" issue="valentjn/vscode-ltex#19">
         Add support for `\addcontentsline`
       </action>
       <action type="add">
         Add support for `\printbibliography` and `\printglossary` without argument
       </action>
-      <action type="update" issue="#19">
+      <action type="update" issue="valentjn/vscode-ltex#19">
         Ignore parenthesis arguments of `textblock`s
       </action>
-      <action type="fix" issue="#123">
+      <action type="fix" issue="valentjn/vscode-ltex#123">
         Fix optional argument of heading commands such as `\section` parsed incorrectly
       </action>
       <action type="update">
@@ -762,7 +762,7 @@
       <action type="update">
         Update LanguageTool to 5.0.2 (see [LT 5.0.2 release notes](https://github.com/languagetool-org/languagetool/blob/v5.0.2/languagetool-standalone/CHANGES.md#502-2020-08-28))
       </action>
-      <action type="fix" issue="#104">
+      <action type="fix" issue="valentjn/vscode-ltex#104">
         Fix skipping of YAML front matter
       </action>
       <action type="update">
@@ -770,10 +770,10 @@
       </action>
     </release>
     <release version="6.3.0" description="The Vowel Extraction" date="2020-08-22">
-      <action type="add" issue="#92">
+      <action type="add" issue="valentjn/vscode-ltex#92">
         Add support for `an` article when before a formula starting with a vowel (e.g., `an $n$-dimensional problem`)
       </action>
-      <action type="add" issue="#99">
+      <action type="add" issue="valentjn/vscode-ltex#99">
         Add support for `~/` and `~\` in settings
       </action>
       <action type="fix">
@@ -784,7 +784,7 @@
       </action>
     </release>
     <release version="6.2.0" description="The Command Isotope" date="2020-08-07">
-      <action type="add" issue="#84">
+      <action type="add" issue="valentjn/vscode-ltex#84">
         Add commands [`LTeX: Check Current Document`](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/commands.html#ltex-check-current-document) and [`LTeX: Check All Documents in Workspace`](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/commands.html#ltex-check-all-documents-in-workspace)
       </action>
       <action type="add">
@@ -810,7 +810,7 @@
       </action>
     </release>
     <release version="6.1.1" description="The Space Saturation" date="2020-07-26">
-      <action type="fix" issue="#80">
+      <action type="fix" issue="valentjn/vscode-ltex#80">
         Fix another problem with spaces in paths when using LTeX LS on Windows
       </action>
       <action type="update">
@@ -818,13 +818,13 @@
       </action>
     </release>
     <release version="6.1.0" description="The babel Momentum" date="2020-07-26">
-      <action type="add" issue="#39">
+      <action type="add" issue="valentjn/vscode-ltex#39">
         Download Java 11 if only Java 8 is installed; LTeX support for Java 8 will end on November 1, 2020 (see [documentation](https://ltex-plus.github.io/ltex-plus/old/deprecation-of-java-8.html))
       </action>
-      <action type="add" issue="#81">
+      <action type="add" issue="valentjn/vscode-ltex#81">
         Add support for babel commands (see [documentation](https://ltex-plus.github.io/ltex-plus/advanced-usage.html#multilingual-latex-documents-with-the-babel-package))
       </action>
-      <action type="fix" issue="#80">
+      <action type="fix" issue="valentjn/vscode-ltex#80">
         Fix problems with spaces in paths when using LTeX LS on Windows
       </action>
       <action type="update">
@@ -838,7 +838,7 @@
       </action>
     </release>
     <release version="6.0.2" description="The Startup Congruence" date="2020-07-11">
-      <action type="update" issue="#75">
+      <action type="update" issue="valentjn/vscode-ltex#75">
         Make Windows startup script of LTeX LS (`ltex-ls.bat`) honor `JAVA_HOME`
       </action>
       <action type="update">
@@ -852,7 +852,7 @@
       </action>
     </release>
     <release version="6.0.1" description="The Freeze Paradox" date="2020-07-02">
-      <action type="fix" issue="#68">
+      <action type="fix" issue="valentjn/vscode-ltex#68">
         Fix freezes when checking German text by working around [languagetool-org/languagetool#3181](https://github.com/languagetool-org/languagetool/issues/3181) introduced by LanguageTool 5.0
       </action>
       <action type="update">
@@ -869,16 +869,16 @@
       <action type="add">
         Add German translations for user interface of LTeX
       </action>
-      <action type="update" issue="#46">
+      <action type="update" issue="valentjn/vscode-ltex#46">
         Delay diagnostics at the current caret position (e.g., incomplete word or sentence) until the user has finished typing
       </action>
-      <action type="add" issue="#67">
+      <action type="add" issue="valentjn/vscode-ltex#67">
         Add `enabled` to magic comments
       </action>
       <action type="add">
         Add command [`LTeX: Report Bug in LTeX`](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/commands.html#ltex-report-bug-in-ltex) for reporting LTeX bugs from within VS Code
       </action>
-      <action type="fix" issue="#63">
+      <action type="fix" issue="valentjn/vscode-ltex#63">
         Fix `\todo` couldn't be ignored
       </action>
       <action type="fix">
@@ -907,12 +907,12 @@
       </action>
     </release>
     <release version="5.0.2" description="The Disabling Submergence" date="2020-06-18">
-      <action type="fix" issue="#61">
+      <action type="fix" issue="valentjn/vscode-ltex#61">
         Fix `Disable rule` quick fix using wrong setting structure
       </action>
     </release>
     <release version="5.0.1" description="The Acceptance Incursion" date="2020-06-07">
-      <action type="fix" issue="#44">
+      <action type="fix" issue="valentjn/vscode-ltex#44">
         Fix `Value is not accepted` warning when using [`ltex.disabledRules`](https://ltex-plus.github.io/ltex-plus/settings.html#ltexdisabledrules) or [`ltex.enabledRules`](https://ltex-plus.github.io/ltex-plus/settings.html#ltexenabledrules)
       </action>
       <action type="update">
@@ -920,10 +920,10 @@
       </action>
     </release>
     <release version="5.0.0" description="The Rewrite Materialization" date="2020-06-01">
-      <action type="add" issue="#6">
+      <action type="add" issue="valentjn/vscode-ltex#6">
         Download LTeX LS on demand with all languages already included; this removes the need for language support extensions
       </action>
-      <action type="update" issue="#5">
+      <action type="update" issue="valentjn/vscode-ltex#5">
         Download Java distribution on demand if no suitable Java installation has been found
       </action>
       <action type="update">
@@ -950,22 +950,22 @@
       <action type="update">
         Rename `ltex.performance.sentenceCacheSize` &#x2192; [`ltex.sentenceCacheSize`](https://ltex-plus.github.io/ltex-plus/settings.html#ltexsentencecachesize)
       </action>
-      <action type="add" issue="#36">
+      <action type="add" issue="valentjn/vscode-ltex#36">
         Add support for external LanguageTool HTTP servers
       </action>
-      <action type="add" issue="#21">
+      <action type="add" issue="valentjn/vscode-ltex#21">
         Add support for magic comments, enables changing the language in the middle of documents
       </action>
-      <action type="fix" issue="#42">
+      <action type="fix" issue="valentjn/vscode-ltex#42">
         Check `\footnote` and `\todo` contents separately, preventing &#x201c;double period&#x201d; warnings
       </action>
-      <action type="add" issue="#43">
+      <action type="add" issue="valentjn/vscode-ltex#43">
         Add support for more BibLaTeX citation commands, add support for plural dummies, add support for `\eg`, `\egc`, `\ie`, `\iec`
       </action>
       <action type="add">
         Add visual feedback in status bar during startup and checks that take a long time
       </action>
-      <action type="remove" issue="#41">
+      <action type="remove" issue="valentjn/vscode-ltex#41">
         Remove `null` types and default values from settings, use empty string/array/object instead
       </action>
       <action type="update">
@@ -993,10 +993,10 @@
       <action type="update">
         Update required version of Java (now 11 or newer)
       </action>
-      <action type="add" issue="#36">
+      <action type="add" issue="valentjn/vscode-ltex#36">
         Add support for external LanguageTool HTTP servers
       </action>
-      <action type="add" issue="#37">
+      <action type="add" issue="valentjn/vscode-ltex#37">
         Add support for `\autoref`, `\pageref`, `\autopageref`
       </action>
       <action type="update">
@@ -1004,10 +1004,10 @@
       </action>
     </release>
     <release version="4.9.1" description="The Sentence Cache Acceleration" date="2020-05-01">
-      <action type="fix" issue="#29">
+      <action type="fix" issue="valentjn/vscode-ltex#29">
         Fix sentence cache was invalidated when a single ignore sentence rule was present
       </action>
-      <action type="update" issue="#35">
+      <action type="update" issue="valentjn/vscode-ltex#35">
         Use thin non-breaking space for `\,`
       </action>
       <action type="update">
@@ -1038,7 +1038,7 @@
       </action>
     </release>
     <release version="4.7.10" description="The French Capacitance" date="2020-03-12">
-      <action type="fix" issue="#27">
+      <action type="fix" issue="valentjn/vscode-ltex#27">
         Fix spelling errors for French dummies
       </action>
       <action type="fix">
@@ -1055,7 +1055,7 @@
       <action type="update">
         Update Markdown parser Flexmark to 0.60.2; this increases the speed of parsing Markdown
       </action>
-      <action type="add" issue="#26">
+      <action type="add" issue="valentjn/vscode-ltex#26">
         Add possibility to ignore Markdown elements or replace them by dummy words via `ltex.markdown.ignore` and `ltex.markdown.dummy`
       </action>
       <action type="update">
@@ -1075,16 +1075,16 @@
       </action>
     </release>
     <release version="4.7.8" description="The Multi-Diagnostic Equivalency" date="2020-02-16">
-      <action type="add" issue="#22">
+      <action type="add" issue="valentjn/vscode-ltex#22">
         Add support for R Sweave `.rnw` files
       </action>
-      <action type="update" issue="#23">
+      <action type="update" issue="valentjn/vscode-ltex#23">
         Enable fixing multiple diagnostics at once
       </action>
-      <action type="add" issue="#24" due-to="@mpolitze">
+      <action type="add" issue="valentjn/vscode-ltex#24" due-to="@mpolitze">
         Add `ltex.javaHome` setting to control the `JAVA_HOME` environment variable
       </action>
-      <action type="add" issue="#25">
+      <action type="add" issue="valentjn/vscode-ltex#25">
         Add support for `\euro`
       </action>
       <action type="update">
@@ -1154,7 +1154,7 @@
       </action>
     </release>
     <release version="4.7.3" description="The word2vec Erosion" date="2019-10-07">
-      <action type="fix" issue="#12">
+      <action type="fix" issue="valentjn/vscode-ltex#12">
         Fix null pointer error for word2vec quick fixes
       </action>
       <action type="update">
@@ -1170,7 +1170,7 @@
       </action>
     </release>
     <release version="4.7.1" description="The Mother Tongue Factor" date="2019-10-02">
-      <action type="add" issue="#11">
+      <action type="add" issue="valentjn/vscode-ltex#11">
         Add [`ltex.additionalRules.motherTongue`](https://ltex-plus.github.io/ltex-plus/settings.html#ltexadditionalrulesmothertongue) setting to enable detection of false friends
       </action>
       <action type="update">
@@ -1184,7 +1184,7 @@
       <action type="update">
         Update LanguageTool to 4.7 (see [LT 4.7 release notes](https://github.com/languagetool-org/languagetool/blob/v4.7/languagetool-standalone/CHANGES.md#47-2019-09-28))
       </action>
-      <action type="add" issue="#7">
+      <action type="add" issue="valentjn/vscode-ltex#7">
         Support multi-root workspaces, all configuration settings except [`ltex.enabled`](https://ltex-plus.github.io/ltex-plus/settings.html#ltexenabled) are now resource-specific
       </action>
       <action type="update">
@@ -1204,7 +1204,7 @@
       </action>
     </release>
     <release version="4.6.13" description="The Remote Permeability" date="2019-09-26">
-      <action type="fix" issue="#8">
+      <action type="fix" issue="valentjn/vscode-ltex#8">
         Fix language extensions not installable on remote machines
       </action>
       <action type="fix">
@@ -1261,10 +1261,10 @@
       </action>
     </release>
     <release version="4.6.10" description="The Plaintext Decay" date="2019-09-18">
-      <action type="update" issue="#4">
+      <action type="update" issue="valentjn/vscode-ltex#4">
         Don't check plaintext files
       </action>
-      <action type="fix" issue="ltex-ls#1">
+      <action type="fix" issue="valentjn/ltex-ls#1">
         Fix `NullPointerException` if LanguageTool has not been initialized
       </action>
       <action type="update">

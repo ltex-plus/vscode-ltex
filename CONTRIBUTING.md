@@ -10,23 +10,23 @@
 
 ## Ways of Contribution
 
-Thank you for considering contributing to LT<sub>E</sub>X. There are many ways to do so:
+Thank you for considering contributing to LT<sub>E</sub>X+. There are many ways to do so:
 
-- You can [report bugs](#how-to-report-bugs) to help make LT<sub>E</sub>X better.
-- You can [request features](#how-to-request-features) to make LT<sub>E</sub>X more powerful.
-- You can [contribute code](#how-to-contribute-code) to accelerate the pace of LT<sub>E</sub>X's development.
+- You can [report bugs](#how-to-report-bugs) to help make LT<sub>E</sub>X+ better.
+- You can [request features](#how-to-request-features) to make LT<sub>E</sub>X+ more powerful.
+- You can [contribute code](#how-to-contribute-code) to accelerate the pace of LT<sub>E</sub>X+'s development.
 - You can [test pre-release versions](#how-to-test-pre-releases) to help find bugs before they affect thousands of users.
-- You can [edit the documentation](#how-to-edit-the-documentation) to make LT<sub>E</sub>X easier to use.
-- You can [translate the user interface](#how-to-translate-the-user-interface) into your mother tongue to make LT<sub>E</sub>X more accessible.
+- You can [edit the documentation](#how-to-edit-the-documentation) to make LT<sub>E</sub>X+ easier to use.
+- You can [translate the user interface](#how-to-translate-the-user-interface) into your mother tongue to make LT<sub>E</sub>X+ more accessible.
 
-If you like LT<sub>E</sub>X, but are not able to contribute in any of these ways, there are still some quick and simple alternatives to show your gratitude:
+If you like LT<sub>E</sub>X+, but are not able to contribute in any of these ways, there are still some quick and simple alternatives to show your gratitude:
 
 - You can star the [repository on GitHub](https://github.com/valentjn/vscode-ltex).
 - You can write a positive review on the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=valentjn.vscode-ltex) or on [Open VSX](https://open-vsx.org/extension/valentjn/vscode-ltex).
 
 ## How to Report Bugs
 
-1. Make sure that your issue is really an LT<sub>E</sub>X bug.
+1. Make sure that your issue is really an LT<sub>E</sub>X+ bug.
 2. Make sure that your issue can neither be found in the list of known issues below nor in the [list of all open and closed GitHub issues](https://github.com/valentjn/vscode-ltex/issues?q=is%3Aissue).
 3. Create a minimal example document for which the bug occurs. To do so, take your original document, for which the bug occurs, and delete roughly half of it. If the bug does not occur anymore, undo the deletion and delete the other half instead. If the bug occurs, repeat by deleting half of the remaining half etc., until you arrive at a very small document, for which the bug still occurs. This is the minimal example document.
 4. Create a minimal example configuration for which the bug occurs. To do so, proceed as for the minimal example document, except that you delete half of your `ltex.` settings.
@@ -45,7 +45,7 @@ If you like LT<sub>E</sub>X, but are not able to contribute in any of these ways
 
 ## How to Request Features
 
-1. Make sure that your feature is actually about LT<sub>E</sub>X (not about LanguageTool, for example).
+1. Make sure that your feature is actually about LT<sub>E</sub>X+ (not about LanguageTool, for example).
 2. Make sure that your feature is not in the [list of all open and closed GitHub issues](https://github.com/valentjn/vscode-ltex/issues?q=is%3Aissue).
 3. Do one of the following:
    - Execute the command [`LTeX: Request Feature for LTeX`](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/commands.html#ltex-request-feature-for-ltex) inside VS Code from the Command Palette (`Ctrl+Shift+P`) and click on `Create issue`. This will open the `New Issue` page on GitHub in your browser (you may have to confirm that you really want to open the page). OR
@@ -56,7 +56,7 @@ If you like LT<sub>E</sub>X, but are not able to contribute in any of these ways
 
 ## How to Set Up the Project
 
-[As explained in the FAQ](https://ltex-plus.github.io/ltex-plus/faq.html#whats-the-difference-between-vscode-ltex-ltex-ls-and-languagetool), LT<sub>E</sub>X consists of two components: [vscode-ltex](https://github.com/valentjn/vscode-ltex) and [ltex-ls](https://github.com/valentjn/ltex-ls). This guide is only about the vscode-ltex part. If you want to change ltex-ls as well, [be sure to read and follow the contribution guidelines of ltex-ls](https://ltex-plus.github.io/ltex-plus/ltex-ls/contributing.html).
+[As explained in the FAQ](https://ltex-plus.github.io/ltex-plus/faq.html#whats-the-difference-between-vscode-ltex-ltex-ls-and-languagetool), LT<sub>E</sub>X+ consists of two components: [vscode-ltex-plus](https://github.com/valentjn/vscode-ltex) and [ltex-ls-plus](https://github.com/valentjn/ltex-ls). This guide is only about the vscode-ltex-plus part. If you want to change ltex-ls-plus as well, [be sure to read and follow the contribution guidelines of ltex-ls-plus](https://ltex-plus.github.io/ltex-plus/ltex-ls/contributing.html).
 
 1. Install VS Code, Git, and npm.
 2. Fork vscode-ltex on GitHub.
@@ -78,7 +78,7 @@ If you like LT<sub>E</sub>X, but are not able to contribute in any of these ways
 
 ## How to Test Pre-Releases
 
-You can help find bugs before they affect thousands of LT<sub>E</sub>X users by testing pre-releases.
+You can help find bugs before they affect thousands of LT<sub>E</sub>X+ users by testing pre-releases.
 
 1. Check whether a pre-release is available on the [releases pages of vscode-ltex](https://github.com/valentjn/vscode-ltex/releases) (pre-releases, if there are any, are at the top of the page).
 2. Download the `*.vsix` file corresponding to your platform.
@@ -113,7 +113,7 @@ You can improve the [documentation](https://ltex-plus.github.io/ltex-plus):
 
 ## How to Translate the User Interface
 
-The user interface of LT<sub>E</sub>X is currently available in the following languages:
+The user interface of LT<sub>E</sub>X+ is currently available in the following languages:
 
 - English
 - German
