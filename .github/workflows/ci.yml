@@ -76,7 +76,7 @@ jobs:
           # (https://github.com/microsoft/vscode/issues/85601)
           NODE_OPTIONS: "--no-force-async-hooks-checks"
         # otherwise, git clean fails to remove lib/ with "Invalid argument" errors
-        run: "npm run test -- --fast"
+        run: "npm run --fast test"
 
   # buildForCocNvim:
   #   name: "CI - Build for coc.nvim Job"

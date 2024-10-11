@@ -129,16 +129,9 @@ async function runTestIteration(useOfflinePackage:boolean): Promise<void> {
 }
 
 async function main(): Promise<void> {
-  let fastMode: boolean = false;
-
-  for (let i: number = 0; i < process.argv.length; i++) {
-    const arg: string = process.argv[i];
-
-    if (arg == '--fast') {
-      fastMode = true;
-    }
-  }
-
+  const fastMode: boolean = process.env.npm_config_fast ? true : false;
+  console.log('Running tests in fast mode: ' + fastMode);
+  
   ltexDirPath = Path.resolve(__dirname, '..', '..');
   const codeVersion: string = 'stable';
   let codePlatform: string | undefined;
