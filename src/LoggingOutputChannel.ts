@@ -100,4 +100,8 @@ export default class LoggingOutputChannel implements Code.OutputChannel {
     this._onAppendEventEmitter.dispose();
     this._outputChannel.dispose();
   }
+
+  public replace(_value: string): void {
+    throw new Error('Method not implemented.');
+  }
 }
