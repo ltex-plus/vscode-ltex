@@ -12,6 +12,17 @@
     <author>Julian Valentin, Daniel Spitzer, LTeX+ Development Community</author>
   </properties>
   <body>
+  <release version="15.2.0" description="The (X)HTML HTTP 413 Elevation" date="upcoming">
+      <action type="update">
+        Update to LTeX+ LS 18.1.0
+      </action>
+      <action type="add" issue="#32" due-to="Jonas Wischeropp (@JonasWischeropp)">
+        Add support for magic comments in (X)HTML files.
+      </action>
+      <action type="fix" issue="valentjn/ltex-ls#228,valentjn/ltex-ls#215,ltex-plus/vscode-ltex-plus#49" due-to="Tim Ruffing (@real-or-random)">
+        Shorten JSON sent to HTTP server in order to HTTP 413 errors.
+      </action>
+    </release>
     <release version="15.1.0" description="The LTeX+ LS Recovery Experiment" date="2024-10-05">
       <action type="update">
         New LTeX+ logo and branding.
