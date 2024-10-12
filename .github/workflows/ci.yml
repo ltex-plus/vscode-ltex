@@ -39,7 +39,7 @@ jobs:
           node-version: 22
 
       - name: "Install Node.js Dependencies"
-        run: "npm install && npm install -g @vscode/vsce"
+        run: "npm install"
 
       - name: "Set up Python"
         uses: "actions/setup-python@v5"
@@ -172,7 +172,7 @@ jobs:
           node-version: 22
 
       - name: "Install Node.js Dependencies"
-        run: "npm install && npm install -g @vscode/vsce ovsx"
+        run: "npm install"
 
       - name: "Set up Python"
         uses: "actions/setup-python@v5"
@@ -224,7 +224,7 @@ jobs:
       #   if: "${{ env.VSCODE_LTEX_IS_PRERELEASE == 'false' }}"
       #   env:
       #     VSCODE_LTEX_OVSX_TOKEN: "${{ secrets.VSCODE_LTEX_OVSX_TOKEN }}"
-      #   run: "ovsx publish -p \"$VSCODE_LTEX_OVSX_TOKEN\""
+      #   run: "npm install -g ovsx && ovsx publish -p \"$VSCODE_LTEX_OVSX_TOKEN\""
 
   # deployForCocNvim:
   #   name: "CI - Deploy for coc.nvim Job"
