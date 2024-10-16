@@ -26,7 +26,7 @@ jobs:
 
   deploy:
     needs: check_latest_commit
-    if: ${{ needs.check_latest_commit.outputs.NEW_COMMIT == 'true' || github.event_name == 'schedule' }}
+    if: ${{ needs.check_latest_commit.outputs.NEW_COMMIT == 'true' || github.event_name == 'workflow_dispatch' }}
     name: "Nightly - Deploy Job"
     runs-on: "ubuntu-latest"
 
