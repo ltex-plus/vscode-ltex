@@ -60,6 +60,7 @@
     "onLanguage:latex",
     "onLanguage:markdown",
     "onLanguage:org",
+    "onLanguage:quarto",
     "onLanguage:restructuredtext",
     "onLanguage:rsweave",
     "onNotebook:*"
@@ -153,6 +154,7 @@
             "latex",
             "markdown",
             "org",
+            "quarto",
             "restructuredtext",
             "rsweave"
           ],

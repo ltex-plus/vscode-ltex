@@ -60,6 +60,7 @@ export default class CommandHandler {
     'latex',
     'markdown',
     'org',
+    'quarto',
     'restructuredtext',
     'rsweave',
   ];
@@ -442,6 +443,10 @@ export default class CommandHandler {
         }
         case 'python': {
           enabledFileExtensions.add('py');
+          break;
+        }
+        case 'quatro': {
+          enabledFileExtensions.add('qmd');
           break;
         }
         case 'r': {
