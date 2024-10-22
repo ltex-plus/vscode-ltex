@@ -70,6 +70,7 @@ REPLACE_THIS_WITH_LTEX_LANGUAGE_CLIENT_LOG
 List here the version information of the relevant software.
 
 - Operating system: Linux (which distribution/version), macOS xx.xx, or Windows xx
+- CPU manufacturer: e.g. Intel, AMD, Apple or Qualcomm
 - VS Code: 1.xx.x
 - vscode-ltex-plus: x.xx
 - ltex-ls-plus: x.xx (only if not using ltex-ls automatically downloaded by LTeX+)
