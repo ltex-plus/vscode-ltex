@@ -59,6 +59,7 @@ export default class CommandHandler {
     'html',
     'latex',
     'markdown',
+    'typst',
     'org',
     'quarto',
     'restructuredtext',
@@ -489,6 +490,10 @@ export default class CommandHandler {
         }
         case 'typescript': {
           enabledFileExtensions.add('ts');
+          break;
+        }
+        case 'typst': {
+          enabledFileExtensions.add('typ');
           break;
         }
         case 'vb': {
