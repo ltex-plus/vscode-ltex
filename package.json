@@ -2642,7 +2642,7 @@
     "@types/webpack": "5.28.5",
     "@typescript-eslint/eslint-plugin": "8.11.0",
     "@typescript-eslint/parser": "8.11.0",
-    "eslint": "9.13.0",
+    "eslint": "9.14.0",
     "eslint-plugin-only-warn": "1.1.0",
     "mocha": "^10.7.3",
     "rimraf": "6.0.1",
