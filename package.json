@@ -2636,7 +2636,7 @@
   "devDependencies": {
     "@vscode/test-electron": "^2.4.1",
     "@types/mocha": "10.0.9",
-    "@types/node": "22.8.6",
+    "@types/node": "22.9.0",
     "@types/rimraf": "4.0.5",
     "@types/semver": "7.5.8",
     "@types/tar": "6.1.13",
