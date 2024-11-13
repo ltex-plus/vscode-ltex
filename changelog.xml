@@ -19,6 +19,9 @@
       <action type="add" issue="#63">
         Add support for Quarto.
       </action>
+      <action type="add" issue="#83">
+        Publish LTeX+ on Open VSX: https://open-vsx.org/extension/ltex-plus/vscode-ltex-plus
+      </action>
     </release>
     <release version="15.2.0" description="The (X)HTML HTTP 413 Elevation" date="2024-10-19">
       <action type="update">

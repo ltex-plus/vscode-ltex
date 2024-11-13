@@ -220,11 +220,11 @@ jobs:
           VSCODE_LTEX_VSCE_TOKEN: "${{ secrets.VSCODE_LTEX_VSCE_TOKEN }}"
         run: "vsce publish -p \"$VSCODE_LTEX_VSCE_TOKEN\""
 
-      # - name: "Publish Package on Open VSX"
-      #   if: "${{ env.VSCODE_LTEX_IS_PRERELEASE == 'false' }}"
-      #   env:
-      #     VSCODE_LTEX_OVSX_TOKEN: "${{ secrets.VSCODE_LTEX_OVSX_TOKEN }}"
-      #   run: "ovsx publish -p \"$VSCODE_LTEX_OVSX_TOKEN\""
+      - name: "Publish Package on Open VSX"
+        if: "${{ env.VSCODE_LTEX_IS_PRERELEASE == 'false' }}"
+        env:
+          VSCODE_LTEX_OVSX_TOKEN: "${{ secrets.VSCODE_LTEX_OVSX_TOKEN }}"
+        run: "ovsx publish -p \"$VSCODE_LTEX_OVSX_TOKEN\""
 
   # deployForCocNvim:
   #   name: "CI - Deploy for coc.nvim Job"
