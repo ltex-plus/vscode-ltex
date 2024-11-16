@@ -15,9 +15,9 @@
 <!-- #if TARGET == 'vscode' -->  
 > Notice: This is a fork of [@valentjn's vscode-ltex](https://github.com/valentjn/vscode-ltex). As of August 2024, this repository seems to be not maintained. This fork solves the severe bug in Windows mentioned in [issue 884](https://github.com/valentjn/vscode-ltex/issues/884)
 
-**LT<sub>E</sub>X+** provides offline grammar checking of various markup languages in Visual Studio Code using [LanguageTool (LT)](https://languagetool.org/). LT<sub>E</sub>X+ currently supports BibT<sub>E</sub>X, ConT<sub>E</sub>Xt, L<sup>A</sup>T<sub>E</sub>X, Markdown, Typst, Org, Quarto, reStructuredText, R Sweave, and XHTML documents. In addition, LT<sub>E</sub>X+ can check comments in many popular programming languages (optional, opt-in).
+**LT<sub>E</sub>X+** provides offline grammar checking of various markup languages in Visual Studio Code using [LanguageTool (LT)](https://languagetool.org/). LT<sub>E</sub>X+ currently supports BibT<sub>E</sub>X, ConT<sub>E</sub>Xt, L<sup>A</sup>T<sub>E</sub>X, Markdown, MDX, Typst, Org, Quarto, reStructuredText, R Sweave, and XHTML documents. In addition, LT<sub>E</sub>X+ can check comments in many popular programming languages (optional, opt-in).
 <!-- #elseif TARGET == 'coc.nvim' -->
-<!-- **LT<sub>E</sub>X+** provides offline grammar checking of various markup languages in Vim/Neovim using [LanguageTool (LT)](https://languagetool.org/) and [coc.nvim](https://github.com/neoclide/coc.nvim). LT<sub>E</sub>X+ currently supports BibT<sub>E</sub>X, ConT<sub>E</sub>Xt, L<sup>A</sup>T<sub>E</sub>X, Markdown, Typst, Org, Quarto, reStructuredText, R Sweave, and XHTML documents. In addition, LT<sub>E</sub>X+ can check comments in many popular programming languages (optional, opt-in). -->
+<!-- **LT<sub>E</sub>X+** provides offline grammar checking of various markup languages in Vim/Neovim using [LanguageTool (LT)](https://languagetool.org/) and [coc.nvim](https://github.com/neoclide/coc.nvim). LT<sub>E</sub>X+ currently supports BibT<sub>E</sub>X, ConT<sub>E</sub>Xt, L<sup>A</sup>T<sub>E</sub>X, Markdown, MDX, Typst, Org, Quarto, reStructuredText, R Sweave, and XHTML documents. In addition, LT<sub>E</sub>X+ can check comments in many popular programming languages (optional, opt-in). -->
 <!-- #endif -->
 
 The difference to regular spell checkers is that LT<sub>E</sub>X+ not only detects spelling errors, but also many grammar and stylistic errors such as:
@@ -37,7 +37,7 @@ LT<sub>E</sub>X+ is a successor (since it's a fork) of the abandoned [LanguageTo
 
 ![Grammar/Spell Checker for VS Code with LanguageTool and LaTeX Support](https://github.com/ltex-plus/vscode-ltex-plus/blob/develop/img/banner-ltex.png?raw=true)
 
-- **Supported markup languages:** BibT<sub>E</sub>X, ConT<sub>E</sub>Xt, L<sup>A</sup>T<sub>E</sub>X, Markdown, Typst, Org, Quarto, reStructuredText, R Sweave, XHTML
+- **Supported markup languages:** BibT<sub>E</sub>X, ConT<sub>E</sub>Xt, L<sup>A</sup>T<sub>E</sub>X, Markdown, MDX, Typst, Org, Quarto, reStructuredText, R Sweave, XHTML
 - Comment checking in **many popular programming languages** (optional, opt-in)
 - Comes with **everything included,** no need to install Java or LanguageTool
 - **Offline checking:** Does not upload anything to the internet

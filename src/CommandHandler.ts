@@ -59,6 +59,7 @@ export default class CommandHandler {
     'html',
     'latex',
     'markdown',
+    'mdx',
     'typst',
     'org',
     'quarto',
@@ -420,6 +421,10 @@ export default class CommandHandler {
         }
         case 'matlab': {
           enabledFileExtensions.add('m');
+          break;
+        }
+        case 'mdx': {
+          enabledFileExtensions.add('mdx');
           break;
         }
         case 'org': {
