@@ -11,22 +11,33 @@ on:
   workflow_dispatch:
 
 jobs:
-  check_latest_commit:
+  check_latest_commits:
     runs-on: "ubuntu-latest"
     name: "Check latest commit"
     outputs:
       NEW_COMMIT: ${{ steps.check_latest_commit.outputs.NEW_COMMIT }}
+      LTEX_LS_PLUS_NEW_COMMIT: ${{ steps.check_latest_commit_ltex-ls-plus.outputs.NEW_COMMIT }}
     steps:
       - name: "Checkout Repository"
         uses: "actions/checkout@v4"
 
       - id: "check_latest_commit"
-        name: "Check if there were any commits in the last 48 hours"
+        name: "Check if there were any commits in the last 48 hours for vscode-ltex-plus"
         run: echo 'NEW_COMMIT='$(test -n "$(git log --format=%H --since='48 hours ago')" && echo 'true' || echo 'false') >> $GITHUB_OUTPUT
+      
+      - name: "Checkout Repository"
+        uses: "actions/checkout@v4"
+        with:
+          repository: ltex-plus/ltex-ls-plus
+          path: ltex-ls-plus
+
+      - id: "check_latest_commit_ltex-ls-plus"
+        name: "Check if there were any commits in the last 48 hours for ltex-ls-plus"
+        run: cd ltex-ls-plus && echo 'NEW_COMMIT='$(test -n "$(git log --format=%H --since='48 hours ago')" && echo 'true' || echo 'false') >> $GITHUB_OUTPUT
 
   deploy:
-    needs: check_latest_commit
-    if: ${{ needs.check_latest_commit.outputs.NEW_COMMIT == 'true' || github.event_name == 'workflow_dispatch' }}
+    needs: check_latest_commits
+    if: ${{ needs.check_latest_commits.outputs.NEW_COMMIT == 'true' || needs.check_latest_commits.outputs.LTEX_LS_PLUS_NEW_COMMIT == 'true' || github.event_name == 'workflow_dispatch' }}
     name: "Nightly - Deploy Job"
     runs-on: "ubuntu-latest"
 
