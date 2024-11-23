@@ -22,6 +22,9 @@
       <action type="add" issue="#88">
         Add support for MDX
       </action>
+      <action type="add" issue="#73">
+        Add `LTeX: Close LTeX+` command to close the extension and LTeX+ LS
+      </action>
       <action type="add" issue="#83">
         Publish LTeX+ on Open VSX: https://open-vsx.org/extension/ltex-plus/vscode-ltex-plus
       </action>

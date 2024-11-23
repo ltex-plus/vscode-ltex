@@ -2612,6 +2612,11 @@
         "category": "LTeX"
       },
       {
+        "command": "ltex.close",
+        "title": "%ltex.i18n.commands.ltex.close.title%",
+        "category": "LTeX"
+      },
+      {
         "command": "ltex.reportBug",
         "title": "%ltex.i18n.commands.ltex.reportBug.title%",
         "category": "LTeX"

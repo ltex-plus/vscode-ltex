@@ -92,6 +92,8 @@ export default class CommandHandler {
         this.showStatusInformation.bind(this)));
     context.subscriptions.push(Code.commands.registerCommand('ltex.resetAndRestart',
         this.resetAndRestart.bind(this)));
+    context.subscriptions.push(Code.commands.registerCommand('ltex.close',
+      this.close.bind(this)));
     context.subscriptions.push(Code.commands.registerCommand('ltex.reportBug',
         this._bugReporter.report.bind(this._bugReporter)));
     context.subscriptions.push(Code.commands.registerCommand('ltex.requestFeature',
@@ -566,6 +568,10 @@ export default class CommandHandler {
 
     await Extension.activate(this._context);
     return Promise.resolve();
+  }
+
+  private async close(){
+    Extension.deactivate();
   }
 
   private async requestFeature(): Promise<void> {
