@@ -28,6 +28,9 @@
       <action type="add" issue="#83">
         Publish LTeX+ on Open VSX: https://open-vsx.org/extension/ltex-plus/vscode-ltex-plus
       </action>
+      <action type="fix" issue="#94">
+        Fix error message when using the command `LTeX: Reset and Restart`
+      </action>
     </release>
     <release version="15.2.0" description="The (X)HTML HTTP 413 Elevation" date="2024-10-19">
       <action type="update">

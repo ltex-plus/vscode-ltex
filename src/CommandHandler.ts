@@ -560,7 +560,7 @@ export default class CommandHandler {
   private async resetAndRestart(): Promise<void> {
     for (const disposable of this._context.subscriptions) {
       // #if TARGET == 'vscode'
-      await disposable.dispose();
+      disposable.dispose();
       // #elseif TARGET == 'coc.nvim'
       // disposable.dispose();
       // #endif
