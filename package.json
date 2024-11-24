@@ -2330,13 +2330,15 @@
           "type": "string",
           "scope": "resource",
           "default": "",
-          "markdownDescription": "%ltex.i18n.configuration.ltex.additionalRules.neuralNetworkModel.markdownDescription%"
+          "markdownDeprecationMessage": "**Deprecated:** This setting is not supported by LanguageTool anymore, see [LanguageTool 6.0 release notes](https://github.com/languagetool-org/languagetool/blob/v6.0/languagetool-standalone/CHANGES.md)",
+          "deprecationMessage": "Deprecated: This setting is not supported by LanguageTool anymore, see https://github.com/languagetool-org/languagetool/blob/v6.0/languagetool-standalone/CHANGES.md"
         },
         "ltex.additionalRules.word2VecModel": {
           "type": "string",
           "scope": "resource",
           "default": "",
-          "markdownDescription": "%ltex.i18n.configuration.ltex.additionalRules.word2VecModel.markdownDescription%"
+          "markdownDeprecationMessage": "**Deprecated:** This setting is not supported by LanguageTool anymore, see [LanguageTool 6.0 release notes](https://github.com/languagetool-org/languagetool/blob/v6.0/languagetool-standalone/CHANGES.md)",
+          "deprecationMessage": "Deprecated: This setting is not supported by LanguageTool anymore, see https://github.com/languagetool-org/languagetool/blob/v6.0/languagetool-standalone/CHANGES.md"
         },
         "ltex.languageToolHttpServerUri": {
           "type": "string",
