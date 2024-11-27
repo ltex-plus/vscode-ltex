@@ -34,6 +34,12 @@
       <action type="update">
         Settings `ltex.additionalRules.word2VecModel`and `ltex.additionalRules.neuralNetworkModel` are marked as deprecated. They are not used by LanguageTool anymore, see [LanguageTool 6.0 release notes](https://github.com/languagetool-org/languagetool/blob/v6.0/languagetool-standalone/CHANGES.md)
       </action>
+      <action type="update">
+        Update to LTeX+ LS 18.3.0
+      </action>
+      <action type="fix" issue="#89">
+        Fix spelling errors for Swedish dummies
+      </action>
     </release>
     <release version="15.2.0" description="The (X)HTML HTTP 413 Elevation" date="2024-10-19">
       <action type="update">

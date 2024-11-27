@@ -43,24 +43,24 @@ export default class DependencyManager {
       + 'ltex-plus/vscode-ltex-plus/installation-usage-vscode-ltex-plus.html#offline-installation';
 
   private static readonly _toBeDownloadedLtexLsTag: string =
-      '18.2.0';
+      '18.3.0';
   private static readonly _toBeDownloadedLtexLsVersion: string =
-      '18.2.0';
+      '18.3.0';
   private static readonly _toBeDownloadedLtexLsHashDigests: {[fileName: string]: string} = {
-    'ltex-ls-plus-18.2.0-linux-aarch64.tar.gz':
-      'c000a7e80e51aec38e36b7204d84183de2ecbb79f1585771f3d2b77542ece002',
-    'ltex-ls-plus-18.2.0-linux-x64.tar.gz':
-      '0b4cdab346dbcf30a20d884c14180269a2e6b0e45599b64667cdfa1cb054e6ac',
-    'ltex-ls-plus-18.2.0-mac-aarch64.tar.gz':
-      'c4a2ccc13b595ca1cd37bd28c3c46756bbbfebeb88fbd6eb27d89f6a27695b94',
-    'ltex-ls-plus-18.2.0-mac-x64.tar.gz':
-      '024e0e939397abd4adfb30ac27437788767789953f1b8707dfa63d860cb9df9c',
-    'ltex-ls-plus-18.2.0-windows-aarch64.zip':
-      '86475dc75e642dd1bfa2b8c801b4a667b220cd111ce2694e9fdcd3b0e1b2d89c',
-    'ltex-ls-plus-18.2.0-windows-x64.zip':
-      '11cfe4890dc841e0b3e341984621a1f38f6b740307a3743270f4a1237ae511f5',
-    'ltex-ls-plus-18.2.0.tar.gz':
-      'f2ac5e69519ddabdd22deac28074a941615b5e1227815d9c76ffe358dec71ce1',
+    'ltex-ls-plus-18.3.0-linux-aarch64.tar.gz':
+      '7fa45165fde790df5b51eb8eb83b0ccb7ebd6a1c853b1bb5da6dea362345513d',
+    'ltex-ls-plus-18.3.0-linux-x64.tar.gz':
+      'bbe01fc3a3e168ba232346e4df4d2f3c85b811deec535bf2ff56899df9d8d022',
+    'ltex-ls-plus-18.3.0-mac-aarch64.tar.gz':
+      'fe9b88a62045a5a5c892ea58fe703afccee54a8549dcc9708495130508cb6498',
+    'ltex-ls-plus-18.3.0-mac-x64.tar.gz':
+      'a1ccaf757c01e7bf49f5b0d47ebf72aa2dc57a88397956cabf0f5bf84c74d08d',
+    'ltex-ls-plus-18.3.0-windows-aarch64.zip':
+      '99dddb603b1eb2039f5fb3e1c2fcbb2efef2d0f220649486979f4a3edb42dd7d',
+    'ltex-ls-plus-18.3.0-windows-x64.zip':
+      'b2215c47cb3b569c907d5db3c1da222c17e95b711e5c66587660709166c0e988',
+    'ltex-ls-plus-18.3.0.tar.gz':
+      '4d5f33f27633da516c2fceb2c692160e1de10c4667ffb3f491ac78f7ca22725b',
   };
 
   public constructor(context: Code.ExtensionContext) {
