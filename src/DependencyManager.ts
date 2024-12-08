@@ -430,12 +430,12 @@ export default class DependencyManager {
     const executableOptions: ChildProcess.SpawnSyncOptionsWithStringEncoding =
     DependencyManager._isWindows ? {
       encoding: 'utf-8',
-      timeout: 15000,
+      timeout: 30000,
       shell: true,
     }
     : {
       encoding: 'utf-8',
-      timeout: 15000,
+      timeout: 30000,
     };
 
     if (executable.options != null) {
@@ -551,12 +551,12 @@ export default class DependencyManager {
     const executableOptions: ChildProcess.SpawnSyncOptionsWithStringEncoding =
     DependencyManager._isWindows ? {
       encoding: 'utf-8',
-      timeout: 15000,
+      timeout: 30000,
       shell: true,
     }
     : {
       encoding: 'utf-8',
-      timeout: 15000,
+      timeout: 30000,
     };
     const childProcess: ChildProcess.SpawnSyncReturns<string> = ((this._isWindows)
         ? ChildProcess.spawnSync('wmic', ['process', 'list', 'FULL'], executableOptions)

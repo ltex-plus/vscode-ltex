@@ -12,6 +12,11 @@
     <author>Julian Valentin, Daniel Spitzer, LTeX+ Development Community</author>
   </properties>
   <body>
+    <release version="15.3.1" date="upcoming">
+      <action type="fix" issue="#60">
+        Fix timeout issue for low-end computers
+      </action>
+    </release>
     <release version="15.3.0" description="The Typst Reflection" date="2024-11-27">
       <action type="add" issue="ltex-ls-plus#39,#49">
         Add support for Typst
