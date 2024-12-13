@@ -20,6 +20,7 @@ enum Status {
   starting,
   ready,
   checking,
+  disabled
 }
 
 interface ProgressParams<T> {
@@ -40,9 +41,11 @@ export default class StatusBarItemManager {
   private _startingStatusText: string;
   private _readyStatusText: string;
   private _checkingStatusText: string;
+  private _disabledStatusText: string;
 
   private static readonly readyStatusDuration: number = 1000;
   private static readonly checkingStatusDelay: number = 5000;
+  private static readonly disabledStatusDuration: number = 5000;
 
   public constructor(context: Code.ExtensionContext) {
     // #if TARGET == 'vscode'
@@ -57,6 +60,7 @@ export default class StatusBarItemManager {
     this._startingStatusText = `$(loading~spin) ${i18n('startingLtex')}`;
     this._readyStatusText = `$(check) ${i18n('ltexReady')}`;
     this._checkingStatusText = `$(loading~spin) ${i18n('ltexIsChecking')}`;
+    this._disabledStatusText = `$(error) ${i18n('disableLtex')}`;
     // #elseif TARGET == 'coc.nvim'
     // this._startingStatusText = i18n('startingLtex');
     // this._readyStatusText = i18n('ltexReady');
@@ -174,5 +178,12 @@ export default class StatusBarItemManager {
         this.update();
       }
     }
+  }
+
+  public setStatusToDisabled(){
+    this._status = Status.disabled;
+    this._statusBarItem.text = this._disabledStatusText;
+    this._statusBarItem.show();
+    setTimeout(() =>{this._statusBarItem.hide();}, StatusBarItemManager.disabledStatusDuration);
   }
 }

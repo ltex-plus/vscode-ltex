@@ -32,6 +32,12 @@ export class Api {
 
 let dependencyManager: DependencyManager | null = null;
 let api: Api | null = null;
+let extensionContext: Code.ExtensionContext | null = null;
+let externalFileManager: ExternalFileManager | null = null;
+let statusPrinter: StatusPrinter| null = null;
+let commandHandler: CommandHandler | null = null;
+let statusBarItemManager: StatusBarItemManager | null = null;
+
 
 async function languageClientIsReady(languageClient: CodeLanguageClient.LanguageClient,
       externalFileManager: ExternalFileManager,
@@ -46,13 +52,23 @@ async function languageClientIsReady(languageClient: CodeLanguageClient.Language
       workspaceConfigurationRequestHandler.handle.bind(workspaceConfigurationRequestHandler));
 }
 
-async function startLanguageClient(context: Code.ExtensionContext,
-      externalFileManager: ExternalFileManager, statusPrinter: StatusPrinter):
+export async function startLanguageClient():
       Promise<CodeLanguageClient.LanguageClient | null> {
   let serverOptions: CodeLanguageClient.ServerOptions | null = null;
 
+  if (extensionContext == null || statusPrinter == null || externalFileManager == null
+    || statusPrinter == null || commandHandler == null || api == null){
+    Logger.error(i18n('couldNotStartLanguageClient'));
+    return Promise.resolve(null);
+  }
+
+  if(api.languageClient != null){
+    Logger.log(i18n('ltexLsWasAlreadyStarted'));
+    return Promise.resolve(api.languageClient);
+  }
+
   // #if TARGET == 'vscode'
-  if (context.extensionMode == Code.ExtensionMode.Development) {
+  if (extensionContext.extensionMode == Code.ExtensionMode.Development) {
     serverOptions = DependencyManager.getDebugServerOptions();
   }
   // #endif
@@ -68,7 +84,7 @@ async function startLanguageClient(context: Code.ExtensionContext,
     serverOptions = await dependencyManager.getLtexLsExecutable();
   }
 
-  const statusBarItemManager: StatusBarItemManager = new StatusBarItemManager(context);
+  statusBarItemManager = new StatusBarItemManager(extensionContext);
 
   const workspaceConfig: Code.WorkspaceConfiguration = Code.workspace.getConfiguration('ltex');
   const enabled: any = workspaceConfig.get('enabled');
@@ -123,7 +139,10 @@ async function startLanguageClient(context: Code.ExtensionContext,
   await languageClient.start().then(languageClientIsReady.bind(
     null, languageClient, externalFileManager, statusBarItemManager));
   statusPrinter.languageClient = languageClient;
-  context.subscriptions.push(languageClient);
+  extensionContext.subscriptions.push(languageClient);
+  commandHandler.languageClient = languageClient;
+  commandHandler.statusBarItemManager = statusBarItemManager;
+  api.languageClient = languageClient;
 
   return Promise.resolve(languageClient);
 }
@@ -137,26 +156,20 @@ export async function activate(context: Code.ExtensionContext): Promise<Api> {
   api.serverOutputChannel = Logger.serverOutputChannel;
 
   dependencyManager = new DependencyManager(context);
+  extensionContext = context;
 
-  const externalFileManager: ExternalFileManager = new ExternalFileManager(context);
-  const statusPrinter: StatusPrinter = new StatusPrinter(
+  externalFileManager = new ExternalFileManager(context);
+  statusPrinter =  new StatusPrinter(
       context, dependencyManager, externalFileManager);
   const bugReporter: BugReporter = new BugReporter(context, dependencyManager, statusPrinter);
 
   const workspaceConfig: Code.WorkspaceConfiguration = Code.workspace.getConfiguration('ltex');
   const enabled: any = workspaceConfig.get('enabled');
+  commandHandler = new CommandHandler(
+    context, externalFileManager, statusPrinter, bugReporter);
 
   if ((enabled === true) || (enabled.length > 0)) {
-    try {
-      api.languageClient = await startLanguageClient(context, externalFileManager, statusPrinter);
-      const commandHandler: CommandHandler = new CommandHandler(
-        context, externalFileManager, statusPrinter, bugReporter);
-      commandHandler.languageClient = api.languageClient;
-    } catch (e: unknown) {
-      Logger.error(i18n('couldNotStartLanguageClient'), e);
-      Logger.showClientOutputChannel();
-      Code.window.showErrorMessage(i18n('couldNotStartLanguageClient'));
-    }
+    await startLanguageClient();
   }
 
   return Promise.resolve(api);
@@ -169,5 +182,9 @@ export function deactivate(): Thenable<void> | undefined {
   if (!api.languageClient) {
     return undefined;
   }
+  if(statusBarItemManager != null){
+    statusBarItemManager.setStatusToDisabled();
+  }
+  
   return api.languageClient.stop();
 }

@@ -23,6 +23,7 @@ import Logger from './Logger';
 import ProgressStack from './ProgressStack';
 import StatusPrinter from './StatusPrinter';
 import WorkspaceConfigurationRequestHandler from './WorkspaceConfigurationRequestHandler';
+import StatusBarItemManager from './StatusBarItemManager';
 
 type LanguageSpecificSettingValue = {
   [language: string]: string[];
@@ -46,6 +47,7 @@ export default class CommandHandler {
   private _bugReporter: BugReporter;
   private _languageClient: CodeLanguageClient.LanguageClient | null;
   private _externalFileManager: ExternalFileManager;
+  private _statusBarItemManager: StatusBarItemManager | null;
 
   private static readonly _featureRequestUrl: string =
         'https://github.com/ltex-plus/vscode-ltex-plus/'
@@ -74,6 +76,7 @@ export default class CommandHandler {
     this._bugReporter = bugReporter;
     this._languageClient = null;
     this._externalFileManager = externalFileManager;
+    this._statusBarItemManager = null;
 
     context.subscriptions.push(Code.commands.registerCommand('ltex.activateExtension',
         this.activateExtension.bind(this)));
@@ -116,7 +119,12 @@ export default class CommandHandler {
     this._languageClient = languageClient;
   }
 
+  public set statusBarItemManager(statusBarItemManager: StatusBarItemManager | null) {
+    this._statusBarItemManager = statusBarItemManager;
+  }
+
   private activateExtension(): void {
+    Extension.startLanguageClient();
   }
 
   private async checkDocument(uri: Code.Uri, codeLanguageId?: string,
@@ -137,6 +145,9 @@ export default class CommandHandler {
         };
 
     try {
+      if (this._languageClient.needsStart()){
+        this._statusBarItemManager?.setStatusToStarting();
+      }
       await Promise.race([
         this._languageClient.needsStart() ? this._languageClient.start() : Promise.resolve(),
         new Promise((_resolve: (value: any) => void, reject: (e: Error) => void) => {
@@ -154,6 +165,8 @@ export default class CommandHandler {
         // do nothing
       }
     }
+
+    this._statusBarItemManager?.setStatusToReady();
 
     if (result.success) {
       return Promise.resolve(true);

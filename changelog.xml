@@ -13,6 +13,12 @@
   </properties>
   <body>
     <release version="15.3.1" date="upcoming">
+      <action type="fix" issue="#106">
+        Fix LTeX commands when ltex.enabled is set to false
+      </action>
+      <action type="fix" issue="#73">
+        Fix status bar item symbols after using LTeX: Close LTeX+ command
+      </action>
       <action type="fix" issue="#60">
         Fix timeout issue for low-end computers
       </action>
@@ -28,7 +34,7 @@
         Add support for MDX
       </action>
       <action type="add" issue="#73">
-        Add `LTeX: Close LTeX+` command to close the extension and LTeX+ LS
+        Add LTeX: Close LTeX+ command to close the extension and LTeX+ LS
       </action>
       <action type="add" issue="#83">
         Publish LTeX+ on Open VSX: https://open-vsx.org/extension/ltex-plus/vscode-ltex-plus
