@@ -124,7 +124,9 @@ export default class CommandHandler {
   }
 
   private activateExtension(): void {
-    Extension.startLanguageClient();
+    if(!Extension.isLtexenabledInConfig()){
+      Extension.startLanguageClient();
+    }
   }
 
   private async checkDocument(uri: Code.Uri, codeLanguageId?: string,

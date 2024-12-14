@@ -52,19 +52,18 @@ async function languageClientIsReady(languageClient: CodeLanguageClient.Language
       workspaceConfigurationRequestHandler.handle.bind(workspaceConfigurationRequestHandler));
 }
 
-export async function startLanguageClient():
-      Promise<CodeLanguageClient.LanguageClient | null> {
+export async function startLanguageClient() : Promise<void> {
   let serverOptions: CodeLanguageClient.ServerOptions | null = null;
 
   if (extensionContext == null || statusPrinter == null || externalFileManager == null
     || statusPrinter == null || commandHandler == null || api == null){
     Logger.error(i18n('couldNotStartLanguageClient'));
-    return Promise.resolve(null);
+    return Promise.resolve();
   }
 
   if(api.languageClient != null){
     Logger.log(i18n('ltexLsWasAlreadyStarted'));
-    return Promise.resolve(api.languageClient);
+    return Promise.resolve();
   }
 
   // #if TARGET == 'vscode'
@@ -76,11 +75,11 @@ export async function startLanguageClient():
   if (serverOptions == null) {
     if (dependencyManager == null) {
       Logger.error('DependencyManager not initialized!');
-      return Promise.resolve(null);
+      return Promise.resolve();
     }
 
     const success: boolean = await dependencyManager.install();
-    if (success !== true) return Promise.resolve(null);
+    if (success !== true) return Promise.resolve();
     serverOptions = await dependencyManager.getLtexLsExecutable();
   }
 
@@ -109,12 +108,7 @@ export async function startLanguageClient():
         synchronize: {
           configurationSection: 'ltex',
         },
-        // LSP sends locale itself since LSP 3.16.0. However, this would require VS Code 1.53.0.
-//         // Currently, we only require VS Code 1.52.0.
          initializationOptions: {
-//           // #if TARGET == 'vscode'
-//           locale: Code.env.language,
-//           // #endif
            customCapabilities: {
               workspaceSpecificConfiguration: true,
              },
@@ -144,7 +138,7 @@ export async function startLanguageClient():
   commandHandler.statusBarItemManager = statusBarItemManager;
   api.languageClient = languageClient;
 
-  return Promise.resolve(languageClient);
+  return Promise.resolve();
 }
 
 export async function activate(context: Code.ExtensionContext): Promise<Api> {
@@ -163,16 +157,23 @@ export async function activate(context: Code.ExtensionContext): Promise<Api> {
       context, dependencyManager, externalFileManager);
   const bugReporter: BugReporter = new BugReporter(context, dependencyManager, statusPrinter);
 
-  const workspaceConfig: Code.WorkspaceConfiguration = Code.workspace.getConfiguration('ltex');
-  const enabled: any = workspaceConfig.get('enabled');
   commandHandler = new CommandHandler(
     context, externalFileManager, statusPrinter, bugReporter);
 
-  if ((enabled === true) || (enabled.length > 0)) {
+  if (isLtexenabledInConfig()) {
     await startLanguageClient();
   }
 
   return Promise.resolve(api);
+}
+
+export function isLtexenabledInConfig(): boolean {
+  const workspaceConfig: Code.WorkspaceConfiguration = Code.workspace.getConfiguration('ltex');
+  const enabled: any = workspaceConfig.get('enabled');
+  if ((enabled === true) || (enabled.length > 0)) {
+    return true;
+  }
+  return false;
 }
 
 export function deactivate(): Thenable<void> | undefined {
