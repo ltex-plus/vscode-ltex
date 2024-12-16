@@ -5,7 +5,6 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-// #if TARGET == 'vscode'
 import * as Assert from 'assert';
 import * as Code from 'vscode';
 
@@ -60,4 +59,3 @@ describe('Test extension (end-to-end)', () => {
     }
   });
 });
-// #endif

@@ -5,13 +5,8 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-// #if TARGET == 'vscode'
 import * as Code from 'vscode';
 import * as CodeLanguageClient from 'vscode-languageclient/node';
-// #elseif TARGET == 'coc.nvim'
-// import * as Code from 'coc.nvim';
-// import CodeLanguageClient = Code;
-// #endif
 
 import BugReporter from './BugReporter';
 import CommandHandler from './CommandHandler';
@@ -66,11 +61,9 @@ export async function startLanguageClient() : Promise<void> {
     return Promise.resolve();
   }
 
-  // #if TARGET == 'vscode'
   if (extensionContext.extensionMode == Code.ExtensionMode.Development) {
     serverOptions = DependencyManager.getDebugServerOptions();
   }
-  // #endif
 
   if (serverOptions == null) {
     if (dependencyManager == null) {
@@ -114,9 +107,7 @@ export async function startLanguageClient() : Promise<void> {
              },
          },
         revealOutputChannelOn: CodeLanguageClient.RevealOutputChannelOn.Never,
-        // #if TARGET == 'vscode'
         traceOutputChannel: Logger.clientOutputChannel,
-        // #endif
         outputChannel: Logger.serverOutputChannel,
       };
 

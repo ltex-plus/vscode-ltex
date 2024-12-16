@@ -5,13 +5,8 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-// #if TARGET == 'vscode'
 import * as Code from 'vscode';
 import EventEmitter = Code.EventEmitter;
-// #elseif TARGET == 'coc.nvim'
-// import * as Code from 'coc.nvim';
-// import EventEmitter = Code.Emitter;
-// #endif
 
 type Entry = {
   time: number;
@@ -82,13 +77,9 @@ export default class LoggingOutputChannel implements Code.OutputChannel {
     this._entries = [];
   }
 
-  // #if TARGET == 'vscode'
   public show(preserveFocus?: boolean | undefined): void;
   public show(column?: Code.ViewColumn | undefined, preserveFocus?: boolean | undefined): void;
   public show(_column?: any, preserveFocus?: any): void {
-  // #elseif TARGET == 'coc.nvim'
-  // public show(preserveFocus?: boolean): void {
-  // #endif
     this._outputChannel.show(preserveFocus);
   }
 

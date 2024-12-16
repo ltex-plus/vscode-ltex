@@ -2639,8 +2639,7 @@
     "test": "mocha ./out/test/TestRunner.js",
     "webpack": "webpack --config .webpack.config.js --mode development",
     "webpack-dev": "webpack --config .webpack.config.js --mode development --watch",
-    "vscode:prepublish": "tsc && webpack --config .webpack.config.js --mode production && python -u tools/convertChangelog.py --xml-file changelog.xml > CHANGELOG.md",
-    "coc.nvim:prepublish": "npm run vscode:prepublish"
+    "vscode:prepublish": "tsc && webpack --config .webpack.config.js --mode production && python -u tools/convertChangelog.py --xml-file changelog.xml > CHANGELOG.md"
   },
   "devDependencies": {
     "@vscode/test-electron": "^2.4.1",
@@ -2669,40 +2668,5 @@
     "tar": "7.4.3",
     "vscode-languageclient": "9.0.1",
     "vscode-languageserver-protocol": "3.17.5"
-  },
-  "ltexAdditionalInformation": {
-    "currentTarget": "vscode",
-    "targetChanges": {
-      "coc.nvim": {
-        "name": "coc-ltex",
-        "engines": {
-          "coc": "^0.0.80",
-          "vscode": "-"
-        },
-        "keywords": {
-          "coc.nvim": "+"
-        },
-        "activationEvents": {
-          "onNotebook:*": "-"
-        },
-        "devDependencies": {
-          "@types/node": "12.12.0",
-          "@types/vscode": "-",
-          "clipboardy": "3.0.0",
-          "coc.nvim": "0.0.81-next.7",
-          "glob": "7.2.0",
-          "vscode-test": "-"
-        },
-        "dependencies": {
-          "vscode-languageclient": "-"
-        },
-        "moveFromDependenciesToDevDependencies": [
-          "extract-zip",
-          "semver",
-          "tar",
-          "vscode-languageserver-protocol"
-        ]
-      }
-    }
   }
 }

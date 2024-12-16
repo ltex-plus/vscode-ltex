@@ -5,13 +5,10 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-// #if TARGET == 'vscode'
 
 import {runTests, runVSCodeCommand, downloadAndUnzipVSCode, TestOptions}
 from '@vscode/test-electron';
 import * as ChildProcess from 'child_process';
-// import * as CodeTest from 'vscode-test';
-// import * as CodeTestRunTest from 'vscode-test/out/runTest';
 import * as Fs from 'fs';
 import * as Path from 'path';
 import * as Rimraf from 'rimraf';
@@ -150,4 +147,3 @@ async function main(): Promise<void> {
 }
 
 main();
-// #endif

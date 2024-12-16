@@ -6,19 +6,10 @@
    - file, You can obtain one at https://mozilla.org/MPL/2.0/.
    -->
 
-<!-- #if TARGET == 'vscode' -->
 # LT<sub>E</sub>X+ Extension for VS Code: Grammar/Spell Checker Using LanguageTool with Support for L<sup>A</sup>T<sub>E</sub>X, Markdown, and Others
-<!-- #elseif TARGET == 'coc.nvim' -->
-<!-- # LT<sub>E</sub>X+ Extension for coc.nvim: Grammar/Spell Checker Using LanguageTool with Support for L<sup>A</sup>T<sub>E</sub>X, Markdown, and Others -->
-<!-- #endif -->
-
-<!-- #if TARGET == 'vscode' -->  
 > Notice: This is a fork of [@valentjn's vscode-ltex](https://github.com/valentjn/vscode-ltex). As of August 2024, this repository seems to be not maintained. This fork solves the severe bug in Windows mentioned in [issue 884](https://github.com/valentjn/vscode-ltex/issues/884)
 
 **LT<sub>E</sub>X+** provides offline grammar checking of various markup languages in Visual Studio Code using [LanguageTool (LT)](https://languagetool.org/). LT<sub>E</sub>X+ currently supports BibT<sub>E</sub>X, ConT<sub>E</sub>Xt, L<sup>A</sup>T<sub>E</sub>X, Markdown, MDX, Typst, Org, Quarto, reStructuredText, R Sweave, and XHTML documents. In addition, LT<sub>E</sub>X+ can check comments in many popular programming languages (optional, opt-in).
-<!-- #elseif TARGET == 'coc.nvim' -->
-<!-- **LT<sub>E</sub>X+** provides offline grammar checking of various markup languages in Vim/Neovim using [LanguageTool (LT)](https://languagetool.org/) and [coc.nvim](https://github.com/neoclide/coc.nvim). LT<sub>E</sub>X+ currently supports BibT<sub>E</sub>X, ConT<sub>E</sub>Xt, L<sup>A</sup>T<sub>E</sub>X, Markdown, MDX, Typst, Org, Quarto, reStructuredText, R Sweave, and XHTML documents. In addition, LT<sub>E</sub>X+ can check comments in many popular programming languages (optional, opt-in). -->
-<!-- #endif -->
 
 The difference to regular spell checkers is that LT<sub>E</sub>X+ not only detects spelling errors, but also many grammar and stylistic errors such as:
 
@@ -51,34 +42,19 @@ LT<sub>E</sub>X+ is a successor (since it's a fork) of the abandoned [LanguageTo
 
 ## Requirements
 
-<!-- #if TARGET == 'vscode' -->
 - 64-bit Linux, Mac, or Windows operating system
 - [VS Code 1.82.0 or newer](https://code.visualstudio.com/)
 - Optional:
   - If you want to check documents written in a markup language that VS Code does not support out-of-the-box (e.g., L<sup>A</sup>T<sub>E</sub>X), install an extension that provides support for that language (e.g., [LaTeX Workshop Extension for VS Code](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)) in addition to this extension.
-<!-- #elseif TARGET == 'coc.nvim' -->
-<!-- - 64-bit Linux, Mac, or Windows operating system -->
-<!-- - [Node.js 14.16.0 or later](https://nodejs.org/) -->
-<!-- - [Vim](https://www.vim.org/) or [Neovim](https://neovim.io/) with [coc.nvim 0.0.80 or newer](https://github.com/neoclide/coc.nvim) -->
-<!-- #endif -->
 
 ## How to Use
 
-<!-- #if TARGET == 'vscode' -->
 1. Install the requirements listed above
 2. Install this extension (see [download options](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/installation-usage-vscode-ltex-plus.html#how-to-install-and-use))
 3. Reload the VS Code window if necessary
 4. Open a L<sup>A</sup>T<sub>E</sub>X or a Markdown document, or open a new file and change the language mode to `LaTeX` or `Markdown` (open the Command Palette and select `Change Language Mode`)
 5. Wait until [ltex-ls](https://ltex-plus.github.io/ltex-plus/faq.html#whats-the-difference-between-vscode-ltex-ltex-ls-and-languagetool) has been found; if necessary, LT<sub>E</sub>X+ downloads it for you. Alternatively, you can choose [offline installation](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/installation-usage-vscode-ltex-plus.html#offline-installation).
 6. Grammar/spelling errors will be displayed! (if there are any)
-<!-- #elseif TARGET == 'coc.nvim' -->
-<!-- 1. Install the requirements listed above -->
-<!-- 2. Install coc-ltex by running `:CocInstall coc-ltex` -->
-<!-- 3. If you want to check LaTeX documents: Add `let g:coc_filetype_map = {'tex': 'latex'}` to `~/.vimrc` (Vim) or `~/.config/nvim/init.vim` (workaround for [#425](https://github.com/valentjn/vscode-ltex/issues/425), until [neoclide/coc.nvim#3433](https://github.com/neoclide/coc.nvim/pull/3433) is released) -->
-<!-- 4. Open a LaTeX or a Markdown document -->
-<!-- 5. Wait until [ltex-ls](https://ltex-plus.github.io/ltex-plus/faq.html#whats-the-difference-between-vscode-ltex-ltex-ls-and-languagetool) has been downloaded and started -->
-<!-- 6. Grammar/spelling errors will be displayed! (if there are any) -->
-<!-- #endif -->
 
 ## Information & Documentation
 
@@ -167,10 +143,6 @@ LT<sub>E</sub>X+ is a successor (since it's a fork) of the abandoned [LanguageTo
     - [Offline Installation](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/installation-usage-vscode-ltex-plus.html#offline-installation)
       - [First Alternative: Download the Offline Version of LT<sub>E</sub>X+](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/installation-usage-vscode-ltex-plus.html#first-alternative-download-the-offline-version-of-ltex)
       - [Second Alternative: Download ltex-ls/Java Manually](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/installation-usage-vscode-ltex-plus.html#second-alternative-download-ltex-lsjava-manually)
-  - [Installation &amp; Usage (coc-ltex)](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/installation-usage-coc-ltex.html)
-    - [Download Providers](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/installation-usage-coc-ltex.html#download-providers)
-    - [Requirements](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/installation-usage-coc-ltex.html#requirements)
-    - [How to Install and Use](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/installation-usage-coc-ltex.html#how-to-install-and-use)
   - [Setting Scopes &amp; Files](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/setting-scopes-files.html)
     - [Multi-Scope Settings](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/setting-scopes-files.html#multi-scope-settings)
     - [External Setting Files](https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/setting-scopes-files.html#external-setting-files)

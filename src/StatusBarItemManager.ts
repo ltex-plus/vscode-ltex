@@ -5,13 +5,8 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-// #if TARGET == 'vscode'
 import * as Code from 'vscode';
 import * as CodeLanguageClient from 'vscode-languageclient/node';
-// #elseif TARGET == 'coc.nvim'
-// import * as Code from 'coc.nvim';
-// import CodeLanguageClient = Code;
-// #endif
 
 import {i18n} from './I18n';
 import Logger from './Logger';
@@ -48,24 +43,14 @@ export default class StatusBarItemManager {
   private static readonly disabledStatusDuration: number = 5000;
 
   public constructor(context: Code.ExtensionContext) {
-    // #if TARGET == 'vscode'
     this._statusBarItem = Code.window.createStatusBarItem(Code.StatusBarAlignment.Left);
-    // #elseif TARGET == 'coc.nvim'
-    // this._statusBarItem = Code.window.createStatusBarItem();
-    // #endif
     this._progressMap = {};
     this._status = Status.starting;
 
-    // #if TARGET == 'vscode'
     this._startingStatusText = `$(loading~spin) ${i18n('startingLtex')}`;
     this._readyStatusText = `$(check) ${i18n('ltexReady')}`;
     this._checkingStatusText = `$(loading~spin) ${i18n('ltexIsChecking')}`;
     this._disabledStatusText = `$(error) ${i18n('disableLtex')}`;
-    // #elseif TARGET == 'coc.nvim'
-    // this._startingStatusText = i18n('startingLtex');
-    // this._readyStatusText = i18n('ltexReady');
-    // this._checkingStatusText = i18n('ltexIsChecking');
-    // #endif
 
     context.subscriptions.push(this._statusBarItem);
     context.subscriptions.push(Code.workspace.onDidChangeConfiguration(
@@ -81,9 +66,6 @@ export default class StatusBarItemManager {
   private update(): void {
     if (this._status == Status.starting) {
       this._statusBarItem.text = this._startingStatusText;
-      // #if TARGET == 'coc.nvim'
-      // this._statusBarItem.isProgress = true;
-      // #endif
       this._statusBarItem.show();
       return;
     }
@@ -95,9 +77,6 @@ export default class StatusBarItemManager {
       if (now - this._progressMap[token].startTime >= StatusBarItemManager.checkingStatusDelay) {
         this._status = Status.checking;
         this._statusBarItem.text = this._checkingStatusText;
-        // #if TARGET == 'coc.nvim'
-        // this._statusBarItem.isProgress = true;
-        // #endif
         this._statusBarItem.show();
         return;
       }
@@ -140,9 +119,6 @@ export default class StatusBarItemManager {
   public setStatusToReady(): void {
     this._status = Status.ready;
     this._statusBarItem.text = this._readyStatusText;
-    // #if TARGET == 'coc.nvim'
-    // this._statusBarItem.isProgress = true;
-    // #endif
     this._statusBarItem.show();
     setTimeout(this.update.bind(this), StatusBarItemManager.readyStatusDuration);
   }

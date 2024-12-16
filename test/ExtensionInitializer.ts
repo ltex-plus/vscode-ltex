@@ -5,7 +5,6 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-// #if TARGET == 'vscode'
 import * as Code from 'vscode';
 import * as CodeLanguageClient from 'vscode-languageclient/node';
 
@@ -103,4 +102,3 @@ export default class ExtensionInitializer {
     return Promise.resolve();
   }
 }
-// #endif

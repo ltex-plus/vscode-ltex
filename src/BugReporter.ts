@@ -5,12 +5,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-// #if TARGET == 'vscode'
 import * as Code from 'vscode';
-// #elseif TARGET == 'coc.nvim'
-// import clipboard from 'clipboardy';
-// import * as Code from 'coc.nvim';
-// #endif
 import * as Fs from 'fs';
 import * as Os from 'os';
 import * as Path from 'path';
@@ -61,11 +56,7 @@ export default class BugReporter {
     }
 
     const document: Code.TextDocument | undefined =
-    // #if TARGET == 'vscode'
         Code.window.activeTextEditor?.document;
-    // #elseif TARGET == 'coc.nvim'
-        // (await Code.workspace.document).textDocument;
-    // #endif
 
     if (document != null) {
       let codeLanguage: string;
@@ -116,32 +107,23 @@ export default class BugReporter {
     bugReport = bugReport.replace(/^- Operating system: .*$/m, `- Operating system: ${platform}`);
 
     const vscodeReplacement: string =
-    // #if TARGET == 'vscode'
         `- VS Code: ${Code.version}`;
-    // #elseif TARGET == 'coc.nvim'
-        // '- coc.nvim';
-    // #endif
     bugReport = bugReport.replace(/^- VS Code: .*$/m, vscodeReplacement);
 
     // deprecated: replace with self._context.extension starting with VS Code 1.55.0
     const extension: Code.Extension<any> | undefined =
-    // #if TARGET == 'vscode'
-        Code.extensions.getExtension('ltex-plus.vscode-ltex');
-    // #elseif TARGET == 'coc.nvim'
-        // Code.extensions.all.find(
-            // (extension: Code.Extension<Code.ExtensionApi>) => extension.id == 'coc-ltex');
-    // #endif
+        Code.extensions.getExtension('ltex-plus.vscode-ltex-plus');
 
     if (extension != null) {
       bugReport = bugReport.replace(/^- vscode-ltex: .*$/m,
-          `- vscode-ltex: ${extension.packageJSON.version}`);
+          `- vscode-ltex-plus: ${extension.packageJSON.version}`);
     }
 
     if (this._dependencyManager != null) {
       const ltexLsVersion: string | null = this._dependencyManager.ltexLsVersion;
 
       if (ltexLsVersion != null) {
-        bugReport = bugReport.replace(/^- ltex-ls: .*$/m, `- ltex-ls: ${ltexLsVersion}`);
+        bugReport = bugReport.replace(/^- ltex-ls-plus: .*$/m, `- ltex-ls-plus: ${ltexLsVersion}`);
       }
 
       const javaVersion: string | null = this._dependencyManager.javaVersion;
@@ -175,23 +157,14 @@ export default class BugReporter {
             async (selectedItem: string | undefined) => {
       if (selectedItem == i18n('setLtexTraceServerToVerbose')) {
         const config: Code.WorkspaceConfiguration = Code.workspace.getConfiguration('ltex');
-        // #if TARGET == 'vscode'
         config.update('trace.server', 'verbose', Code.ConfigurationTarget.Global);
-        // #elseif TARGET == 'coc.nvim'
-        // config.update('trace.server', 'verbose');
-        // #endif
         Code.window.showInformationMessage(i18n('ltexTraceServerSetToVerbose'));
       } else if (selectedItem == i18n('copyReportAndCreateIssue')) {
         const url: Url.URL = new Url.URL(BugReporter._bugReportUrl);
         url.searchParams.set('body', i18n('enterSummaryOfIssueInTitleFieldAndReplaceSentence'));
 
-        // #if TARGET == 'vscode'
         Code.env.clipboard.writeText(bugReport);
         Code.env.openExternal(Code.Uri.parse(url.toString()));
-        // #elseif TARGET == 'coc.nvim'
-        // await clipboard.write(bugReport);
-        // Code.workspace.openResource(url.toString());
-        // #endif
       }
     });
   }
