@@ -174,9 +174,6 @@ export function deactivate(): Thenable<void> | undefined {
   if (!api.languageClient) {
     return undefined;
   }
-  if(statusBarItemManager != null){
-    statusBarItemManager.setStatusToDisabled();
-  }
   
   return api.languageClient.stop();
 }

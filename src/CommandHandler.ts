@@ -202,8 +202,12 @@ export default class CommandHandler {
       return Promise.resolve(false);
     }
 
+    const firstLine: Code.TextLine = textEditor.document.lineAt(0);
+    const lastLine: Code.TextLine = textEditor.document.lineAt(textEditor.document.lineCount - 1);
+    const docText: Code.Selection = new Code.Selection(firstLine.range.start, lastLine.range.end);
+
     return this.checkDocument(textEditor.document.uri, textEditor.document.languageId,
-        textEditor.document.getText());
+        textEditor.document.getText(), docText);
   }
 
   private async checkAllDocumentsInWorkspace(): Promise<boolean> {
@@ -538,7 +542,8 @@ export default class CommandHandler {
   }
 
   private async close(){
-    Extension.deactivate();
+    this._statusBarItemManager?.setStatusToDisabled();
+    Extension.deactivate(); 
   }
 
   private async requestFeature(): Promise<void> {
