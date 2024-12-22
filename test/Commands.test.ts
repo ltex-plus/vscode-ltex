@@ -82,4 +82,17 @@ describe('Test commands', () => {
     Assert.strictEqual(Code.languages.getDiagnostics(fileUri2).length, 1);
     Assert.strictEqual(Code.languages.getDiagnostics(fileUri3).length, 0);
   });
+
+  it('Test ltex.close and ltex.checkCurrentDocument', async () => {
+    const document: Code.TextDocument = await TestTools.createNewFile('latex',
+        'This is an \\textbf{test}.');
+    await TestTools.sleep(10000);
+    Assert.strictEqual(Code.languages.getDiagnostics(document.uri).length, 1);
+    await Code.commands.executeCommand('ltex.close');
+    await TestTools.sleep(1000);
+    Assert.strictEqual(Code.languages.getDiagnostics(document.uri).length, 0);
+    await Code.commands.executeCommand('ltex.checkCurrentDocument');
+    await TestTools.sleep(10000);
+    Assert.strictEqual(Code.languages.getDiagnostics(document.uri).length, 1);
+  });
 });
