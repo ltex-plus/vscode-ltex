@@ -19,6 +19,9 @@
       <action type="fix" issue="#73">
         Fix status bar item symbols after using LTeX: Close LTeX+ command
       </action>
+      <action type="fix" issue="#72">
+        Fix unwanted LTeX+ activation when using Jupyter interactive windows
+      </action>
       <action type="fix" issue="#60">
         Fix timeout issue for low-end computers
       </action>
