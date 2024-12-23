@@ -65,7 +65,7 @@
     "onLanguage:quarto",
     "onLanguage:restructuredtext",
     "onLanguage:rsweave",
-    "onNotebook:jupyter-notebook"
+    "onNotebook:*"
   ],
   "contributes": {
     "walkthroughs": [
