@@ -8,10 +8,11 @@
 
 # Acknowledgments
 
-## LanguageTool Extension for Visual Studio Code
+## LT<sub>E</sub>X and LanguageTool Extension for Visual Studio Code
 
-As a fork of the abandoned [LanguageTool for Visual Studio Code extension](https://github.com/adamvoss/vscode-languagetool), this extension would not have been possible without the work of Adam Voss.
+Until version 13.1.0, Julian Valentin developed LT<sub>E</sub>X+ as [LT<sub>E</sub>X](https://github.com/valentjn/vscode-ltex). 
+LT<sub>E</sub>X is a fork of the abandoned [LanguageTool for Visual Studio Code extension](https://github.com/adamvoss/vscode-languagetool). This extension would not have been possible without the work of Adam Voss and Julian Valentin.
 
-## ltex-ls
+## ltex-ls-plus
 
-Distributions of LT<sub>E</sub>X include [ltex-ls](https://github.com/valentjn/ltex-ls) under the terms of the [Mozilla Public License, version 2.0](https://github.com/valentjn/ltex-ls/blob/release/LICENSE.md). For information on dependencies of ltex-ls, please see [ltex-ls/ACKNOWLEDGMENTS.md](https://github.com/valentjn/ltex-ls/blob/release/ACKNOWLEDGMENTS.md).
+Distributions of LT<sub>E</sub>X+ include [ltex-ls-plus](https://github.com/ltex-plus/ltex-ls-plus) under the terms of the [Mozilla Public License, version 2.0](https://github.com/ltex-plus/ltex-ls-plus/blob/develop/LICENSE.md). For information on dependencies of ltex-ls-plus, please see [ltex-ls-plus/ACKNOWLEDGMENTS.md](https://github.com/ltex-plus/ltex-ls-plus/blob/develop/ACKNOWLEDGMENTS.md).
