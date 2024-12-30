@@ -409,6 +409,10 @@ export default class CommandHandler {
           enabledFileExtensions.add('mdx');
           break;
         }
+        case 'neorg': {
+          enabledFileExtensions.add('norg');
+          break;
+        }
         case 'org': {
           enabledFileExtensions.add('org');
           break;

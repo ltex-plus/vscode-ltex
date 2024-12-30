@@ -13,6 +13,9 @@
   </properties>
   <body>
     <release version="15.5.0" date="upcoming">
+      <action type="add" issue="ltex-plus/ltex-ls-plus#55">
+        Add support for Neorg
+      </action>
     </release>
     <release version="15.4.0" description="The ltex.enabled Decoupling" date="2024-12-25">
       <action type="fix" issue="#106">
