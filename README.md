@@ -16,6 +16,7 @@
 - Org and Neorg
 - reStructuredText
 - XHTML
+
 In addition, LT<sub>E</sub>X+ can check comments in many popular programming languages (optional, opt-in).
 
 The difference to regular spell checkers is that LT<sub>E</sub>X+ not only detects spelling errors, but also many grammar and stylistic errors such as:
