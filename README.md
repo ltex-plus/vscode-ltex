@@ -36,8 +36,6 @@ LT<sub>E</sub>X+ is a successor (since it's a fork) of the abandoned [LanguageTo
 
 ![Grammar/Spell Checker for VS Code with LanguageTool and LaTeX Support](https://github.com/ltex-plus/vscode-ltex-plus/blob/develop/img/banner-ltex.png?raw=true)
 
-- **Supported markup languages:** BibT<sub>E</sub>X, ConT<sub>E</sub>Xt, L<sup>A</sup>T<sub>E</sub>X, Markdown, MDX, Typst, Org, Quarto, reStructuredText, R Sweave, XHTML
-- Comment checking in **many popular programming languages** (optional, opt-in)
 - Comes with **everything included,** no need to install Java or LanguageTool
 - **Offline checking:** Does not upload anything to the internet
 - Supports **over 20 languages:** English, French, German, Dutch, Chinese, Russian, etc.
