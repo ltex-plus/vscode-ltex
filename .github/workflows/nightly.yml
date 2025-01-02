@@ -84,12 +84,9 @@ jobs:
         run: "python -u tools/createOfflinePackages.py"
 
       - name: "Delete Old Nightly Releases"
-        uses: "dev-drprasad/delete-older-releases@v0.3.4"
-        with:
-          keep_latest: 0
-          delete_tag_pattern: "nightly"
+        run: "gh release delete nightly -y"
         env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: "Update Nightly Tag"
         run: "git tag -f nightly && git push -f origin nightly"
