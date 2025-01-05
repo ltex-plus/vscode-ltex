@@ -2656,7 +2656,7 @@
     "@typescript-eslint/parser": "8.19.0",
     "eslint": "9.17.0",
     "eslint-plugin-only-warn": "1.1.0",
-    "mocha": "11.0.2",
+    "mocha": "11.1.0",
     "rimraf": "6.0.1",
     "ts-loader": "9.5.1",
     "typescript": "5.7.2",
