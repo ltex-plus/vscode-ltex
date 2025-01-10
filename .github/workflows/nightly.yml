@@ -13,8 +13,10 @@ on:
 
 jobs:
   check_latest_commits:
-    runs-on: "ubuntu-latest"
     name: "Check latest commit"
+    runs-on: "ubuntu-latest"
+    permissions:
+      contents: read
     outputs:
       NEW_COMMIT: ${{ steps.check_latest_commit.outputs.NEW_COMMIT }}
       LTEX_LS_PLUS_NEW_COMMIT: ${{ steps.check_latest_commit_ltex-ls-plus.outputs.NEW_COMMIT }}
@@ -41,6 +43,8 @@ jobs:
     if: ${{ needs.check_latest_commits.outputs.NEW_COMMIT == 'true' || needs.check_latest_commits.outputs.LTEX_LS_PLUS_NEW_COMMIT == 'true' || github.event_name == 'workflow_dispatch' }}
     name: "Nightly - Deploy Job"
     runs-on: "ubuntu-latest"
+    permissions:
+      contents: write
 
     steps:
       - name: "Checkout Repository"
@@ -72,20 +76,17 @@ jobs:
         run: "python -u -c \"import json; file = open('package.json', 'r+'); json_ = json.loads(file.read()); json_['version'] = '${{ env.VSCODE_LTEX_VERSION }}'; file.seek(0); file.truncate(); file.write(json.dumps(json_, indent=2) + '\\n')\""
 
       - name: "Update Version of LTeX LS"
-        env:
-          LTEX_GITHUB_OAUTH_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
         run: "python -u tools/updateLtexLsVersionAndHashDigests.py --tag nightly"
 
       - name: "Build Package with vsce"
         run: "vsce package"
 
       - name: "Build Offline Packages"
-        env:
-          LTEX_GITHUB_OAUTH_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
         run: "python -u tools/createOfflinePackages.py"
 
       - name: "Delete Old Nightly Releases"
         run: "gh release delete nightly -y"
+        continue-on-error: true
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -93,12 +94,16 @@ jobs:
         run: "git tag -f nightly && git push -f origin nightly"
 
       - name: "Create GitHub Release"
-        uses: "softprops/action-gh-release@v2"
+        run: >
+          gh release create nightly
+          --prerelease=true
+          --title='${{ env.VSCODE_LTEX_VERSION }}'
+          --notes='This is a nightly build. Use at your own risk.'
+          'vscode-ltex-plus-${{ env.VSCODE_LTEX_VERSION }}-offline-linux-x64.vsix'
+          'vscode-ltex-plus-${{ env.VSCODE_LTEX_VERSION }}-offline-mac-x64.vsix'
+          'vscode-ltex-plus-${{ env.VSCODE_LTEX_VERSION }}-offline-windows-x64.vsix'
+          'vscode-ltex-plus-${{ env.VSCODE_LTEX_VERSION }}-offline-linux-aarch64.vsix'
+          'vscode-ltex-plus-${{ env.VSCODE_LTEX_VERSION }}-offline-mac-aarch64.vsix'
+          'vscode-ltex-plus-${{ env.VSCODE_LTEX_VERSION }}-offline-windows-aarch64.vsix'
         env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-        with:
-          tag_name: "nightly"
-          name: "${{ env.VSCODE_LTEX_VERSION }}"
-          prerelease: true
-          body: "This is a nightly build. Use at your own risk."
-          files: "vscode-ltex-plus-${{ env.VSCODE_LTEX_VERSION }}-offline-*.vsix"
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

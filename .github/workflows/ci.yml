@@ -22,6 +22,8 @@ jobs:
   buildForVsCode:
     name: "CI - Build for VS Code Job"
     runs-on: "${{ matrix.os }}"
+    permissions:
+      contents: read
 
     strategy:
       matrix:
@@ -63,7 +65,6 @@ jobs:
       - name: "Run Mocha Tests (Linux)"
         if: "${{ startsWith(matrix.os, 'ubuntu-') }}"
         env:
-          LTEX_GITHUB_OAUTH_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           # to suppress "async hook stack has become corrupted" errors
           # (https://github.com/microsoft/vscode/issues/85601)
           NODE_OPTIONS: "--no-force-async-hooks-checks"
@@ -72,7 +73,6 @@ jobs:
       - name: "Run Mocha Tests (Windows)"
         if: "${{ startsWith(matrix.os, 'windows-') }}"
         env:
-          LTEX_GITHUB_OAUTH_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           # to suppress "async hook stack has become corrupted" errors
           # (https://github.com/microsoft/vscode/issues/85601)
           NODE_OPTIONS: "--no-force-async-hooks-checks"
@@ -82,6 +82,8 @@ jobs:
   validate:
     name: "CI - Validate Job"
     runs-on: "ubuntu-latest"
+    permissions:
+      contents: read
 
     steps:
       - name: "Checkout Repository"
@@ -101,33 +103,15 @@ jobs:
       - name: "Validate JSON files"
         run: "python -u tools/validateJsonFiles.py"
 
-  analyzeCodeQl:
-    name: "CI - CodeQL Job"
-    runs-on: "ubuntu-latest"
-
-    steps:
-      - name: "Checkout Repository"
-        uses: "actions/checkout@v4"
-
-      - name: "Initialize CodeQL"
-        uses: "github/codeql-action/init@v3"
-        with:
-          languages: "javascript,python"
-
-      - name: "Autobuild"
-        uses: "github/codeql-action/autobuild@v3"
-
-      - name: "Perform CodeQL Analysis"
-        uses: "github/codeql-action/analyze@v3"
-
   deployForVsCode:
     name: "CI - Deploy for VS Code Job"
     if: "${{ startsWith(github.ref, 'refs/tags/') }}"
     needs:
       - "buildForVsCode"
       - "validate"
-      - "analyzeCodeQl"
     runs-on: "ubuntu-latest"
+    permissions:
+      contents: write
 
     steps:
       - name: "Checkout Repository"
@@ -168,18 +152,23 @@ jobs:
         run: "vsce package"
 
       - name: "Build Offline Packages"
-        env:
-          LTEX_GITHUB_OAUTH_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
         run: "python -u tools/createOfflinePackages.py"
 
       - name: "Create GitHub Release"
-        uses: "softprops/action-gh-release@v2"
+        run: >
+          gh release create ${{ github.ref_name }}
+          --prerelease=${{ env.VSCODE_LTEX_IS_PRERELEASE }}
+          --title='${{ env.VSCODE_LTEX_VERSION }}'
+          --notes='${{ env.VSCODE_LTEX_CHANGELOG }}'
+          'vscode-ltex-plus-${{ env.VSCODE_LTEX_VERSION }}.vsix'
+          'vscode-ltex-plus-${{ env.VSCODE_LTEX_VERSION }}-offline-linux-x64.vsix'
+          'vscode-ltex-plus-${{ env.VSCODE_LTEX_VERSION }}-offline-mac-x64.vsix'
+          'vscode-ltex-plus-${{ env.VSCODE_LTEX_VERSION }}-offline-windows-x64.vsix'
+          'vscode-ltex-plus-${{ env.VSCODE_LTEX_VERSION }}-offline-linux-aarch64.vsix'
+          'vscode-ltex-plus-${{ env.VSCODE_LTEX_VERSION }}-offline-mac-aarch64.vsix'
+          'vscode-ltex-plus-${{ env.VSCODE_LTEX_VERSION }}-offline-windows-aarch64.vsix'
         env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"       
-        with:
-          prerelease: "${{ env.VSCODE_LTEX_IS_PRERELEASE }}"
-          body: "${{ env.VSCODE_LTEX_CHANGELOG }}"
-          files: "vscode-ltex-plus-${{ env.VSCODE_LTEX_VERSION }}*.vsix"
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: "Publish Package on VS Marketplace"
         if: "${{ env.VSCODE_LTEX_IS_PRERELEASE == 'false' }}"
