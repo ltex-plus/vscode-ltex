@@ -75,13 +75,17 @@ jobs:
       - name: "Bump Version"
         run: "python -u -c \"import json; file = open('package.json', 'r+'); json_ = json.loads(file.read()); json_['version'] = '${{ env.VSCODE_LTEX_VERSION }}'; file.seek(0); file.truncate(); file.write(json.dumps(json_, indent=2) + '\\n')\""
 
-      - name: "Update Version of LTeX LS"
+      - name: "Update Version of LTeX+ LS"
+        env:
+          LTEX_GITHUB_OAUTH_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
         run: "python -u tools/updateLtexLsVersionAndHashDigests.py --tag nightly"
 
       - name: "Build Package with vsce"
         run: "vsce package"
 
       - name: "Build Offline Packages"
+        env:
+          LTEX_GITHUB_OAUTH_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
         run: "python -u tools/createOfflinePackages.py"
 
       - name: "Delete Old Nightly Releases"
