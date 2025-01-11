@@ -8,7 +8,6 @@
    -->
 
 # LT<sub>E</sub>X+ Extension for VS Code: Grammar/Spell Checker Using LanguageTool with Support for L<sup>A</sup>T<sub>E</sub>X, Markdown, and Others
-> Notice: This is a fork of [@valentjn's vscode-ltex](https://github.com/valentjn/vscode-ltex). As of August 2024, this repository seems to be not maintained. This fork solves the severe bug in Windows mentioned in [issue 884](https://github.com/valentjn/vscode-ltex/issues/884)
 
 **LT<sub>E</sub>X+** provides offline grammar checking of various markup languages in Visual Studio Code using [LanguageTool (LT)](https://languagetool.org/). LT<sub>E</sub>X+ currently supports:
 - L<sup>A</sup>T<sub>E</sub>X, BibT<sub>E</sub>X, ConT<sub>E</sub>Xt and rsweave
@@ -31,7 +30,8 @@ A classic use case of LT<sub>E</sub>X+ is checking scientific L<sup>A</sup>T<sub
 
 [Find more information and documentation about LT<sub>E</sub>X+ on the official website.](https://ltex-plus.github.io/ltex-plus)
 
-LT<sub>E</sub>X+ is a successor (since it's a fork) of the abandoned [LanguageTool for Visual Studio Code extension](https://github.com/adamvoss/vscode-languagetool) by Adam Voss<sup>†</sup>.
+Until version 13.1.0, Julian Valentin developed LT<sub>E</sub>X+ as [LT<sub>E</sub>X](https://github.com/valentjn/vscode-ltex). 
+LT<sub>E</sub>X is a fork of the abandoned [LanguageTool for Visual Studio Code extension](https://github.com/adamvoss/vscode-languagetool). This extension would not have been possible without the work of Adam Voss<sup>†</sup> and Julian Valentin.
 
 ## Features
 
